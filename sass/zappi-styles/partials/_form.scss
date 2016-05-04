@@ -1,0 +1,66 @@
+$use-form-borders: false;
+
+.zappi-form,
+&.zappi-form {
+
+	@extend .typography.medium-text;
+
+	input, textarea {
+		
+		border: none;
+		outline: none;
+
+		&:focus {
+			outline: none;
+		}
+
+		&.pad-right {
+			margin-right: 20px;
+		}
+
+	}
+
+	.instructions-text {
+		display: none;
+	}
+
+	@import 'form_controls/form_row';
+	@import 'form_controls/form_title';
+	@import 'form_controls/form_introduction';
+	@import 'form_controls/form_section';
+	@import 'form_controls/form_question_list';
+	@import 'form_controls/form_tip';
+	@import 'form_controls/question';
+	@import 'form_controls/question_info';
+	@import 'form_controls/page_indicator';
+	@import 'form_controls/date_picker';
+
+	@import 'form_elements/form_right_panel';
+	@import 'form_elements/zappi_panel';
+	@import 'form_elements/form_left_panel';
+	@import 'form_elements/modal_section';
+	@import 'form_elements/form_page';
+
+	// CONTROLS
+
+	@import 'form_controls/progress_bar';
+	@import 'form_controls/indicator';
+	@import 'form_controls/changable_value';
+	@import 'form_controls/image_grid';
+	@import 'form_controls/image_select';
+	@import 'form_controls/text_input';
+	@import 'form_controls/auto_complete';
+	@import 'form_controls/word_selector';
+	@import 'form_controls/well';
+	@import 'form_controls/checkbox';
+	@import 'form_controls/phrase_complete';
+	@import 'form_controls/media_upload';
+	@import 'form_controls/media_placeholder';
+	@import 'form_controls/sentence_list';
+	
+	@import 'form_controls/multi_select';
+	@import 'form_controls/toggle_button';
+	@import 'form_controls/image_option';
+	@import 'form_controls/option_group';
+
+}

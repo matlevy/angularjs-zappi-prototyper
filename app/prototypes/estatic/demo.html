@@ -1,0 +1,154 @@
+<proto-customise-header header-skin="linknow-full" page-model="page"></proto-customise-header>
+
+<div class="container" ng-controller="EstaticProtoTypeController">
+
+  <div class="row zappi-styles zappi-form mmr">
+    <div class="col-md-8">
+      <zappi-page-indicator form-page-model="models.form"></zappi-page-indicator>
+    </div>
+  </div>
+
+  <div class="row zappi-styles zappi-form linknow">
+    <div class="col-md-8 form-left-panel">
+
+      <zappi-form-page page-id="1" form-page-model="models.form" page-title="Basic Information" page-index="0">
+
+        <section class="zappi-form-section brand-name-section" id="brand-name" instructions-model="models.form.tutorial">
+          <div class="instructions-text">Enter the name of your product.</div>
+          <ul class="form-question-list">
+            <li class="stage">
+              <div class="zappi-question">What is the brand name of your product?</div>
+              <input class="zappi-text-input stretch" ng-model="models.choices.brand" placeholder="e.g. Coca-Cola"></input>
+              <a name="category"></a>
+            </li>
+          </ul>
+        </section>
+
+        <section class="zappi-form-section category-section" id="category-name" instructions-model="models.form.tutorial">
+          <div class="instructions-text">
+            Enter your category in the box below in singular form. Make sure you use language that consumers will understand. For example you might write ‘chocolate bar’ instead of ‘FMCG’ or ‘car’ instead of ‘automotive’. Make sure the text is written in the local language of the country the research is to be carried out in.</div>
+          <ul class="form-question-list">
+            <li class="stage">
+              <div class="zappi-question">What type of product are you researching for?</div>
+              <input class="zappi-text-input stretch" placeholder="e.g. Chocolate Bar" ng-model="models.choices.written_category" placeholder="e.g. TV"></input>
+              <a name="category"></a>
+            </li>
+          </ul>
+        </section>
+
+        <section class="zappi-form-section industry-section" id="industry-section" instructions-model="models.form.tutorial">
+          <div class="instructions-text">
+            Indicate what stage of production your creative executions are: ‘fully finished’ or ‘rough’. Respondents will be shown an information message explaining that the stage of development is to be taken into consideration when completing the survey questions.
+          </div>
+          <ul class="form-question-list">
+            <li class="stage">
+              <div class="zappi-question">Which of the following is the closest match to your type of industry?</div>
+              <zappi-form-image-select skin="skin" options="models.options.categories" columns="3" image-height="200" selected="models.choices.category" is-visible="true" on-change="edit.setCategory" id="category"></zappi-form-image-select>
+              <a name="stage"></a>
+            </li>
+          </ul>
+        </section>
+
+      </zappi-form-page>
+
+      <zappi-form-page page-id="2" form-page-model="models.form" page-title="About Your Advert" page-index="1">
+
+        <section class="zappi-form-section adtype-section" id="adtype-name" instructions-model="models.form.tutorial">
+          <div class="instructions-text">
+            Select where your advert will appear from the following options. If your advert will appear in two or more of the options, select the best fit or preffered type from the options below.</div>
+          <ul class="form-question-list">
+            <li class="stage">
+              <div class="zappi-question">Where will your advert appear?</div>
+              <zappi-form-image-select skin="skin" options="models.options.ad_type" columns="3" image-height="200" selected="models.choices.ad_type" is-visible="true" on-change="edit.setAdType" id="ad_type"></zappi-form-image-select>
+              <a name="stage"></a>
+            </li>
+          </ul>
+        </section>
+
+        <section class="zappi-form-section stage-section" id="stage-name" instructions-model="models.form.tutorial">
+          <div class="instructions-text">
+            Indicate what stage of production your creative executions are: ‘fully finished’ or ‘rough’. Respondents will be shown an information message explaining that the stage of development is to be taken into consideration when completing the survey questions.
+          </div>
+          <ul class="form-question-list">
+            <li class="stage">
+              <div class="zappi-question">At what stage of development is your product?</div>
+              <zappi-form-image-select skin="skin" options="models.options.stages" columns="2" image-height="200" selected="models.choices.stage" is-visible="true" on-change="edit.setStage" id="stage"></zappi-form-image-select>
+              <a name="stage"></a>
+            </li>
+          </ul>
+        </section>
+
+      </zappi-form-page>
+
+      <zappi-form-page page-id="3" form-page-model="models.form" page-title="Customise Your Survey" page-index="2">
+
+        <section class="verbs-area" id="verbs-area" instructions-model="models.form.tutorial">
+
+          <div class="instructions-text">
+            We need you to select some verbs to fit with your brand / ad. This helps us to customise our questionnaire. If you are unsure which to select, or need some guidance please email contact@zappstore.com or use our chat box below.
+          </div>
+
+          <section class="zappi-form-section words-section" ng-repeat="question in models.choices.category.questions">
+            <ul class="form-question-list">
+              <li class="stage">
+                <div class="zappi-question">{{ question.text }}</div>
+                <!--<zappi-single-select-option options="question.answers" selected="question.selected" is-visible="true" on-change="edit.setCategory" id="category"></zappi-single-select-option>-->
+                <zappi-phrase-complete options="question.answers" selected="question.selected" columns="2" is-visible="true">{{ question.sentence }}</zappi-phrase-complete>
+                <a name="words"></a>
+              </li>
+            </ul>
+          </section>
+
+        </section>
+
+        <section class="zappi-form-section statements-section" id="statements">
+          <div class="instructions-text">
+            Type in up to 3 statements that explain the associations or messages that you want your ad to communicate for your brand. Type the message you consider to be most important first. Please use consumer language; the messages will appear on the questionnaire exactly as they have been typed in. Pay attention to the use of capital letters, punctuation and spelling.
+          </div>
+          <ul class="form-question-list">
+            <li class="">
+              <div class="zappi-question">Type in up to 10 statements that explain the associations or messages that you want your advert to communicate for your brand.</div>
+              <zappi-sentence-list sentences="models.choices.sentences" max-permitted="10" is-visible="true" place-holder="enter a statement and press [enter]"></zappi-sentence-list>
+            </li>
+          </ul>
+        </section>
+
+      </zappi-form-page>
+
+      <zappi-form-page page-id="4" form-page-model="models.form" page-title="Upload Your Material" page-index="3">
+
+       <section class="zappi-form-section upload-options" ng-repeat="media_object in models.choices.media">
+          <zappi-media-upload is-visible="true" media-upload-state="media_object.state" media-object="media_object" on-media-removed="onMediaRemove">
+            <div>
+              <ul class="form-question-list">
+                <li class="zappi-form-row">
+                  <div class="zappi-question">Enter a title for your media</div>
+                  <input class="zappi-text-input stretch" ng-model="mediaObject.meta.title" placeholder="e.g. Banner Advert 1"></input>
+                  <zappi-media-placeholder media="media_object" custom-class="small"></zappi-media-placeholder>
+                </li>
+              </ul>
+            </div>
+          </zappi-media-upload>
+        </section>
+
+        <section class="zappi-form-section upload-section" id="upload" ng-hide="models.choices.media.length>=5">
+          <div class="instructions-text">
+            Finally upload your creatives for us to test. You can do this by dragging and dropping the file into the upload area or simply clicking the button and browsing for the file.
+          </div>
+          <ul class="form-question-list">
+            <li class="">
+              <zappi-media-upload upload-state="'default'" is-visible="true" on-media-chosen="onNewMedia" on-media-removed="onMediaRemove" media-object-factory="mediaObjectService.factory" media-object-type="">
+              </zappi-media-upload>
+            </li>
+          </ul>
+        </section>
+
+      </zappi-form-page>
+
+    </div>
+    
+    <de-right-panel-placeholder  page-navigation-model="models.form"></de-right-panel-placeholder>
+    
+  </div>  
+
+</div>

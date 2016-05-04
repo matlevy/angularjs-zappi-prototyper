@@ -1,0 +1,32 @@
+.zappi-text-input {
+
+	@extend .z-border-radius;
+	@extend .z-input-widths;
+
+	@extend .zappi-grey-bdr;
+	@extend .border.thin;
+
+	@include z-standard-input-spacing();
+	
+	@extend .typography.regular-text;
+
+	@extend .zappi-light-grey-bdr;
+	@extend .border.thin;
+
+	height: 4rem;
+
+	&.medium-height {
+		height: 8rem;
+	}
+
+	&.large-height {
+		height: 12rem;
+	}
+
+	&.no-right-corner {
+		border-top-right-radius: 0;
+    	border-bottom-right-radius: 0;
+    	border-right: none;
+	}
+
+}

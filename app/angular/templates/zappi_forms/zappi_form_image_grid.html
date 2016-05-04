@@ -1,0 +1,24 @@
+<div class="zappi-form-row">
+	<div class="line-space-below" ng-show="buttonPosition=='above'">
+		<button class="previous-button trash_icon_small" ng-click="previousPage()">Previous Page</button>
+		<button class="next-button trash_icon_small" ng-click="nextPage()">Next Page</button>
+		<span ng-transclude></span>
+	</div>
+	<div class="zappi-image-grid" style="min-height: {{ minimumGalleryHeight }}px">
+		<a ng-click="select(item)" href="javascript://" ng-repeat="item in items | filter:pageFilter" class="{{ item.value }}" 
+			ng-mouseover="hoverEdit = true" ng-mouseleave="hoverEdit = false"
+			ng-class="{ 'selected' : item==selected }">
+			<div class="option" style="width: {{optionWidth}}">
+				<div class="image" style="height: {{imageHeight}}px;">
+					<image ng-src="{{item.media.thumbnail}}" ng-show="item.media!=null && item.media.state=='uploaded'"></image>
+					<div class="edit-overlay" ng-class="{ 'show' : hoverEdit && canEdit }"><div class="edit-label">Edit</div></div>
+				</div>
+			</div>
+		</a>
+	</div>
+	<div class="line-space-below" ng-show="buttonPosition=='below'">
+		<button class="previous-button trash_icon_small" ng-click="previousPage()">Previous Page</button>
+		<button class="next-button trash_icon_small" ng-click="nextPage()">Next Page</button>
+		<span ng-transclude></span>
+	</div>
+</div>

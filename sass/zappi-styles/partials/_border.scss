@@ -1,0 +1,12 @@
+.border {
+	border-style: solid;
+	&.thin {
+		border: 1px solid black;
+	}
+	&.medium {
+		border: 2px solid black;
+	}
+	&.thick {
+		border: 3px solid black;
+	}
+}

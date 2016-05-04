@@ -1,0 +1,66 @@
+.zappi-product-box {
+	
+	.product-logo {
+		
+		margin-bottom: 2rem;
+		min-height: 16rem;
+		background-position: center center;
+		background-size: 14rem;
+	}
+
+	.product-name, .product-description,
+	.product-price, .starting-label, .product-buttons,
+	.product-logo {
+		text-align: center;
+		margin-left: 0;
+		margin-right: 0;
+	} 
+
+	.product-name {
+		@extend .typography.regular-text;
+	}
+
+	.product-description {
+		@extend .single-line-space-below;
+		width: 90%;
+		margin-left: auto;
+		margin-right: auto;
+		min-height: 8rem;
+		max-height: 8rem;
+	}
+
+	.starting-label {
+
+	}
+
+	.product-price {
+		@extend .typography.large-text;
+		@extend .double-line-space-below;
+		@extend .zappi-blue.colored-text;
+	}
+
+	.product-buttons {
+		
+		@extend .single-line-space-below;
+		@extend .single-line-space-above;
+
+		button {
+			@extend .stretch;
+		}
+	}
+
+	@extend .double-line-space-below;
+	///@extend .border;
+	//@extend .border.thin;
+	@extend .zappi-mid-border;
+	@extend .z-border-radius;
+
+	@extend .zappi-white-bg;
+
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+	padding-bottom: 1rem;
+	margin-top: 4rem;
+	padding-top: 2rem;
+
+}

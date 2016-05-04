@@ -1,0 +1,90 @@
+.zappi-image-grid {
+
+	@extend .typography.medium-regular-text;
+	@extend .dark-text;
+
+	@include float-box(100%);
+
+	a {
+		@extend .dark-text;
+	}
+
+	transition: min-height 0.2s;
+	-webkit-transition: min-height 0.2s;
+	
+	.option {
+
+		@include float-box(auto);
+
+		padding-right: 1rem;
+		padding-left: 0;
+
+		.image {
+
+			@extend .border.thin;
+			@extend .zappi-light-grey-bdr;
+			@extend .z-border-radius;
+
+			@include float-box(100%);
+
+			margin-bottom: 1rem;
+
+			&.selected {
+				@extend .zappi-blue-bdr;
+			}
+
+			background-size: contain;
+			background-position: center center;
+			background-repeat: no-repeat;
+
+			position: relative;
+			overflow: hidden;
+
+			img {
+				width: 90%;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translateY(-50%) translateX(-50%);
+				-webkit-transform: translateY(-50%) translateX(-50%);
+			}
+
+			.edit-overlay {
+				
+				@extend .zappi-black-50.background;
+				@extend .zappi-light.colored-text;
+				@extend .z-border-radius;
+
+				position: absolute;
+				top: 0;
+				left: 0;
+				bottom: 0;
+				right: 0;
+				min-width: 100%;
+				min-height: 100%;
+				opacity: 0;
+
+				-webkit-transition: 0.2s;
+				transition: 0.2s;
+
+				&.show {
+					opacity: 1;
+					border: 0;
+				}
+
+				.edit-label {
+					position: absolute;
+					top: 50%;
+					left: 50%;
+					transform: translateX(-50%) translateY(-50%);
+					width: auto;
+					margin: auto;
+				}
+
+			}
+
+		}
+
+		margin-bottom: 1rem;
+	}
+}

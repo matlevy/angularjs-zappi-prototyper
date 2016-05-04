@@ -1,0 +1,22 @@
+.container-tools {
+
+	position: fixed;
+	top: 1rem;
+	left: 30rem;
+	right: 0;
+	padding: 2rem;
+	text-align: right;
+	//background-color: white;
+	z-index: 99;
+
+	.tool {
+		@extend .zappi-button;
+		width: 48px;
+		height: 48px;
+		background-color: #009fe3;
+		border: none;
+		* {
+			color: white;
+		}
+	}
+}

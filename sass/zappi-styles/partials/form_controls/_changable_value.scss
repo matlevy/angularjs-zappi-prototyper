@@ -1,0 +1,39 @@
+.zappi-changable-value {
+
+	.value-label {
+		@extend .z-border-radius;
+		@extend .z-reset-padding;
+		@extend .z-reset-margins;
+		@extend .typography.regular-text;
+		
+		@if $use-form-borders == true {
+			@extend .zappi-grey.border;
+			border: 1px solid;
+		}
+
+		@include z-standard-input-spacing();
+		
+		padding-left: 0 !important;
+		display: inline-block;
+		float: left;
+		border-top-right-radius: 0px;
+		border-bottom-right-radius: 0px;
+		border-right: none;
+		min-height: 40px;
+
+	}
+
+	.zappi-button {
+
+		@extend .zappi-blue-hover.border;
+		
+		@if $use-form-borders == true {
+			@extend .zappi-blue.border;
+			border: 1px solid;
+		}
+
+		
+		
+	}
+
+}

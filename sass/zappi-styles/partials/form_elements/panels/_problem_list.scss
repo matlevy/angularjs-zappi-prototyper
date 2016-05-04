@@ -1,0 +1,43 @@
+.zappi-problem-list {
+
+	@extend .z-clear;
+	@extend .z-border-radius;
+	@extend .typography.medium-regular-text;
+	@extend .zappi-animations.fade-in;
+	@extend .border.thin;
+	@extend .zappi-light-grey.border;
+	@extend .zappi-white.background;
+	@extend .zappi-well.white;
+	
+
+	@include float-box(100%);
+
+	h3 {
+		@extend .zappi-pink-txt;
+		margin-bottom: 20px;
+		margin-top: 1rem;
+		text-transform: uppercase;
+	}
+
+	.introduction {
+		@extend .zappi-black.colored-text;
+		margin-bottom: 20px;
+		margin-top: 20px;
+	}
+
+	.zappi-problem {
+		@extend .zappi-animations.fade-in;
+		padding-bottom: 10px;
+	}
+
+	.zappi-button {
+		@extend .zappi-pink-bg;
+	}
+
+	ol, ul {
+		padding-left: 20px;
+	}
+
+	margin-bottom: 20px;
+	padding: 20px;
+}

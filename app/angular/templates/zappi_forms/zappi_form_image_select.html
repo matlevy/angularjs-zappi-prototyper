@@ -1,0 +1,13 @@
+<div class="zappi-form-row" ng-show="isVisible">
+	<div class="zappi-image-select">
+		<a ng-click="select(option)" href="javascript://" ng-repeat="option in options | filter:filter" ng-class="{ 'selected' : option==selected }">
+			<div class="option" style="width: {{optionWidth}}; min-height: {{ minimumOptionHeight }}">
+				<div style="height: {{imageHeight}}px;" class="image {{ option==selected ? option.selectedImageClass + ( skin ? skin : 'zappiblue' ) : option.imageClass }}" ng-class="{ 'selected' : option==selected }"></div>
+				<div class="indicator-area" ng-hide="hideIndicator">
+					<div class="indicator" ng-class="{ 'selected' : option==selected }"></div>				
+				</div>
+				<div class="option-label">{{ getOptionLabel(option) }}</div>
+			</div>
+		</a>
+	</div>
+</div>

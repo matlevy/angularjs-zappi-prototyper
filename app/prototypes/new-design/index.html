@@ -1,0 +1,49 @@
+<div class="container zappi-styles zappi-form" ng-controller="PrototypesController">
+	<div class="row zappi-form-section grey">
+		<div class="col-md-12">
+			<input class="zappi-text-input stretch" placeholder="search..." ng-model="prototypes.search_text">
+		</div>
+		<div class="col-md-12">
+			<div class="row">
+				<div class="col-md-6">
+					<ul class="form-question-list">
+						<li class="zappi-form-row">
+							<div class="zappi-question">Tag</div>
+							<zappi-single-select-option options="prototypes.tags" selected="prototypes.selected_tag">
+								<button class="zappi-button as-tag interaction-action" ng-click="clearPrototypeTagFilter()">All</button>
+							</zappi-single-select-option>
+						</li>
+					</ul>
+				</div>
+				<div class="col-md-6">
+					<ul class="form-question-list">
+						<li class="zappi-form-row">
+							<div class="zappi-question">Stage</div>
+							<zappi-single-select-option options="prototypes.stages" selected="prototypes.selected_stage">
+								<button class="zappi-button as-tag interaction-action" ng-click="clearPrototypeStageFilter()">All</button>
+							</zappi-single-select-option>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row double-line-space-above zappi-form-section white" ng-repeat="p in prototypes.data | filter: prototypeFilter">
+		<div class="col-md-6">
+			<div class="">
+				<div><a href="{{ p.link }}" target="_blank"><h2>{{ p.name }}</h2></a></div>
+				<div class="line-space-above">
+					<button class="zappi-button as-tag">{{ p.stage }}</button>
+				</div>
+				<div>
+					<button class="zappi-button zappi-pink background as-tag" ng-repeat="tag in p.tags">{{ tag }}</button>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-6">
+			<div class="">
+				<div class="zappi-question"><p>{{ p.description }}</p></div>
+			</div>
+		</div>
+	</div>
+</div>

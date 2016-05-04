@@ -1,0 +1,11 @@
+@mixin float-box($width){
+	width: $width;
+	position: relative;
+	float: left;
+	display: inline-block;
+}
+
+.no-gutter > [class*='col-'] {
+    padding-right:0;
+    padding-left:0;
+}

@@ -1,0 +1,10 @@
+.zappi-form-title {
+	@extend .typography.big-text;
+	margin-bottom: 50px;
+	margin-top: 70px;
+	text-transform: uppercase;
+	h1 {
+		@extend .typography.big-text;
+		@extend .z-reset-margins;
+	}
+}

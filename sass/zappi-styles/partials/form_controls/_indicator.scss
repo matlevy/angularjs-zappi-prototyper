@@ -1,0 +1,19 @@
+@mixin indicator($width:2rem,$height:2rem) {
+
+	.indicator {
+		@extend .border.thin;
+		@extend .zappi-light-grey-bdr;
+		@extend .zappi-light-grey-bg;
+
+		width: $width;
+		height: $height;
+		border-radius: 1rem;
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+
+		&.selected {
+			@extend .zappi-blue-bg;
+		}
+	}
+}

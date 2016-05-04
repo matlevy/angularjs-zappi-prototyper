@@ -1,0 +1,9 @@
+<div class="zappi-form-row zappi-changable-value zappi-button-group" ng-show="state=='saved'">
+	<label class="value-label">{{ value }}</label>
+	<!--<button type="button" class="zappi-button as-tag selected" ng-show="type=='single'">{{ value }}</button>-->
+	<button class="zappi-button interaction-action as-tag" ng-click="toggleState()">Change</button>
+</div>
+<div class="zappi-form-row" ng-show="state=='edit'">
+	<input class="zappi-text-input stretch" placeholder="{{ label }}" ng-model="value" ng-show="type=='single'"/>
+	<textarea class="zappi-text-input stretch" placeholder="{{ label }}" ng-model="value" ng-show="type=='multi'"></textarea>
+</div>

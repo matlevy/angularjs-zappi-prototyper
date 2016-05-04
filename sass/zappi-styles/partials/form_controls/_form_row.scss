@@ -1,0 +1,27 @@
+.zappi-form-row {
+
+	@extend .z-row;
+	@extend .zappi-animations.slide-down-and-fade-in-on-show;
+
+	margin-bottom: 10px;
+
+	&.single-spaced {
+		margin-bottom: 10px;			
+	}
+
+	label {
+		@extend .typography.medium-text;
+		margin-bottom: 10px;
+		padding-left: 10px;
+	}
+
+	.sentence-items label {
+		margin-top: 12px;
+		font-size: large;
+	}
+
+	&.no-bottom-margin {
+		margin-bottom: 0px;
+	}
+
+}

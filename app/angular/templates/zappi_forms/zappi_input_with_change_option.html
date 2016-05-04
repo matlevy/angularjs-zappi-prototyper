@@ -1,0 +1,12 @@
+<div class="zappi-form-row zappi-changable-value" ng-hide="optionsVisible || selected==null">
+	<label class="value-label fixed-wide">{{ selected.key }}</label>
+	<button class="zappi-button interaction-action as-tag" ng-click="toggleOptional()">Change</button>
+</div>
+<div class="zappi-form-row zappi-button-group single-select" ng-show="optionsVisible || selected==null" role="group">
+	<button type="button" class="zappi-button as-tag selectable" ng-class="{ 'selected' : (selected == option && !selectedCustomValue) }" ng-repeat="option in options" ng-click="setValue(option)">{{ getLabel(option) }}</button>
+	<span ng-if="allowCustomValue == 'true'">
+		<span class="add-space left-and-right">{{ customValueLabel }}</span>
+		<!-- NOTE: HAVE TO USE PARENT ON THE INPUT BIZARLY BECAUSE OF THE NG-IF, WIERDLY IF YOU REMOVE THE IF THERES NO NEED TO USE $PARENT -->
+	    <input class="zappi-text-input fixed-narrow" placeholder="e.g. 5000" ng-model="$parent.customValue"/>
+    </span>
+</div>

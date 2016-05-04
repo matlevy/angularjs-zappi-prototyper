@@ -1,0 +1,24 @@
+{
+	questions: [ {
+		text: "Where do you is your advert likely to appear?",
+		answers: [
+			{
+				text: "Online"
+			},{
+				text: "On TV"
+			},{
+				text: "A Magasine or Newspaper"
+			}
+		]
+	},{
+		text: "What would you like to do?"
+		answers: [ 
+			{ 
+				text: "Test a new product"
+			},{
+				text: "Collect feedback on an advert"
+			},{
+				text: "Compare two new ideas for products"
+			}
+	} ]
+}

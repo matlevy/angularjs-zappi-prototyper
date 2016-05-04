@@ -1,0 +1,27 @@
+.order-summary {
+	
+	.contact-summary {
+		&.grey {
+			@extend .zappi-light-grey.background.force;
+		}
+	}
+
+	.contact-title {
+		@extend .typography.small-text;
+		@include float-box(100%);
+		margin-bottom: 0rem;
+		margin:0;
+		text-transform: uppercase;
+	}
+
+	.detail { 
+		@extend .typography.medium-regular-text;
+	}
+
+	.section-title {
+		@extend .typography.regular-text;
+		@extend .z-reset-margins;
+		@extend .line-space-below;
+	}
+
+}

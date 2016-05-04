@@ -1,0 +1,171 @@
+.domain-contacts {
+	.region {
+
+		padding: 2rem;
+		margin-bottom: 0rem;
+
+		.region-name {
+			@extend .typography.large-text;
+			margin-bottom: 5rem;
+		}
+
+		.contact {
+
+			* {
+				text-decoration: none !important;
+			}
+
+			.contact-card {
+
+				margin: 0 auto;
+
+				border: 2px dotted silver;
+
+				text-align: center;
+				text-decoration: none !important;
+
+				@extend .z-border-radius;
+				@extend .zappi-dark.colored-text.force;
+				@extend .zappi-white.background;
+
+				padding: 2rem;
+				margin-bottom: 2rem;
+				min-height: 40rem;
+
+				.contact-image {
+
+					margin: 0 auto;
+					width: 10rem;
+					height: 10rem;
+					border-radius: 5rem;
+					position: relative;
+
+					.initials {
+
+						@extend .zappi-dark.colored-text;
+						@extend .typography.large-text;
+
+						position: absolute;
+						left: 50%;
+						top: 50%;
+						transform: translateX(-50%) translateY(-50%);
+					}
+
+				}
+
+				.contact-name {
+					min-height: 8rem;
+					margin-top: 4rem;
+				}
+
+				.contact-email {
+
+				}
+
+				.contact-telephone {
+					padding-top: 1rem;
+				}
+
+				.contact-team-position {
+					margin-bottom: 1rem;
+				}
+
+				.contact-position {
+
+				}
+
+			}
+		}
+	}
+
+	.team-key .key-marker,
+	.contact-card {
+
+		&.client-excellence .contact-image,
+		&.client-excellence-marker,
+		&.account-lead .contact-image,
+		&.account-lead-marker,
+		&.support .contact-image,
+		&.support-marker {
+			@extend .border.thick;
+		}
+
+		&.client-excellence .contact-image,
+		&.client-excellence-marker {
+			@extend .zappi-orange.border.force;
+			
+		}
+
+		&.account-lead .contact-image,
+		&.account-lead-marker {
+			@extend .zappi-pink.border.force;
+			
+		}
+
+		&.support .contact-image,
+		&.support-marker {
+			@extend .zappi-green.border.force;
+			
+		}
+
+		&.global-account-owner-marker {
+			@extend .zappi-black.border.force;
+			border-style: dotted;
+		}
+
+		&.global-account-owner {
+
+			.initials {
+				//color: white !important;
+			}
+
+			border: 2px solid black;
+
+			//@extend .zappi-blue.border.force;
+
+			&.client-excellence  {
+				@extend .zappi-blue.border.force;
+			}
+
+			&.account-lead {
+				@extend .zappi-pink.border.force;
+			}
+
+			&.support {
+				@extend .zappi-blue.border.force;
+			}
+		}
+
+	}
+
+	.team-key {
+
+		margin-bottom: 8rem;
+
+		.team-key-item {
+
+			position: relative;
+			float: left;
+			display: inline-block;
+			margin-right: 1rem;
+
+			@extend .z-border-radius;
+			@extend .zappi-dark.colored-text.force;
+			@extend .zappi-white.background;
+
+			padding: 2rem;
+
+			.key-marker {
+				width: 2rem;
+				height: 2rem;
+				border-radius: 1rem;
+				display: inline-block;
+				float: left;
+				position: relative;
+				margin-right: 1rem;
+			}
+
+		}
+
+	}
+}

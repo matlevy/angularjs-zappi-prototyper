@@ -1,0 +1,71 @@
+.zappi-custom-question {
+
+	.quesetion-answer,
+	.question-input-area {
+		@extend .zappi-animations.slide-down-and-fade-in-on-show;
+		@extend .zappi-animations.pop-in-on-show;
+	}
+
+	.question-input {
+		@extend .stretch;
+		@extend .zappi-text-input;	
+	}
+
+	.question-input {
+		@extend .zappi-text-input;
+		@extend .stretch;
+	}
+
+	.answer-input,
+	.edit-question {
+		border-bottom: 1px solid black;
+
+		@include z-standard-input-spacing();
+		@extend .typography.regular-text;
+		@extend .zappi-grey-bdr;
+		@extend .stretch;
+		
+		padding-left: 0px;
+	}
+
+	
+
+	.position-button {
+		padding-left: 1rem;
+		min-width: 40px;
+		text-align: center;
+		color: #333333 !important;
+		padding-right: 1rem;
+		line-height: 2rem;
+		background-position: 7px 7px;
+		font-size: 2rem;
+	}
+
+	.position-button:hover {
+		max-width: 0px !important;
+		color: #333333 !important;
+		@extend .typography.medium-text;
+		line-height: 2rem;
+		font-size: 2rem;
+	}
+
+	.position-button.random {
+		font-size: 0px;
+		line-height: 2rem;
+		background-color: rgb(94, 205, 245) !important;
+		border-color: rgb(94, 205, 245) !important;
+		color: white !important;
+		&:hover {
+			background-image: none;
+			margin-bottom: 0px;
+			line-height: 2rem;
+			font-size: 2rem;
+			@extend .zappi-grey.background;
+		}
+	}
+
+	.answer-position {
+		@extend .typography.medium-text;
+	}
+
+}

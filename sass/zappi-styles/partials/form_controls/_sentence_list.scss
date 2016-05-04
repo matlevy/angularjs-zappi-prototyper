@@ -1,0 +1,69 @@
+.zappi-sentence-list {
+
+	.sentence-input-area {
+		@extend .zappi-animations.slide-down-and-fade-in-on-show;
+		@extend .zappi-animations.pop-in-on-show;
+	}
+
+	.sentence-input {
+		@extend .stretch;
+		@extend .zappi-text-input;	
+	}
+
+	.sentence-items {
+
+		@extend .z-clear;
+		@include float-box(100%);
+
+		.sentence {
+
+			@extend .zappi-animations.slide-down-and-fade-in-on-show;
+			@extend .zappi-animations.pop-in-on-show;
+			@extend .typography.medium-text;
+			
+			@include float-box(100%);
+
+			.copy {
+				@include float-box(75%);
+				@extend .typography.regular-text;
+			}
+
+			.actions {
+				@include float-box(25%);
+
+				.zappi-button {
+					@extend .z-reset-margins;
+				}
+			}
+
+			@extend .half-line-space-above;
+
+			&.ng-enter.ng-enter-active,
+			&.ng-leave {
+				-webkit-transition: 0.8s;
+				transition: 0.8s;
+				opacity: 1;
+				max-height: 9999px;
+				padding-top:30px;
+				padding-bottom:30px;
+				transform:scale(1);
+				margin-bottom: 20px;
+			}
+
+			&.ng-leave.ng-leave-active,
+			&.ng-enter {
+				-webkit-transition: 0.8s;
+				transition: 0.8s;
+				opacity: 0;
+				max-height: 0px;
+				padding-top:0;
+				padding-bottom:0;
+				transform:scale(0);
+				margin-bottom: 0;
+			}
+
+		}
+
+	}
+
+}

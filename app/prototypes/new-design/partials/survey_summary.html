@@ -1,0 +1,15 @@
+<section class="zappi-form-section survey-summary {{ customClasses }}" id="survey-summary">
+	<section ng-repeat="section in orderSummary.sections">
+		<h3 class="survey-section-title">{{ section.name }}</h3>
+		<div class="row survey-section-meta" ng-repeat="item in section.labels">
+			<div class="col-md-4">{{ item.label }}</div>
+			<div class="col-md-6 value-render">
+				<span ng-show="item.type=='text'">{{ item.value }}</span>
+				<span ng-if="item.type=='array'">
+					<div ng-repeat="item_value in item.value track by $index">{{ item_value.toString() }}</div>
+				</span>
+				<img class="meta-image" ng-if="item.type=='image'" ng-src="{{ item.value }}"></img>
+			</div>
+		</div>
+	</section>
+</section>

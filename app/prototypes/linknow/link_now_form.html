@@ -1,0 +1,79 @@
+<zappi-form-page page-id="1" form-page-model="models.form" page-title="Basic Information" page-index="0">
+
+  <zappi-page-introduction>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris orci tortor, dignissim nec molestie sed, blandit quis risus. Nullam quis augue velit. Nam tempus leo nisl, sagittis feugiat diam varius quis. Maecenas vestibulum dictum justo, id iaculis lectus rhoncus ac. Praesent in lorem tempus, ultricies nunc sed, porttitor dui. Quisque vel lorem arcu. In nisi libero, elementum nec placerat sit amet, malesuada quis enim. Nullam et elit id nulla tincidunt tincidunt. Nulla quis velit erat.
+  </zappi-page-introduction>
+
+  <section class="zappi-form-section brand-name-section" id="brand-name">
+    <div class="instructions-text">Enter the name of your product.</div>
+    <ul class="form-question-list">
+      <li class="stage">
+        <div class="zappi-question">What is the brand name of your product?</div>
+        <input class="zappi-text-input stretch" ng-model="models.choices.brand" placeholder="e.g. Coca-Cola"></input>
+        <a name="category"></a>
+      </li>
+    </ul>
+  </section>
+
+  <section class="zappi-form-section category-section" id="category-name">
+    <div class="instructions-text">
+      Enter your category in the box below in singular form. Make sure you use language that consumers will understand. For example you might write ‘chocolate bar’ instead of ‘FMCG’ or ‘car’ instead of ‘automotive’. Make sure the text is written in the local language of the country the research is to be carried out in.</div>
+    <ul class="form-question-list">
+      <li class="stage">
+        <div class="zappi-question">What type of product are you researching for?</div>
+        <input class="zappi-text-input stretch" placeholder="e.g. Chocolate Bar" ng-model="models.choices.written_category" placeholder="e.g. TV"></input>
+        <a name="category"></a>
+      </li>
+    </ul>
+  </section>
+
+  <section class="zappi-form-section industry-section" id="industry-section">
+    <div class="instructions-text">
+      Select the category type which is closest to your business. We ask slightly different questions depending on your choice here. If you are not sure which category type to select, then please contact us for guidance.
+    </div>
+    <ul class="form-question-list">
+      <li class="stage">
+        <div class="zappi-question">Which of the following is the closest match to your type of industry?</div>
+        <zappi-form-image-select options="models.options.categories" columns="3" image-height="200" selected="models.choices.category" is-visible="true" on-change="edit.setCategory" id="category"></zappi-form-image-select>
+        <a name="stage"></a>
+      </li>
+    </ul>
+  </section>
+
+</zappi-form-page>
+
+<zappi-form-page page-id="2" form-page-model="models.form" page-title="Customise Your Questions" page-index="1">
+
+  <zappi-page-introduction>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris orci tortor, dignissim nec molestie sed, blandit quis risus. Nullam quis augue velit. Nam tempus leo nisl, sagittis feugiat diam varius quis. Maecenas vestibulum dictum justo, id iaculis lectus rhoncus ac. Praesent in lorem tempus, ultricies nunc sed, porttitor dui. Quisque vel lorem arcu. In nisi libero, elementum nec placerat sit amet, malesuada quis enim. Nullam et elit id nulla tincidunt tincidunt. Nulla quis velit erat.
+  </zappi-page-introduction>
+
+  <div class="verbs-area" id="verbs-area" instructions-model="models.form.tutorial">
+    <div class="instructions-text">
+      We need you to select some verbs to fit with your brand or advert. This helps us to customise our questionnaire. If you are unsure which to select, or need some guidance please email contact@zappstore.com or use our chat box below.
+    </div>
+    <section class="zappi-form-section words-section" ng-repeat="question in models.choices.category.questions">
+      <ul class="form-question-list">
+        <li class="stage">
+          <div class="zappi-question">{{ question.text }}</div>
+          <!--<zappi-single-select-option options="question.answers" selected="question.selected" is-visible="true" on-change="edit.setCategory" id="category"></zappi-single-select-option>-->
+          <zappi-phrase-complete options="question.answers" selected="question.selected" columns="2" is-visible="true">{{ question.sentence }}</zappi-phrase-complete>
+          <a name="words"></a>
+        </li>
+      </ul>
+    </section>
+  </div>
+
+  <section class="zappi-form-section statements-section" id="statements">
+    <div class="instructions-text">
+      Type in up to 3 statements that explain the associations or messages that you want your ad to communicate for your brand. Type the message you consider to be most important first. Please use consumer language; the messages will appear on the questionnaire exactly as they have been typed in. Pay attention to the use of capital letters, punctuation and spelling.
+    </div>
+    <ul class="form-question-list">
+      <li class="">
+        <div class="zappi-question">Type in up to 3 statements that explain the associations or messages that you want your advert to communicate for your brand.</div>
+        <zappi-sentence-list sentences="models.choices.sentences" max-permitted="3" is-visible="true"  place-holder="Type your phrase and press 'enter'."></zappi-sentence-list>
+      </li>
+    </ul>
+  </section>
+
+</zappi-form-page>

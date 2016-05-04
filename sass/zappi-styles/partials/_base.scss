@@ -1,0 +1,87 @@
+/* 
+
+Classes within this file are used as standard base classes. They shouldn't really be used in HTML other classes will
+extend these classes. To standardise these and easiliy identify where they area set, please prefix with z-{name}
+
+*/
+
+$button-border-radius: 5px;
+
+.z-border-radius {
+	border-radius: $button-border-radius;
+}
+
+@mixin z-standard-input-spacing() {
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 10px;
+	padding-right: 10px;
+	line-height: 20px;
+}
+
+.z-clear {
+	&:before {
+		box-sizing: border-box;
+		clear: both;
+		display: table;
+		height: 0;
+		width: 1px;
+		content: " ";
+	}
+	&:after {
+		box-sizing: border-box;
+		clear: both;
+		display: table;
+		height: 0;
+		width: 1px;
+		content: " ";
+	}
+}
+
+.z-row {
+	@extend .z-clear;
+	display: block;
+	width: 100%;
+	box-sizing: border-box;
+}
+
+.z-reset-padding {
+	padding: 0;
+}
+
+.z-reset-margin,
+.z-reset-margins {
+	margin: 0;
+}
+
+.z-input-widths {
+	&.fixed-square {
+		width: 40px;
+		min-width: 40px;
+	}
+
+	&.fixed-narrow {
+		width: 100px;
+		min-width: 100px;
+		min-width: 100px;
+	}
+
+	&.fixed-normal {
+		width: 175px;
+		min-width: 175px;
+	}
+
+	&.fixed-wide {
+		width: 370px;
+		min-width: 370px;
+	}
+
+	&.fixed-extra-wide {
+		width: 370px +  370px + 20px;
+	}
+
+	&.auto-width {
+		min-width: auto !important;
+		width: auto !important;
+	}
+}

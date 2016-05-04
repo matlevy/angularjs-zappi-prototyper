@@ -1,0 +1,16 @@
+<div class="zappi-form-introduction" zappi-tutorial ng-show="tutorialModel.showTutorial">
+    <div class="introText" ng-show="tutorialModel.tutorialStarted==false">
+      <h2>Step-By-Step Guide</h2>
+      If you've never used this form before, we can give you step-by-step guide and help you completing the survey setup.
+      <div class="zappi-guide-area double-line-space-above">
+        <button class="zappi-button zappi-pink-bg guide-cta extra-padding" ng-click="startGuide()">{{ startLabel }}</button>
+        <button class="zappi-button guide-cta extra-padding" ng-click="hideTutorial()">{{ closeLabel }}</button>
+      </div>
+    </div>
+    <ol class="tutorial-steps">
+      <li ng-repeat="instruction in tutorialModel.instructions" data-id="{{ instruction.targetId }}" data-text="{{ instruction.nextText }}" data-prev-text="{{ instruction.previousText }}" data-options="{{ getOptions(instruction) }}">
+        <h2>{{ instruction.title }}</h2>
+        <p>{{ instruction.copy }}</p>
+      </li>
+    </ol>
+</div>

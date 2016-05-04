@@ -1,0 +1,53 @@
+.map-area {
+	
+	height: 400px;
+
+	&.proto-boston {
+		background-image: image-url('prototyping/boston-map.png');
+		background-position: center center;
+		background-size: 2000px;
+	}
+
+	&.proto-camden {
+		background-image: image-url('prototyping/camden-map.png');
+		background-position: center center;
+		background-size: 2000px;
+	}
+
+}
+
+.contact {
+
+	.contact-information {
+		
+		.address-details,
+		.address-details address {
+			@extend .typography.regular-text;
+		}
+
+		.telephone-and-email {
+			@extend .typography.regular-text;
+
+			ul, li {
+				margin: 0;
+				padding: 0;
+				list-style: none;
+			}
+		}
+
+		.contact-title {
+			@extend .typography.regular-text;
+			font-weight: bold;
+		}
+
+		.email {
+			@extend .typography.regular-text;
+		}
+
+		.telephone {
+			@extend .typography.regular-text;
+		}
+
+	}
+
+}

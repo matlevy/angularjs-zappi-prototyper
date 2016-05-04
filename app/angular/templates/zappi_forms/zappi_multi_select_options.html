@@ -1,0 +1,4 @@
+<div class="zappi-form-row zappi-button-group multi-select" role="group" ng-class="{ 'zappi-form-row' : isFormRow }" ng-show="isVisible">
+	<button type="button" class="zappi-button as-tag interaction-action" ng-click="selectAll()" ng-hide="allowSelectAll==false||allowSelectAll=='false'">{{ allLabel }}</button>
+	<button type="button" class="zappi-button as-tag selectable {{ isSelected(option) ? 'selected' : '' }}" ng-repeat="option in options | filter:filter" ng-class="" ng-click="toggleValue(option)">{{ getLabel(option) }}</button>
+</div>

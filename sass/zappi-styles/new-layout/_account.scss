@@ -1,0 +1,30 @@
+.account,
+&.account {
+	&.my-details {
+		.contact-area {
+			min-height: 40rem;
+		}
+	}
+}
+
+.my-account-navigation {
+
+	@include float-box(100%);
+	@extend .z-clear;
+
+	padding-top: 2rem;
+	padding-bottom: 2rem;
+
+
+	ul, li {
+		margin: 0;
+		padding: 0;
+		position: relative;
+		float: left;
+		display: inline-block;
+	}
+
+	li {
+		min-height: 4rem;
+	}
+}

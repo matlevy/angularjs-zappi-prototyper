@@ -1,0 +1,57 @@
+<div class="row">
+	<div class="col-md-8 no-gutter">
+		<div ng-include="'/prototypes/my-shared/navigation.html'"></div>
+	</div>
+	<div class="col-md-4 text-right">
+		<div class="zappi-page-indicator">
+			<ul class="indicators float-center">
+				<li class="indicator"><a class="indicator-link is-current" href="javascript://">1</a></li>
+				<li class="indicator"><a class="indicator-link" href="javascript://">2</a></li>
+				<li class="indicator"><a class="indicator-link" href="javascript://">3</a></li>
+				<li class="indicator"><a class="indicator-link" href="javascript://">4</a></li>
+				<li class="indicator"><a class="indicator-link" href="javascript://">5</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+<div class="row double-line-space-below"  ng-show="feedback_required">
+	<div class="col-md-12 no-gutter" ng-include="'/prototypes/my-shared/notification.html'"></div>
+</div>
+
+<div class="row">
+	<div class="col-md-12">
+		<div class="zappi-form-section-noanim light-grey">
+			<div class="row">
+				<div class="col-md-6">
+					<ul class="form-question-list">
+						<li class="zappi-form-row">
+							<div class="zappi-question">Product</div>
+							<zappi-single-select-option options="product_names" selected="report_filters.order">
+								<button class="zappi-button as-tag interaction-action" ng-click="$parent.$parent.clearOrderTypeFilter()">All</button>
+							</zappi-single-select-option>
+						</li>
+					</ul>
+				</div>
+				<div class="col-md-3 text-right">
+					<ul class="form-question-list">
+						<li class="zappi-form-row">
+							<div class="zappi-question">Start Date</div>
+							<div class="zappi-date-picker" id="from-date">
+								<zappi-date-picker element-id="from-date"></zappi-date-picker>
+			                </div>
+						</li>
+					</ul>
+				</div>
+				<div class="col-md-3 text-right">
+					<ul class="form-question-list">
+						<li class="zappi-form-row">
+							<div class="zappi-question">End Date</div>
+							<zappi-date-picker element-id="to-date"></zappi-date-picker>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

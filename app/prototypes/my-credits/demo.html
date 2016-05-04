@@ -1,0 +1,26 @@
+<proto-customise-header header-title="My Credits" page-model="page"></proto-customise-header>
+
+<div class="my-reports zappi-styles zappi-form container" id="my-orders">
+
+	<div ng-include="'/prototypes/my-shared/list-header.html'"></div>
+
+	<div class="row">
+		<div class="col-md-12">
+			<div class="zappi-form-section line-space-above typography medium-regular-text" ng-repeat="order in page.account.orders | filter : report_filters">
+				<div class="col-md-1">
+					{{ order.id }}
+				</div>
+				<div class="col-md-2">
+					{{ order.date | date : format : shortDate }}
+				</div>
+				<div class="col-md-8">
+					{{ order.order.key }}
+				</div>
+				<div class="col-md-1 text-right">
+					${{ order.credit }}
+				</div>
+			</div>
+		</div>
+	</div>
+	
+</div>

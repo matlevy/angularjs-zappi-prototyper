@@ -1,0 +1,13 @@
+<div class="zappi-form-row" ng-show="isVisible">
+	<div class="zappi-word-selector">
+		<div class="">	
+			<div class="instructions line-space-below" ng-show="showInstructions=='true' && selected.length<maxCustom">You can enter {{ getRemainingWordCount() }} custom word{{ getRemainingWordCount()>1 ? 's' : '' }}, or search for words we suggest. Multiple words can be entered at the same time seperated by a comma. Click a higlighted word to remove it once chosen or entered.</div>	
+			<input class="text-input search" ng-model="searchText" ng-hide="selected.length>=maxCustom" placeholder="{{ label }}"></input>
+			<div class="suggested-words" ng-show="searchText.length>0 || showAll==true || selected.length>0">
+				<button type="button" class="zappi-button as-tag selected {{ option.is_custom ? 'custom' : '' }}" ng-repeat="option in selected" ng-click="removeSelected(option)">{{ getLabel(option) }}</button>
+				<button type="button" class="zappi-button as-tag selectable" ng-repeat="option in options | filter:search" ng-click="selectItem(option)" ng-show="(( (options|filter:search).length>0 && (searchText.length>2) ) || showAll==true) && selected.length<maxCustom ">{{ getLabel(option) }}</button>
+			</div>
+			<div class="" ng-hide="selected.length>=maxCustom"><a class="all-options-link" ng-click="showAll==false ? showAllOptions() : hideAllOptions()">{{ showAll==false ? 'Show me a list of suggestions' : 'Hide suggested words' }}</a></div>
+		</div>
+	</div>
+</div>

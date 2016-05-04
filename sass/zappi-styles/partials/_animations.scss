@@ -1,0 +1,51 @@
+.zappi-animations {
+
+	&.slide-down-and-fade-in-on-show {
+
+		-webkit-transition: 0.8s;
+		transition: 0.8s;
+		opacity: 1;
+		max-height: 9999px;
+		overflow-y: hidden;	
+
+		&.ng-hide {
+		  	opacity: 0;
+			max-height: 0px;
+			padding-top:0;
+			padding-bottom:0;
+		}
+	}
+
+	&.pop-in-on-show {
+		-webkit-transition: 0.8s;
+		transition: 0.8s;
+		transform:scale(1);
+		&.ng-hide {
+			transform:scale(0);
+		}
+	}
+
+	&.pop-in-on-show {
+		-webkit-transition: 0.8s;
+		transition: 0.8s;
+		transform:scale(1);
+		&.ng-hide {
+			transform:scale(0);
+		}
+	}
+
+	&.fade-in {
+		-webkit-transition: 0.8s;
+		transition: 0.8s;
+		opacity: 1;
+		&.ng-hide {
+			opacity: 0;
+		}
+	}
+		
+}
+
+.animated-column {
+	-webkit-transition: 0.3s;
+	transition: 0.3s;
+}

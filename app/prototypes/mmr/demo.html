@@ -1,0 +1,163 @@
+<div class="container" ng-controller="MMRController">
+
+  <div class="row zappi-styles zappi-form mmr">
+    <div class="col-md-8">
+      <zappi-page-indicator form-page-model="models.form"></zappi-page-indicator>
+    </div>
+  </div>
+
+  <div class="row zappi-styles zappi-form mmr">
+
+    <div class="col-md-8 form-left-panel audience-configuration">
+
+      <zappi-form-page page-id="1" form-page-model="models.form" page-title="Basic Information" page-index="0">
+
+        <!--<zappi-tutorial tutorial-model="$parent.pageObject.tutorial" type="form" start-label="Yes, Guide Me Through This" close-label="No, Don't show this again"></zappi-tutorial>-->
+
+        <zappi-page-introduction>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris orci tortor, dignissim nec molestie sed, blandit quis risus. Nullam quis augue velit. Nam tempus leo nisl, sagittis feugiat diam varius quis. Maecenas vestibulum dictum justo, id iaculis lectus rhoncus ac. Praesent in lorem tempus, ultricies nunc sed, porttitor dui. Quisque vel lorem arcu. In nisi libero, elementum nec placerat sit amet, malesuada quis enim. Nullam et elit id nulla tincidunt tincidunt. Nulla quis velit erat.
+        </zappi-page-introduction>
+
+        <section class="zappi-form-section appear-section" id="appear-name" instructions-model="$parent.pageObject.tutorial" instructions-page-title="Basic Information" instructions-location="top" instructions-next-text="OK, Done." instructions-prev-text="Go back a step" pre-broadcast="" post-broadcast="" zappi-instructions-step>
+          <div class="instructions-text">
+            Enter the following basic information about your product such as name and title.
+          </div>
+          <ul class="form-question-list">
+            <li class="zappi-form-row">
+              <div class="zappi-question">What is your brand name?</div>
+                <zappi-text-input type="single" label="e.g. Coca-Cola" value="models.choices.brand"></zappi-text-input>
+            </li>
+            <li class="zappi-form-row">
+              <div class="zappi-question">What is the title of your pack?</div>
+                <zappi-text-input type="single" label="e.g. Multipack Drinks" value="models.choices.pack_title"></zappi-text-input>
+            </li>
+            <li class="zappi-form-row">
+              <div class="zappi-question">What is your product type?</div>
+                <zappi-text-input type="single" label="e.g. Food & Drinks" value="models.choices.product_type"></zappi-text-input>
+            </li>
+            <li class="zappi-form-row">
+              <div class="zappi-question">What is the name of your product?</div>
+                <zappi-text-input type="single" label="e.g. Coca-Cola 6 Pack" value="models.choices.product_name"></zappi-text-input>
+            </li>
+          </ul>
+        </section>
+
+         <section class="zappi-form-section appear-section" id="appear-name" instructions-model="$parent.pageObject.tutorial" instructions-page-title="Product Category" instructions-location="top" instructions-next-text="OK, Done." instructions-prev-text="Go back a step" pre-broadcast="" post-broadcast="" zappi-instructions-step>
+          <div class="instructions-text">
+            Type in the category your product appears under in the search box. Alternatively, click the button to show all available category types and click the item you want to choose.
+          </div>
+          <ul class="form-question-list">
+            <li class="where">
+              <div class="zappi-question">What category does your product appear within?</div>
+              <zappi-auto-complete search-text="models.form.categorySearch" options="models.options.categories" selected="models.choices.category" button-class="as-tag" is-visible="true" place-holder="Search for a cetegory from our list, e.g. Beer"></zappi-auto-complete>
+              <a name="category"></a>
+            </li>
+          </ul>
+        </section>
+
+      </zappi-form-page>
+
+      <zappi-form-page page-id="2" form-page-model="models.form" page-title="Elements & Statements" page-index="1">
+
+        <zappi-page-introduction>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris orci tortor, dignissim nec molestie sed, blandit quis risus. Nullam quis augue velit. Nam tempus leo nisl, sagittis feugiat diam varius quis. Maecenas vestibulum dictum justo, id iaculis lectus rhoncus ac. Praesent in lorem tempus, ultricies nunc sed, porttitor dui. Quisque vel lorem arcu. In nisi libero, elementum nec placerat sit amet, malesuada quis enim. Nullam et elit id nulla tincidunt tincidunt. Nulla quis velit erat.
+        </zappi-page-introduction>
+
+         <section class="zappi-form-section statements-section" id="elements" instructions-model="$parent.pageObject.tutorial" instructions-page-title="Pack Diagnostics" instructions-location="top" instructions-next-text="OK, Done." instructions-prev-text="Go back a step" pre-broadcast="" post-broadcast="" zappi-instructions-step>
+          <div class="instructions-text">
+            We will ask consumers to rate three specific elements of your pack. In the area below, please write the three elements that you are most interested to get feedback on. It might be the colour, logo, or tagline for example. You must include three elements of the pack to explore.
+          </div>
+          <ul class="form-question-list">
+            <li class="">
+              <div class="zappi-question">We will ask consumers to rate three specific elements of your pack. Please write three elements you would like feedback regarding.</div>
+              <zappi-word-selector max-custom="3" options="models.options.element_examples" selected="models.choices.elements" is-visible="true" showInstructions="false"></zappi-word-selector>
+            </li>
+          </ul>
+        </section>
+
+        <section class="zappi-form-section statements-section" id="statements" instructions-model="$parent.pageObject.tutorial" instructions-page-title="Your Expectations" instructions-location="top" instructions-next-text="OK, Done." instructions-prev-text="Go back a step" pre-broadcast="" post-broadcast="" zappi-instructions-step>
+          <div class="instructions-text">
+            We will ask consumers what expectations each pack included in the study conveys about the product. Please write a minimum of 3 and a maximum of 12 in the boxes below. The expectations must fit the statement below, and be written in the local language of the country that fieldwork is taking place in.
+          </div>
+          <ul class="form-question-list">
+            <li class="">
+              <div class="zappi-question">What statements of expectations do you want to question against? Please enter 3-12.</div>
+              <zappi-sentence-list sentences="models.choices.expectations" max-permitted="3" is-visible="true"  place-holder="Complete the sentence 'This product will...' and press 'enter'."></zappi-sentence-list>
+            </li>
+          </ul>
+        </section>
+
+      </zappi-form-page>
+
+      <zappi-form-page page-id="3" form-page-model="models.form" page-title="Upload Media" page-index="2">
+
+        <zappi-page-introduction hide-when="models.choices.media.length>0">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris orci tortor, dignissim nec molestie sed, blandit quis risus. Nullam quis augue velit. Nam tempus leo nisl, sagittis feugiat diam varius quis. Maecenas vestibulum dictum justo, id iaculis lectus rhoncus ac. Praesent in lorem tempus, ultricies nunc sed, porttitor dui. Quisque vel lorem arcu. In nisi libero, elementum nec placerat sit amet, malesuada quis enim. Nullam et elit id nulla tincidunt tincidunt. Nulla quis velit erat.
+        </zappi-page-introduction>
+
+        <section class="zappi-form-section upload-options" ng-repeat="media_object in models.choices.media">
+          <zappi-media-upload is-visible="true" media-upload-state="media_object.state" media-object="media_object" on-media-removed="onMediaRemove">
+            <div class="zappi-question">Pack Image</div>
+            <zappi-media-placeholder media="media_object" custom-class="small"></zappi-media-placeholder>
+            <mmr-media-config media-object="media_object"></mmr-media-config>
+          </zappi-media-upload>
+        </section>
+        
+        <section class="zappi-form-section upload-section" id="upload">
+          <div class="instructions-text">
+            Finally upload your creatives for us to test. You can do this by dragging and dropping the file into the upload area or simply clicking the button and browsing for the file.
+          </div>
+          <ul class="form-question-list">
+            <li class="">
+              <zappi-media-upload is-visible="true" on-media-chosen="onNewMedia" media-object-factory="mediaObjectService.factory" media-object-type="mmr" label="'Click or drag-and-drop here to upload your Pack Image'"></zappi-media-upload>
+              <a name="upload"></a>
+            </li>
+          </ul>
+        </section>
+
+      </zappi-form-page>
+
+      <zappi-form-page page-id="4" form-page-model="models.form" page-title="Set-up Comparison Pack Images" page-index="3">
+
+        <zappi-page-introduction hide-when="models.form.selectedPackGallery!=null">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris orci tortor, dignissim nec molestie sed, blandit quis risus. Nullam quis augue velit. Nam tempus leo nisl, sagittis feugiat diam varius quis. Maecenas vestibulum dictum justo, id iaculis lectus rhoncus ac. Praesent in lorem tempus, ultricies nunc sed, porttitor dui. Quisque vel lorem arcu. In nisi libero, elementum nec placerat sit amet, malesuada quis enim. Nullam et elit id nulla tincidunt tincidunt. Nulla quis velit erat.
+        </zappi-page-introduction>
+
+        <section class="zappi-form-section appear-section" ng-show="models.form.selectedPackGallery==null" id="packageCategory">
+          <ul class="form-question-list">
+            <li class="where">
+              <div class="zappi-question">
+                When surveying customers, we present a number of alternative pack images randomly. To start, choose from one of the following pack-image galleries, or click 'custom' to create your own.
+              </div>
+              <zappi-form-image-select options="models.options.package_sizes" selected="models.form.selectedPackGallery" hide-indicator="true" columns="4" image-height="200" is-visible="true" on-change="onPackCategoryClick"></zappi-form-image-select>
+            </li>
+          </ul>
+        </section>
+
+        <section class="zappi-form-section appear-section" ng-show="models.form.selectedPackGallery!=null">
+          <ul class="form-question-list">
+            <li class="where">
+              <zappi-form-image-grid can-edit="true" items="models.choices.package_images" page-rows="4" columns="4" image-height="200" on-click="onPackageImageClick" minimum-gallery-height="440">
+                <button class="zappi-button interaction-action" ng-click="goBackToChooseTemplate()">{{ models.form.selectedPackGallery.key }}</button>
+                <div class="single-line-space-below"></div> 
+                <div class="zappi-question single-line-space-above">
+                  If you like, you can change an image that appears below by clicking the appropriate image.
+                </div>
+              </zappi-form-image-grid>
+            </li>
+          </ul>
+        </section>
+
+      </zappi-form-page>
+
+    </div>
+    
+    <de-right-panel-placeholder  page-navigation-model="models.form">
+      <!--<zappi-tutorial tutorial-model="models.form.current_page.tutorial" start-label="Help Me With This Page" type="panel">
+          If you've never used this form before, we can give you step-by-step guide and help you completing the survey setup.
+      </zappi-tutorial>-->
+    </de-right-panel-placeholder>
+    
+  </div>  
+
+</div>

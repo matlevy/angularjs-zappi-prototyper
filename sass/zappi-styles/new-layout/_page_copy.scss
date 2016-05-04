@@ -1,0 +1,25 @@
+.page-copy {
+	
+	@extend .typography.medium-text;
+
+	line-height: 2rem;
+
+	h1 {
+		@extend .single-line-space-below;
+		@extend .double-line-space-above;
+	}
+
+	h2 {
+		@extend .typography.regular-text;
+		@extend .double-line-space-above;
+	}
+
+	p {
+		@extend .typography.medium-regular-text;
+		@extend .single-line-space-below;
+		line-height: 2.5rem;
+	}
+
+	padding-bottom: 3rem;
+	margin-bottom: 4rem;
+}

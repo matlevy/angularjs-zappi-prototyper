@@ -1,0 +1,36 @@
+@import "../partials/form_controls/form_row";
+@import "../partials/form_controls/question";
+@import "../partials/form_controls/text_input";
+
+.login-form {
+
+	.login-username,
+	.login-password,
+	.login-remember,
+	.login-submit {
+		@extend .zappi-form-row;
+	}
+	
+	label {
+		@extend .zappi-question;
+		padding: 0 !important;
+		display: block;
+		font-size: 2rem !important;
+		line-height: 3rem !important;
+	}
+
+	.login-username,
+	.login-password {
+		input {
+			@extend .zappi-text-input;
+			@extend .stretch;
+		}
+	}
+
+	.login-submit .button-primary {
+		@extend .zappi-button-base;
+		@extend .stretch;
+	}
+
+	margin-top: 5rem;
+}

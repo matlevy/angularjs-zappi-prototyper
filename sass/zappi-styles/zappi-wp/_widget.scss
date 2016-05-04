@@ -1,0 +1,71 @@
+.widget {
+
+	//@extend .zappi-well;
+	//@extend .zappi-light-grey.background;
+	@extend .z-border-radius;
+
+	//padding: 2rem;
+	margin-bottom: 4rem;
+	display: block;
+
+	.widget-title {
+		@extend .typography.medium-text;
+
+		margin: 0;
+		text-transform: uppercase;
+		margin-bottom: 2rem;
+	}
+
+	@import "widgets/search";
+	@import "widgets/categories";
+	@import "widgets/author";
+
+	&.widget_recent_comments,
+	&.widget_pages,
+	&.widget_recent_entries {
+
+		ul {
+			padding: 0;
+			margin: 0;
+			list-style: none;
+		}
+
+		li {
+			@extend .typography.medium-text;
+			margin-bottom: 0.5rem;
+		}
+	}
+
+	&.widget_tag_cloud {
+		a {
+			@extend .zappi-button-base;
+			@extend .zappi-button-base.as-tag;
+			@extend .typography.medium-text;
+			font-size: 1.5rem !important;
+			display: inline-block;
+		}
+	}
+
+	&.widget_recent_entries {
+		padding: 0;
+		background: none;
+
+		margin-top: 2rem;
+
+		.widget-title {
+			margin-bottom: 2rem;
+		}
+
+		li {
+			padding: 2rem;
+			margin-bottom: 1rem;
+			@extend .zappi-white.background;
+			@extend .z-border-radius;
+			* {
+				color: $dark !important;
+				text-decoration: none;
+			}
+		}
+	}
+
+}

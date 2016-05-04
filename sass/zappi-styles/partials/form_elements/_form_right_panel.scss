@@ -1,0 +1,22 @@
+.zappi-form-right-panel {
+
+	&.element {
+		padding: 20px;
+		margin-bottom: 20px;
+
+		@extend .zappi-animations.slide-down-and-fade-in-on-show;
+		@extend .zappi-animations.pop-in-on-show;
+	}
+
+	@import "panels/problem_list";
+	@import "panels/summary_panel";
+	@import "panels/chat_panel";
+
+	.zappi-action-buttons {
+		@extend .z-clear;
+		@include float-box(100%);
+	}
+
+	@import 'zappi_panel';
+	@import 'config_quote_box';
+}

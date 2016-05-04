@@ -1,0 +1,31 @@
+.zappi-products,
+&.zappi-products {
+
+	@import 'products/product_groups';
+	@import 'products/product_box';
+	@import 'products/product_grid';
+
+	.products-heading {
+
+		@extend .double-line-space-below;
+		
+		min-height: 500px;
+		background-color: white;
+		position: relative;
+		margin-top: -3rem;
+
+		.wizard-cta {
+			position: absolute;
+			bottom: 4rem;
+			left: 0;
+			right: 0;
+			text-align: center;
+		}
+
+		.active {
+
+		}
+		
+	}
+
+}

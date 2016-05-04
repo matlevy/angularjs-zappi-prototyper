@@ -1,0 +1,277 @@
+<proto-customise-header header-title="Launch Your Survey" page-model="page"></proto-customise-header>
+
+<div class="contact zappi-styles zappi-form container order-summary">
+	
+	<div class="row">
+		<div class="{{ page.orderconfirm.current_page.no_right_panel==true ? 'col-md-12' : 'col-md-8' }} animated-column">
+			<zappi-page-indicator form-page-model="page.orderconfirm"></zappi-page-indicator>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="{{ page.orderconfirm.current_page.no_right_panel==true ? 'col-md-12' : 'col-md-8' }} animated-column">
+
+			<zappi-form-page page-id="1" form-page-model="page.orderconfirm" page-title="Project Reference" page-index="0">
+
+				<zappi-page-introduction>
+			        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris orci tortor, dignissim nec molestie sed, blandit quis risus. Nullam quis augue velit. Nam tempus leo nisl.
+			    </zappi-page-introduction>
+
+				<section class="zappi-form-section" id="contact-form">
+					<ul class="form-question-list">
+						<li class="zappi-form-row">
+							<div class="zappi-question">Project Name</div>
+							<input type="text" class="zappi-text-input stretch">
+						</li>
+						<li class="zappi-form-row">
+							<div class="zappi-question">Order Refence</div>
+							<input type="text" class="zappi-text-input stretch">
+						</li>
+					</ul>
+				</section>
+
+			</zappi-form-page>
+
+			<zappi-form-page page-id="2" form-page-model="page.orderconfirm" page-title="Company Details" page-index="1">
+
+			<zappi-page-introduction>
+		        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris orci tortor, dignissim nec molestie sed, blandit quis risus. Nullam quis augue velit. Nam tempus leo nisl.
+		    </zappi-page-introduction>
+
+			<section class="zappi-form-section" id="contact-form">
+				<ul class="form-question-list">
+					<li class="zappi-form-row">
+						<div class="zappi-question">First Name</div>
+						<input type="text" class="zappi-text-input stretch" ng-model="page.account.details.forname">
+					</li>
+					<li class="zappi-form-row">
+						<div class="zappi-question">Last Name</div>
+						<input type="text" class="zappi-text-input stretch" ng-model="page.account.details.surname">
+					</li>
+					<li class="zappi-form-row">
+						<div class="zappi-question">Job Title</div>
+						<input type="text" class="zappi-text-input stretch">
+					</li>
+					<li class="zappi-form-row">
+						<div class="zappi-question">Email</div>
+						<input type="text" class="zappi-text-input stretch">
+					</li>
+					<li class="zappi-form-row">
+						<div class="zappi-question">Telephone</div>
+						<input type="text" class="zappi-text-input stretch" ng-model="page.account.details.telephone">
+					</li>
+					<li class="zappi-form-row">
+						<div class="zappi-question">Company Name</div>
+						<input type="text" class="zappi-text-input stretch" ng-model="page.account.details.company_name">
+					</li>
+					<li class="zappi-form-row">
+						<div class="zappi-question">Company Address 1</div>
+						<input type="text" class="zappi-text-input stretch" ng-model="page.account.details.company_address_1">
+					</li>
+					<li class="zappi-form-row">
+						<div class="zappi-question">Company Address 1</div>
+						<input type="text" class="zappi-text-input stretch" ng-model="page.account.details.company_address_2">
+					</li>
+					<li class="zappi-form-row">
+						<div class="zappi-question">Company Postcode</div>
+						<input type="text" class="zappi-text-input stretch" ng-model="page.account.details.company_postcode">
+					</li>
+				</ul>
+			</section>
+			
+			</zappi-form-page>
+
+			<zappi-form-page page-id="3" form-page-model="page.orderconfirm" page-title="Billing Details" page-index="2">
+
+			<section class="zappi-form-section" id="contact-form">
+				<ul class="form-question-list">
+					<li class="zappi-form-row">
+						<div class="zappi-question">I'd like to use my contact details for billing:
+						<zappi-toggle-button selected-label="YES" unselected-label="NO" selected="page.account.details.contactZappi"></zappi-toggle-button></div>
+					</li>
+				</ul>
+			</section>
+
+			<section class="zappi-form-section" id="contact-form">	
+				<ul class="form-question-list">
+					<li class="zappi-form-row" ng-show="!page.account.details.contactZappi">
+						<div class="zappi-question">First Name</div>
+						<input type="text" class="zappi-text-input stretch">
+					</li>
+					<li class="zappi-form-row" ng-show="!page.account.details.contactZappi">
+						<div class="zappi-question">Last Name</div>
+						<input type="text" class="zappi-text-input stretch">
+					</li>
+					<li class="zappi-form-row" ng-show="!page.account.details.contactZappi">
+						<div class="zappi-question">Country</div>
+						<input type="text" class="zappi-text-input stretch">
+					</li>
+					<li class="zappi-form-row" ng-show="!page.account.details.contactZappi">
+						<div class="zappi-question">Address</div>
+						<input type="text" class="zappi-text-input stretch">
+					</li>
+					<li class="zappi-form-row" ng-show="!page.account.details.contactZappi">
+						<div class="zappi-question">Address 2</div>
+						<input type="text" class="zappi-text-input stretch">
+					</li>
+					<li class="zappi-form-row" ng-show="!page.account.details.contactZappi">
+						<div class="zappi-question">City</div>
+						<input type="text" class="zappi-text-input stretch">
+					</li>
+					<li class="zappi-form-row" ng-show="!page.account.details.contactZappi">
+						<div class="zappi-question">State</div>
+						<input type="text" class="zappi-text-input stretch">
+					</li>
+					<li class="zappi-form-row" ng-show="!page.account.details.contactZappi">
+						<div class="zappi-question">Post Code</div>
+						<input type="text" class="zappi-text-input stretch">
+					</li>
+					<li class="zappi-form-row" ng-show="!page.account.details.contactZappi">
+						<div class="zappi-question">Telephone</div>
+						<input type="text" class="zappi-text-input stretch">
+					</li>
+					<li class="zappi-form-row">
+						<div class="zappi-question">VAT #</div>
+						<input type="text" class="zappi-text-input stretch">
+					</li>
+				</ul>
+			</section>
+
+			</zappi-form-page>
+
+			<zappi-form-page page-id="4" form-page-model="page.orderconfirm" page-title="Order Summary" page-index="3" no-right-panel="true">
+
+				<zappi-page-introduction>
+			        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris orci tortor, dignissim nec molestie sed, blandit quis risus. Nullam quis augue velit. Nam tempus leo nisl.
+			    </zappi-page-introduction>
+				
+				<zappi-survey-summary order-summary="order_summary"></zappi-survey-summary>
+
+				<div class="row contact-summary zappi-form-right-panel">
+			    	<div class="col-md-6">
+			    		<section class="config-quote-box">
+			    			<h2 class="section-title">Contact Details</h2>
+				    		<ul class="form-question-list">
+								<li class="zappi-form-row">
+									<h3 class="contact-title">First Name</h3>
+									<div class="detail">{{ page.account.details.forname }}</div>
+								</li>
+								<li class="zappi-form-row">
+									<h3 class="contact-title">Last Name</h3>
+									<div class="detail">{{ page.account.details.surname }}</div>
+								</li>
+								<li class="zappi-form-row">
+									<h3 class="contact-title">Job Title</h3>
+									<div class="detail">{{ page.account.details.job_types.selected.key }}</div>
+								</li>
+								<li class="zappi-form-row">
+									<h3 class="contact-title">Email</h3>
+									<div class="detail">{{ page.account.details.email }}</div>
+								</li>
+								<li class="zappi-form-row">
+									<h3 class="contact-title">Telephone</h3>
+									<div class="detail">{{ page.account.details.telephone }}</div>
+								</li>
+								<li class="zappi-form-row">
+									<h3 class="contact-title">Company Name</h3>
+									<div class="detail">{{ page.account.details.company_name }}</div>
+								</li>
+								<li class="zappi-form-row">
+									<h3 class="contact-title">Company Address 1</h3>
+									<div class="detail">{{ page.account.details.company_address_1 }}</div>
+								</li>
+								<li class="zappi-form-row">
+									<h3 class="contact-title">Company Address 1</h3>
+									<div class="detail">{{ page.account.details.company_address_2 }}</div>
+								</li>
+								<li class="zappi-form-row">
+									<h3 class="contact-title">Company Postcode</h3>
+									<div class="detail">{{ page.account.details.company_postcode }}</div>
+								</li>
+							</ul>
+						</section>
+			    	</div>
+			    	<div class="col-md-6">
+			    		<section class="config-quote-box">
+			    			<h2 class="section-title">Billing Details</h2>
+				    		<ul class="form-question-list">
+								<li class="zappi-form-row">
+									<h3 class="contact-title">First Name</h3>
+									<div class="detail">{{ page.account.details.forname }}</div>
+								</li>
+								<li class="zappi-form-row">
+									<h3 class="contact-title">Last Name</h3>
+									<div class="detail">{{ page.account.details.surname }}</div>
+								</li>
+								<li class="zappi-form-row">
+									<h3 class="contact-title">Job Title</h3>
+									<div class="detail">{{ page.account.details.job_types.selected.key }}</div>
+								</li>
+								<li class="zappi-form-row">
+									<h3 class="contact-title">Email</h3>
+									<div class="detail">{{ page.account.details.email }}</div>
+								</li>
+								<li class="zappi-form-row">
+									<h3 class="contact-title">Telephone</h3>
+									<div class="detail">{{ page.account.details.telephone }}</div>
+								</li>
+								<li class="zappi-form-row">
+									<h3 class="contact-title">Company Name</h3>
+									<div class="detail">{{ page.account.details.company_name }}</div>
+								</li>
+								<li class="zappi-form-row">
+									<h3 class="contact-title">Billing Address 1</h3>
+									<div class="detail">{{ page.account.details.company_address_1 }}</div>
+								</li>
+								<li class="zappi-form-row">
+									<h3 class="contact-title">Billing Address 1</h3>
+									<div class="detail">{{ page.account.details.company_address_2 }}</div>
+								</li>
+								<li class="zappi-form-row">
+									<h3 class="contact-title">Billing Postcode</h3>
+									<div class="detail">{{ page.account.details.company_postcode }}</div>
+								</li>
+							</ul>
+						</section>
+  					</div>
+			    </div>
+
+			    <div class="row contact-summary zappi-form-right-panel">
+			    	<div class="col-md-6">
+					    <section class="zappi-form-section" id="payment-form">	
+					    	<ul class="form-question-list">
+								<li class="zappi-form-row">
+									<div class="zappi-question">My preffered payment method is:</div>
+									<zappi-input-with-change-option options="page.orderconfirm.payment_methods.items" selected="page.orderconfirm.payment_methods.selected"></zappi-input-with-change-option>
+								</li>
+							</ul>
+					    </section>
+					</div>
+					<div class="col-md-6">
+						<section class="config-quote-box">
+						    <div class="price-container" ng-class="{ 'is-calculating' : priceIsUpdating }" ng-hide="problems.length>0">
+						      <div class="quote-label">Price</div>
+						      <div class="quote-value">£5000</div>
+						    </div>
+						    <div class="duration-container" ng-class="{ 'is-calculating' : priceIsUpdating }" ng-hide="problems.length>0">
+						      <div class="quote-label">Ready In</div>
+						      <div class="quote-value">8hrs</div>
+						    </div>
+						   	<div class="text-center">VAT: £500 @ 20%</div>
+					  </section>
+					</div>
+				</div>
+
+			    <section class="config-quote-box">
+			    	<zappi-form-page-navigator form-page-model="pageNavigationModel" view="angular/templates/zappi_forms/zappi_form_navigation_right.html"></zappi-form-page-navigator>
+				</section>
+
+			</zappi-form-page>
+
+		</div>
+
+		<de-right-panel-placeholder page-navigation-model="page.orderconfirm"></de-right-panel-placeholder>
+
+	</div>
+
+</div>

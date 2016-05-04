@@ -1,0 +1,5 @@
+.zappi-question-info {
+	margin-top: 10px;
+	@extend .zappi-animations.slide-down-and-fade-in-on-show;
+	@extend .typography.medium-text;
+}

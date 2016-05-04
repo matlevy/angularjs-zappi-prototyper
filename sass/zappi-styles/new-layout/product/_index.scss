@@ -1,0 +1,249 @@
+&.product-cover {
+
+	.content-strip {
+		
+		padding-top: 4rem;
+		background-color: white;
+		position: relative;
+
+		&.no-pad {
+			padding-top: 0;
+		}
+
+		&.video-strip {
+			
+			min-height: 0;
+			background-size: cover;
+			background-position: center center;
+
+			@media screen and (min-width: 980px) {
+				min-height: 500px;
+				max-height: 500px;
+			}
+
+			@media screen and (min-width: 1200px) {
+				background-size: 100%;
+			}
+
+			overflow: hidden;
+			
+			padding-top: 0;
+			background-color: none;
+
+			transition: max-height 0.3s, background 0.3s;
+			-webkit-transition: max-height 0.3s, background 0.3s;
+
+			.video {
+				width: 100%;
+				height: 100%;
+			}
+
+			.video-content {
+				display: none;
+			}
+
+			.the-video {
+				width: 100%;
+				height: 100%;
+				opacity: 0;
+				transition: opacity 0.3s;
+				-webkit-transition: opacity 0.3s;
+			}
+
+			&.expanded {
+				max-height: 2000px;
+				.the-video {
+					opacity: 1;
+				}
+				background: white !important;
+			}
+
+		}
+
+		&.transparent {
+			background: none;
+		}
+
+		.read-more-link {
+			display: inline-block;
+			@extend .z-border-radius;
+			@extend .z-reset-padding;
+			@extend .z-reset-margin;
+			@extend .z-input-widths;
+			@extend .zappi-blue.background;
+			@extend .zappi-blue-hover.background;
+			@extend .zappi-white-hover.colored-text;
+			@extend .white-text;
+			@extend .typography.medium-text;
+			
+			text-decoration: none;
+			text-transform: uppercase;
+			padding: 1rem;
+			border: 0px;
+			-webkit-transition: color 0.2s, background-color 0.2s;
+			transition: background-color 0.2s, color 0.2s;
+			outline: none;
+
+			&:focus {
+				outline: none;
+			}
+
+			&.centered {
+				margin: 0 auto;
+			}
+
+			margin-right: 1rem;
+		}
+
+		.container {
+			padding-bottom: 4rem;
+		}
+
+		.container .container {
+			width: 100%;
+			padding: 0;
+		}
+
+	}
+
+	.overview-content {
+
+		.copy-column {
+			@extend .z-border-radius;
+			padding: 2rem;
+			background-color: white;
+		}
+
+		.container {
+			background-repeat: no-repeat;
+			background-position: right bottom;
+		}
+
+		&:nth-of-type(even) {
+
+			.copy-column {
+				float: right;
+			}
+
+			.container {
+				background-position: left bottom;
+			}
+
+		}
+
+		@media screen and (max-width: 980px) {
+			&.has-image .image-column {
+				min-height: 250px;
+				max-height: 250px;
+			}
+		}
+
+	}
+
+	.dividor {
+		min-height: 4rem;
+		height: 4rem;
+	}
+
+	.heading-area {
+
+		text-align: center;
+
+		.heading-area-title {
+			@extend .z-reset-margins;
+			@extend .typography.large-text;
+			@extend .line-space-after;
+		}
+
+		.heading-area-content {
+			@extend .z-reset-margins;
+			@extend .typography.regular-text;
+			padding-left: 4rem;
+			padding-right: 4rem;
+
+			@media screen and (max-width: 980px) {
+				padding-top: 2rem;
+				line-height: 2rem;
+				font-size: 1.8rem;
+				margin-bottom: 1rem;
+			}
+		}
+
+	}
+
+	.product-feature {
+
+		margin-bottom: 3rem;
+		
+		.feature-icon {
+			margin: 0 auto;
+			width: 6rem;
+			height: 6rem;
+			background-color: #0da8df;
+			border-radius: 3rem;
+			margin-bottom: 1rem;
+			background-position: center center;
+			background-size: 60%;
+			background-repeat: no-repeat;
+		}
+
+		.feature-title {
+			@extend .z-reset-margins;
+			@extend .typography.regular-text;
+			margin-bottom: 0;
+			@media screen and (max-width: 980px) {
+				text-align: center;
+			}
+		}
+
+		.feature-content, .feature-content * {
+			@extend .z-reset-margins;
+			@extend .typography.medium-text;
+			line-height: 2rem;
+			@media screen and (max-width: 980px) {
+				text-align: center;
+				width: 80%;
+				margin: 0 auto;
+			}
+		}
+
+	}
+
+	.product-feature-grid .product-feature {
+		text-align: center;
+		margin-bottom: 6rem;
+
+		.feature-title {
+			@extend .z-reset-margins;
+			@extend .typography.regular-text;
+		}
+	}
+
+	.heading-copy {
+		margin-bottom: 6rem;
+		margin-bottom: 3rem;
+	}
+
+	.regular-copy {
+		@extend .z-reset-margins;
+		@extend .typography.medium-regular-text;
+		margin-bottom: 0;
+		line-height: 2.5rem;
+	}
+
+	.two-column-copy {
+		@extend .z-reset-margins;
+		@extend .typography.medium-regular-text;
+		line-height: 2.5rem;
+		-webkit-column-count: 2; /* Chrome, Safari, Opera */
+	    -moz-column-count: 2; /* Firefox */
+	    column-count: 2;
+	}
+
+	.large-section-title {
+		@extend .z-reset-margins;
+		@extend .typography.large-text;
+		@extend .line-space-after;
+	}
+
+}

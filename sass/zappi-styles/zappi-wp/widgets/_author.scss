@@ -1,0 +1,8 @@
+.author_widget {
+	.author-link {
+		@extend .zappi-button-base;
+		@extend .zappi-button-base.as-tag;	
+		@extend .zappi-black.background.force;
+		margin-top: 1rem;
+	} 
+}

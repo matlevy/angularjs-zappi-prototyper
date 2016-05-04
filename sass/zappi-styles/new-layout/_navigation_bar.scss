@@ -1,0 +1,182 @@
+.navigation-bar {
+	
+	height: 8rem;
+	background-color: $color-darkgrey;
+	position: fixed;
+	z-index: 3000;
+	left: 0;
+	right: 0;
+	top: 0;
+
+	box-shadow: 0px 1px 2px rgba(0,0,0,0.5);
+
+	transition: top 0.2s;
+	-webkit-transition: top 0.2s;
+
+	&.offscreen {
+		top: -15rem;
+	}
+
+	@media screen and (max-width: 600px) {
+		position: relative;
+		display: block;
+		bottom: auto;
+		top: auto;
+		box-shadow: none;
+		height: auto;
+		padding: 1.5rem;
+		&.offscreen {
+			top: 0;
+		}
+	}
+
+	.logo {
+		position: absolute;
+		top: 1.5rem;
+		bottom: 2rem;
+		left: 2rem;
+		width: 10rem;
+
+		@media screen and (max-width: 600px) {
+			right: 1.5rem;
+			left: auto;
+		}
+	}
+
+	.menu-button {
+		position: absolute;
+		top: 2.5rem;
+		bottom: 1rem;
+		left: 2.5rem;
+		width: 3rem;
+	}
+
+	.user-nav,
+	.primary-nav,
+	.currencies {
+		&ul, ul, li {
+			margin: 0;
+			display: inline-block;
+			position: relative;
+			padding: 0;
+			transition: 0.3s;
+		}
+
+		li {
+			padding-right: 2rem;
+		}
+
+		@media screen and (max-width: 600px) {
+			&ul, ul, li {
+				display: block;
+			}
+			li {
+				margin-bottom: 0.5rem;
+			}	
+		}
+	}
+
+	.user-nav,
+	.primary-nav {
+
+		position: absolute;
+		top: 3rem;
+		bottom: 1rem;
+		left: 15rem;
+
+		a,
+		.nav-link {
+			@extend .typography.medium-text;
+			text-decoration: none;
+			color: white;
+			text-transform: uppercase;
+		}
+		@media screen and (max-width: 600px) {
+			display: block;
+			position:relative;
+			top: auto;
+			left: auto;
+			bottom: auto;
+		}
+	}
+
+	.user-nav {
+
+		left: auto;
+		right: 1rem;
+		top: 2rem;
+
+		ul.ng-hide {
+			transform: scale(0);
+			-webkit-transform: scale(0);
+			width: 0;
+			height: 0;
+			margin:0;
+			padding:0;
+			border-width:0;
+		}
+
+		@media screen and (max-width: 600px) {
+			display: none;
+		}
+
+	}
+
+	.currencies {
+
+		height: 4rem;
+		overflow: hidden;
+		float: right;
+		position: relative;
+		padding-right: 2rem;
+		max-width: 4rem;
+
+		@media screen and (max-width: 600px) {
+			display: none;
+		}
+
+		li {
+			padding-right: 0;
+		}
+
+		.currency {
+
+			width: 4rem;
+			height: 4rem;
+			border-radius: 2rem;
+			margin-right: 1rem;
+
+			@extend .border;
+			@extend .border.medium;
+			@extend .zappi-grey.border;
+
+			background-position: center center;
+			background-size: 190%;
+
+			&.usd, &.aud {
+				background-position: top left;
+				background-size: 220%;
+			}
+			
+			&.selected {
+				@extend .zappi-blue.border;
+			}
+
+			&.ng-hide {
+				transform: scale(0);
+				-webkit-transform: scale(0);
+				width: 0;
+				height: 0;
+				margin:0;
+				padding:0;
+				border-width:0;
+			}
+
+			transition: 0.2s;
+		}
+
+		max-width: 900px;
+
+	}
+
+}

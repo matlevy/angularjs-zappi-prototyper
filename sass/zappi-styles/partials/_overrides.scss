@@ -1,0 +1,20 @@
+.no-bottom-spacing {
+	margin-bottom: 0px !important;
+}
+
+.no-top-spacing {
+	margin-top: 0px !important;
+} 
+
+.force-capitals {
+	text-transform: capitalize;
+}
+
+.force-lowecase {
+	text-transform: lowercase;
+}
+
+&.overflow-ok {
+	overflow-x: none !important;
+	overflow-y: none !important;
+}

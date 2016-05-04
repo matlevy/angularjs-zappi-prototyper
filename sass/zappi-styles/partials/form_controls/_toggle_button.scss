@@ -1,0 +1,75 @@
+.zappi-toggle-button {
+	
+	@extend .zappi-grey.background;
+	@extend .zappi-grey.border;
+
+	display: inline-block;
+	position: relative;
+
+	transition: background-color 0.2s;
+	-webkit-transition: background-color 0.2s;
+	
+	.button {
+		position: absolute;
+		width: 22px;
+		height: 22px;
+		@extend .zappi-blue.background;
+		@extend .zappi-grey.border;
+		border-radius: 11px;
+		top: -2px;
+		left: -1px;
+		transition: left 0.2s;
+		-webkit-transition: left 0.2s;
+		border: 1px solid;
+	}
+	
+	width: 40px;
+	height: 20px;
+	border: 1px solid;
+	border-radius: 10px;
+	
+	&.selected {
+		.button {
+			left: 21px;
+		}
+	}
+
+	&.disabled {
+		.button {
+			left: -2px;
+			@extend .zappi-disabled.background;
+		}
+		@extend .zappi-grey.colored-text;
+	}
+
+	margin-left: 5px;
+	margin-right: 5px;
+	margin-bottom: -5px;
+
+	text-decoration: none;
+
+	* {
+		text-decoration: none;
+	}
+
+}
+.zappi-togglable-container {
+	margin: 12px 0;
+	.zappi-togglable-button {
+		font-size: 1.2rem;
+		margin-left: 20px;
+		margin-right: 10px;
+		text-transform: uppercase;
+		text-decoration: none;
+		* {
+			text-decoration: none;
+		}
+	}
+}
+
+.disabled .zappi-togglable-button {
+	@extend .zappi-grey.colored-text;
+	.button {
+		@extend .zappi-grey.background;
+	}
+}

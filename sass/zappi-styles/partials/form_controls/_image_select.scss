@@ -1,0 +1,57 @@
+.zappi-image-select {
+
+	@extend .typography.medium-regular-text;
+	@extend .dark-text;
+
+	@include float-box(100%);
+
+	a {
+		@extend .dark-text;
+	}
+	
+	.option {
+
+		@include float-box(auto);
+
+		padding-right: 2rem;
+		padding-left: 0;
+
+		.image {
+
+			@extend .border.thin;
+			@extend .zappi-light-grey-bdr;
+			@extend .z-border-radius;
+
+			@include float-box(100%);
+
+			margin-bottom: 1rem;
+
+			&.selected {
+				@extend .zappi-blue-bdr;
+			}
+
+			background-size: contain;
+			background-position: center center;
+			background-repeat: no-repeat;
+
+		}
+
+		.option-label {
+
+			@include float-box(100%);
+
+			text-align: center;
+		}
+
+		.indicator-area {
+
+			@include float-box(100%);
+			@include indicator();
+
+			margin-bottom: 1rem;
+
+		}
+
+		margin-bottom: 1rem;
+	}
+}

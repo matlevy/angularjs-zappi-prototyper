@@ -1,0 +1,29 @@
+.zappi-product-groups {
+
+	.product-group-listing {
+
+		ul, li {
+
+			@extend .z-reset-padding;
+			@extend .z-reset-margin;
+
+			display: inline-block;
+			position: relative;
+
+		}
+
+		ul {
+			display: inline-block;
+		}
+
+		margin-left: auto;
+		margin-right: auto;
+		width: auto;
+		display: inline-block;
+		position: relative;
+
+		left: 50%;
+		transform: translateX(-50%);
+	}
+
+}

@@ -1,0 +1,9 @@
+<div class="zappi-form-row zappi-button-group single-select" role="group">
+	<span ng-transclude></span>
+	<button type="button" class="zappi-button as-tag selectable" ng-class="{ 'selected' : (selected == option && !selectedCustomValue) }" ng-repeat="option in options | filter:filter" ng-click="setValue(option)">{{ getLabel(option) }}</button>
+	<span ng-show="allowCustomValue == 'true'">
+		<span class="add-space left-and-right">{{ customValueLabel }}</span>
+		<!-- NOTE: HAVE TO USE PARENT ON THE INPUT BIZARLY BECAUSE OF THE NG-IF, WIERDLY IF YOU REMOVE THE IF THERES NO NEED TO USE $PARENT -->
+	    <input class="zappi-text-input fixed-narrow" placeholder="e.g. 5000" ng-model="customValue"/>
+    </span>
+</div>

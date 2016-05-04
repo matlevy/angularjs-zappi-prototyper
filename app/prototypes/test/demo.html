@@ -1,0 +1,34 @@
+<div class="badAss container" anim-test>
+	<!--<button ng-click="removeMe()">Big bad buttton!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</button>-->
+
+	<style>
+
+		.badAss {
+			
+		}
+
+		.badAss button {
+			width: 200px;
+			margin: 10px;
+		}
+
+		button.ng-enter, button.ng-move {
+		  -webkit-transition:0.5s linear all;
+		  -moz-transition:0.5s linear all;
+		  -o-transition:0.5s linear all;
+		  transition:0.5s linear all;
+		  opacity:0;
+		}
+
+		button.ng-enter.ng-enter-active,
+		button.ng-move.ng-move-active {
+		  opacity:1;
+		}
+
+	</style>
+
+	<button ng-click="addSomething()">Add Something</button>
+	<button ng-click="removeSomething()">Remove Something</button>
+	<hr/>
+	<button ng-repeat="item in the_list">{{ item }}</button>
+</div>

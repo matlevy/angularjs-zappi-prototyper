@@ -1,0 +1,56 @@
+<div class="col-md-4 zappi-form-right-panel" ng-hide="pageNavigationModel.current_page.no_right_panel==true">
+<aside class="">
+   <section class="audience-summary-panel" ng-hide="surveyType!=undefined && surveyType==null">
+    <div class="large-text">
+      <div class="audience_summary">
+        <div class="title"><h3>Country</h3></div>
+        <div class="detail" ng-over="blinkArea('country')">United Kingdom</div>
+        <div class="title"><h3>Required Completions</h3></div>
+        <div class="detail" ng-over="blinkArea('completions')">{{ currentCompletions }}</div>
+        <div ng-show="targetCustom==true" class="summary-section">
+          <div class="title"><h3>Genders</h3></div>
+          <div class="detail" ng-over="blinkArea('genders')">{{ currentSelectedSex!=null ? currentSelectedSex : "Both" }}</div>
+          <div class="title"><h3>Ages</h3></div>
+          <div class="detail"ng-over="blinkArea('ages')">{{ (currentSelectedAges.length != ages.length) && currentSelectedAges!=null ? currentSelectedAges.join(', ') : 'All' }}</div>
+          <div class="title"><h3>Regions</h3></div>
+          <div class="detail" ng-over="blinkArea('region')">{{ (currentSelectedRegions.length > 0) && (currentSelectedRegions.length < currentSelectedCountry.value.length) ? currentSelectedRegions.join(', ') : 'All' }}</div>
+          <div ng-show="currentSelectedBehaviourGroup!=null">
+            <div class="title"><h3>Demographic Group</h3></div>
+            <div class="detail" ng-over="blinkArea('demographic')">{{ currentSelectedBehaviourGroup.key }}</div>
+          </div>
+          <div ng-show="currentSelectedBehaviourItem!=null">
+            <div class="title"><h3>Demographic Selection</h3></div>
+            <div class="detail" ng-over="blinkArea('demographic')">{{ currentSelectedBehaviourItem }}</div>
+          </div>
+        </div>
+      </div>
+      <div ng-show="targetCustom==false || targetCustom==undefined || targetCustom==null "  class="summary-section">
+        <div class="title"><h3>Target Audience</h3></div>
+        <div class="detail" ng-over="blinkArea('survey-type')">{{ pageNavigationModel.selected_target_name ? pageNavigationModel.selected_target_name : 'National Representative' }}</div>
+      </div>
+    </div>
+  </section>
+
+  <span ng-transclude></span>
+  
+  <section class="config-quote-box" ng-hide="problems.length>0">
+    <div class="price-container" ng-class="{ 'is-calculating' : priceIsUpdating }" ng-hide="problems.length>0">
+      <div class="quote-label">Price</div>
+      <div class="quote-value">{{ currentPrice }}</div>
+    </div>
+    <div class="duration-container" ng-class="{ 'is-calculating' : priceIsUpdating }" ng-hide="problems.length>0">
+      <div class="quote-label">Ready In</div>
+      <div class="quote-value">{{ currentTime }}</div>
+    </div>
+    <zappi-form-page-navigator form-page-model="pageNavigationModel" view="angular/templates/zappi_forms/zappi_form_navigation_right.html"></zappi-form-page-navigator>
+  </section>
+  <section class="zappi-problem-list" ng-show="problems.length>0">
+    <h3>TO-DO</h3>
+    <ul>
+      <li class="zappi-problem" ng-repeat="problem in problems">{{ problem.text }}</li>
+    </ul>
+    <button class="zappi-button interaction-action stretch line-space-above" ng-click="toggleHelp()">{{ showHelp==true ? 'Hide the extra information' : 'Show more question information' }}</button>
+  </section>
+  
+</aside>
+</div>

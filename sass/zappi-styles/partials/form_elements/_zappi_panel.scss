@@ -1,0 +1,11 @@
+.zappi-panel {
+	@extend .z-clear;
+	@extend .z-border-radius;
+	@extend .zappi-form-right-panel.element;
+	@extend .zappi-light-grey-bdr;
+	@extend .zappi-well.white;
+
+	@include float-box(100%);
+
+	padding: 20px;
+}

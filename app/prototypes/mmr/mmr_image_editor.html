@@ -1,0 +1,20 @@
+<div ng-controller="MMRController">
+	
+  <section class="zappi-form-section upload-section" ng-show="models.form.currentSelectedPackImage.media.state!='uploading'">
+    <ul class="form-question-list">
+      <li class="">
+        <zappi-media-upload 
+        	is-visible="true" on-media-chosen="onNewPackageImage" on-media-uploaded="onNewPackageImageUploaded" media-object-factory="mediaObjectService.factory" 
+        	media-object-type="default" label="'Click or drag-and-drop here to upload your Pack Image'">
+        </zappi-media-upload>
+      </li>
+    </ul>
+  </section>
+
+  <section class="zappi-form-section upload-options" ng-show="models.form.currentSelectedPackImage.media!=null && models.form.currentSelectedPackImage.media.state=='uploading'">
+    <zappi-media-upload is-visible="true" media-upload-state="models.form.currentSelectedPackImage.media.state" 
+      media-object="models.form.currentSelectedPackImage.media" on-media-removed="onMediaRemove">
+    </zappi-media-upload>
+  </section>
+
+</div>

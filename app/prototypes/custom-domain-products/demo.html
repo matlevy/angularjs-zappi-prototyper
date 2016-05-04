@@ -1,0 +1,8 @@
+<proto-customise-header header-title="Create A New Survey" page-model="page"></proto-customise-header>
+
+<div class="zappi-styles zappi-form zappi-products">
+	<div class="container" id="zappi-products" ng-controller="ProductDesignController">
+		<zappi-product-groups items="product_groups" selected="choices.selected_group" on-group-selected="onProductGroupChanged"></zappi-product-groups>
+		<zappi-product-grid items="products" filter="product_filter" item-selector=".zappi-product-box"></zappi-product-grid>	
+	</div>
+</div>

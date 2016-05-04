@@ -1,0 +1,95 @@
+<div class="zappi-page zappi-styles {{ page.domain }}" ng-controller="NewDesignController">
+	<div class="navigation-bar" zappi-navigation-bar>
+		<!--<div class="menu-button zappi-icon_menu-zappigrey"></div>-->
+		<div class="primary-nav">
+			<nav>
+				<ul>
+					<li><a class="nav-link" href="#/new-design/products/">About</a></li>
+					<li><a class="nav-link" href="#/new-design/products/">Products</a></li>
+					<li><a class="nav-link" href="#/new-design/products/">Validation</a></li>
+					<li><a class="nav-link" href="#/new-design/products/">Pricing</a></li>
+					<li><a class="nav-link" href="#/new-design/products/">Team</a></li>
+					<li><a class="nav-link" href="#/new-design/contact/">Contact</a></li>
+				</ul>
+			</nav>
+		</div>
+		<div class="user-nav">
+			<nav>
+				<ul ng-hide="showCurrencies">
+					<li><a href="#/new-design/create-account"><button class="zappi-button zappi-blue-hover">Register</button></a></li>
+					<li><a href="#/new-design/login"><button class="zappi-button secondary-action zappi-grey-hover">Sign-In</button></a></li>
+				</ul>
+				<ul class="currencies">
+					<li><button class="currency common-artwork-GBP gbp selected" ng-click="toggleCurrencies()"></button></li>
+					<li><button class="currency common-artwork-CAD cad" ng-show="showCurrencies" ng-click="toggleCurrencies()"></button></li>
+					<li><button class="currency common-artwork-USD usd" ng-show="showCurrencies" ng-click="toggleCurrencies()"></button></li>
+					<li><button class="currency common-artwork-EUR eur" ng-show="showCurrencies" ng-click="toggleCurrencies()"></button></li>
+					<li><button class="currency common-artwork-AUD aud" ng-show="showCurrencies" ng-click="toggleCurrencies()"></button></li>
+				</ul>
+			</nav>
+		</div>
+		<a href="#/new-design/home_page"><div class="logo common-artwork-zappi-logo-white"></div></a>
+	</div>
+	<div class="{{ page.product }} zappi-product-container {{ page.image }}">
+		<header class="header" zappi-header>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<h1 class="product-name primary-color-text">{{ page.page_title }}</h1>
+						<h1 class="page-title primary-color-text">{{ page.title }}</h1>
+					</div>
+				</div>
+			</div>
+		</header>
+		<main class="content">
+			<div class="zappi-styles zappi-form zappi-modal-container" style="top: {{ containerTop }}px" ng-controller="ZappiModalController" ng-hide="state=='closed'">
+				<zappi-modal-window modal="modal"></zappi-modal-window>
+			</div>
+			<div class="resizer">
+				<de-form-prototype></de-form-prototype>
+			</div>
+		</main>
+		<footer class="footer" zappi-footer-navigation>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-4 footer-links">
+						<h2>Our products</h2>
+						<ul class="links">
+							<li><a href="javscript://">Creative Test</a></li>
+							<li><a href="javscript://">Choose It Test</a></li>
+							<li><a href="javscript://">New Product Development</a></li>
+							<li><a href="javscript://">Creative Test for Video</a></li>
+							<li><a href="javscript://">TNS Conversion Model</a></li>
+							<li><a href="javscript://">MMR Impact Lite</a></li>
+							<li><a href="javscript://">LinkNow For TV</a></li>
+							<li><a href="javscript://">LinkNow For Digital</a></li>
+						</ul>
+					</div>
+					<div class="col-md-4 footer-links">
+						<h2>Our products</h2>
+						<ul class="links">
+							<li><a href="javscript://">What Is ZappiStore</a></li>
+							<li><a href="javscript://">Product Pricing Explained</a></li>
+							<li><a href="javscript://">Contact</a></li>
+						</ul>
+					</div>
+					<div class="col-md-4 footer-links">
+						<h2>Payment Methods</h2>
+						<ul class="methods">
+							<li class="icon-mastercard common-artwork-visa">visa</li>
+							<li class="icon-visa common-artwork-mastercard">mastercard</li>
+							<li class="icon-americanexpress common-artwork-americanexpress">americanexpress</li>
+							<li class="icon-switch common-artwork-switch">switch</li>
+						</ul>
+						<h2>Follow Us</h2>
+						<ul class="links">
+							<li><a href="javscript://">Twitter</a></li>
+							<li><a href="javscript://">Google+</a></li>
+							<li><a href="javscript://">LinkedIn</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</footer>
+	</div>
+</div>

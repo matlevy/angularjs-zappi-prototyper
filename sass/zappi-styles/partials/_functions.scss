@@ -1,0 +1,26 @@
+$image-url-prefix: '/assets/images/' !default;
+$image-url-suffix: '' !default;
+
+$font-url-prefix: '/assets/fonts/' !default;
+$font-url-suffix: '' !default;
+
+//$image-url-prefix: '<%= image_path(\'';
+//$image-url-suffix: '\') %>';
+
+// Overrides the image-url function. WARNING! DO Not include in ZappiStore website
+// it may override the image path function in the sass compiler of the server.
+
+@function image-url($url) {
+  @return url("#{$image-url-prefix}#{$url}#{$image-url-suffix}");
+}
+
+@mixin fontAsset($font-name,$asset) {
+	@font-face {
+		font-family: '#{$font-name}';
+		src: 	url("#{$font-url-prefix}#{$asset}.eot#{$font-url-suffix}") format("embedded-opentype"), 
+				url("#{$font-url-prefix}#{$asset}.woff2#{$font-url-suffix}") format("woff2"), 
+				url("#{$font-url-prefix}#{$asset}.woff#{$font-url-suffix}") format("woff"), 
+				url("#{$font-url-prefix}#{$asset}.ttf#{$font-url-suffix}") format("truetype"), 
+				url("#{$font-url-prefix}#{$asset}#{$font-url-suffix}") format("svg");
+	}
+}

@@ -1,0 +1,95 @@
+<proto-customise-header header-title="My Orders" page-model="page"></proto-customise-header>
+<div class="contact zappi-styles zappi-form container order-summary">
+	<div ng-include="'/prototypes/my-shared/list-header.html'"></div>
+	<div class="row">
+		<div class="col-md-12">
+			<div class="zappi-form-section line-space-above typography medium-regular-text" ng-repeat="order in page.account.orders | filter : report_filters">
+				<div class="row">
+					<div class="col-md-1">
+						{{ order.id }}
+					</div>
+					<div class="col-md-2">
+						{{ order.date | date : format : shortDate }}
+					</div>
+					<div class="col-md-3">
+						{{ order.order.key }}
+					</div>
+					
+					<div class="col-md-2">
+						{{ order.method }}
+					</div>
+					<div class="col-md-2">
+						{{ order.status }}
+					</div>
+					<div class="col-md-2">
+						<button class="zappi-button" ng-click="page.account.orders.current = (page.account.orders.current==order) ? null : order">{{ (page.account.orders.current==order) ? 'Hide Details' : 'Show Details' }}</button>
+					</div>
+				</div>
+				<div class="line-space-above zappi-well grey" ng-show="page.account.orders.current==order">
+					<div class="row">
+						<div class="col-md-8 zappi-light-grey background force z-border-radius">
+							<div class="line-space-above">
+								<zappi-survey-summary order-summary="order_summary" custom-classes="grey"></zappi-survey-summary>
+							</div>
+						</div>
+						<div class="col-md-4 zappi-form-right-panel contact-summary">
+						  	<section class="config-quote-box grey">
+				    			<h2 class="section-title">Billing Details</h2>
+					    		<ul class="form-question-list">
+									<li class="zappi-form-row">
+										<h3 class="contact-title">First Name</h3>
+										<div class="detail">{{ page.account.details.forname }}</div>
+									</li>
+									<li class="zappi-form-row">
+										<h3 class="contact-title">Last Name</h3>
+										<div class="detail">{{ page.account.details.surname }}</div>
+									</li>
+									<li class="zappi-form-row">
+										<h3 class="contact-title">Job Title</h3>
+										<div class="detail">{{ page.account.details.job_types.selected.key }}</div>
+									</li>
+									<li class="zappi-form-row">
+										<h3 class="contact-title">Email</h3>
+										<div class="detail">{{ page.account.details.email }}</div>
+									</li>
+									<li class="zappi-form-row">
+										<h3 class="contact-title">Telephone</h3>
+										<div class="detail">{{ page.account.details.telephone }}</div>
+									</li>
+									<li class="zappi-form-row">
+										<h3 class="contact-title">Company Name</h3>
+										<div class="detail">{{ page.account.details.company_name }}</div>
+									</li>
+									<li class="zappi-form-row">
+										<h3 class="contact-title">Billing Address 1</h3>
+										<div class="detail">{{ page.account.details.company_address_1 }}</div>
+									</li>
+									<li class="zappi-form-row">
+										<h3 class="contact-title">Billing Address 1</h3>
+										<div class="detail">{{ page.account.details.company_address_2 }}</div>
+									</li>
+									<li class="zappi-form-row">
+										<h3 class="contact-title">Billing Postcode</h3>
+										<div class="detail">{{ page.account.details.company_postcode }}</div>
+									</li>
+								</ul>
+							</section>
+							<section class="config-quote-box grey">
+							    <div class="price-container" ng-class="{ 'is-calculating' : priceIsUpdating }" ng-hide="problems.length>0">
+							      <div class="quote-label">Price</div>
+							      <div class="quote-value">£5000</div>
+							    </div>
+							    <div class="duration-container" ng-class="{ 'is-calculating' : priceIsUpdating }" ng-hide="problems.length>0">
+							      <div class="quote-label">Ready In</div>
+							      <div class="quote-value">8hrs</div>
+							    </div>
+							   	<div class="text-center">VAT: £500 @ 20%</div>
+						  	</section>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+

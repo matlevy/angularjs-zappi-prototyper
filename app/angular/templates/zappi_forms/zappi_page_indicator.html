@@ -1,0 +1,8 @@
+<div class="zappi-page-indicator">
+	<ul class="indicators">
+		<li class="indicator" ng-repeat="page in formPageModel.pages track by $index">
+			<a class="indicator-link" ng-class="{ 'can-goto-page' : canGotoPage(page), 'is-current' : isCurrentPage(page) }" ng-click="gotoPage(page)">{{ page.id }}</a>
+		</li>
+	</ul>
+	<span class="page-title">{{ formPageModel.current_page.title }}</span>
+</div>

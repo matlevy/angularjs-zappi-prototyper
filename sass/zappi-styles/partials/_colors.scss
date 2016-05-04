@@ -1,0 +1,130 @@
+$white: #FFFFFF;
+$light: #FEFEFE;
+$dark: #111111;
+$mid: #CCCCCC;
+
+@mixin zappi-color($name,$color){
+	.zappi-#{$name} {
+		&.background {
+			background-color: $color;
+			&.force {
+				background-color: $color !important;
+			}
+		}
+		&.colored-text {
+			color: $color;
+			&.force {
+				color: $color !important;
+			}
+		}
+		&.border {
+			border-color: $color;	
+			&.force {
+				border-color: $color !important;
+			}
+		}
+		&.links {
+			a {
+				color: $color;
+			}
+		}
+	}
+	.zappi-#{$name}-bg {
+		background-color: $color;
+	}
+	.zappi-#{$name}-txt {
+		color: $color;
+	}
+	.zappi-#{$name}-border,
+	.zappi-#{$name}-bdr {
+		border-color: $color;
+	} 
+}
+
+@mixin zappi-stripes($name,$color_1, $color_2){
+	.zappi-stripes-#{$name} {
+		&.background {
+			background: repeating-linear-gradient(
+			  45deg,
+			  $color_1,
+			  $color_2 10px
+			);
+		}
+	}
+}
+
+@mixin zappi-color-hover($name,$color){
+	.zappi-#{$name}-hover {
+		
+		&.background:hover {
+			background-color: $color;
+		}	
+		&.colored-text:hover {
+			color: $color !important;
+			list-style-color: $color;
+		}
+		&.border:hover {
+			border-color: $color;	
+		}
+
+		&.force {
+			&.background:hover {
+				background-color: $color !important;
+			}	
+			&.colored-text:hover {
+				color: $color !important;
+				list-style-color: $color !important;
+			}
+			&.border:hover {
+				border-color: $color !important;	
+			}
+		}
+	}
+}
+
+@include zappi-color( $name: 'white', $color: $white );
+@include zappi-color( $name: 'light', $color: $light );
+@include zappi-color( $name: 'dark', $color: $dark );
+@include zappi-color( $name: 'mid', $color: $mid );
+
+@include zappi-color( $name: 'white', $color: rgb(254,254,254) );
+@include zappi-color( $name: 'light-grey', $color: rgb(240,240,240) );
+@include zappi-color( $name: 'grey', $color: #CCCCCC );
+@include zappi-color( $name: 'dark-grey', $color: rgb(100,100,100) );
+@include zappi-color( $name: 'black', $color: rgb(54,54,54) );
+@include zappi-color( $name: 'black-50', $color: rgba(54,54,54,0.5) );
+@include zappi-color( $name: 'pink', $color: #EC1687 );
+@include zappi-color( $name: 'red', $color: #FC0D1B );
+@include zappi-color( $name: 'yellow', $color: #EEE54D );
+@include zappi-color( $name: 'green', $color: #22C944 );
+@include zappi-color( $name: 'orange', $color: #ff9933 );
+@include zappi-color( $name: 'blue', $color: #0da8df );
+@include zappi-color( $name: 'blue-alpha', $color: rgba(94, 205, 245, 0.6) );
+@include zappi-color( $name: 'error', $color: #CC0000 );
+@include zappi-color( $name: 'disabled', $color: rgb(240,240,240) );
+
+@include zappi-stripes( $name: 'blue', $color_1: rgb(94, 205, 245), $color_2: darken(rgb(94, 205, 245),15%) );
+
+@include zappi-color-hover( $name: 'white', $color: rgb(254,254,254) );
+@include zappi-color-hover( $name: 'black', $color: rgb(54,54,54) );
+@include zappi-color-hover( $name: 'blue', $color: darken(rgb(94, 205, 245), 15%) );
+@include zappi-color-hover( $name: 'white', $color: rgb(254,254,254) );
+@include zappi-color-hover( $name: 'grey', $color: darken(#CCCCCC, 15%) );
+@include zappi-color-hover( $name: 'light-grey', $color: darken(rgb(240,240,240), 15%) );
+@include zappi-color-hover( $name: 'orange', $color: darken(#ff9933, 15%) );
+
+.white-text {
+	color: $white;
+}
+
+.light-text {
+	color: $light;
+}
+
+.dark-text {
+	color: $dark;
+}
+
+.mid-text {
+	color: $mid;
+}

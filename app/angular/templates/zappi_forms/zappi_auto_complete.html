@@ -1,0 +1,13 @@
+<div class="zappi-form-row" ng-show="isVisible">
+	<div class="zappi-auto-complete">
+		<div class="" ng-show="selected==null">
+			<input class="text-input search" ng-model="searchText" placeholder="{{ placeHolder }}"></input>
+			<zappi-single-select-option ng-show="searchText.length>=2 || showAll==true" options="options" filter="search" selected="selected" button-class="as-tag" is-visible="isVisible"></zappi-single-select-option>
+			<div class="line-space-below" ng-show="showAll==false"><a class="all-options-link" ng-click="toggleShowAll()">Show me all options available</a></div>
+		</div>
+		<div ng-show="selected!=null" class="zappi-button-group"> 
+			<button type="button" class="zappi-button as-tag selected">{{ getLabel(selected) }}</button>
+			<button type="button" class="zappi-button as-tag interaction-action" ng-click="clearSelected()">Change</button>
+		</div>
+	</div>
+</div>

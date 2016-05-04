@@ -1,0 +1,27 @@
+<proto-customise-header header-skin="linknow-full" page-model="page"></proto-customise-header>
+<div class="container" ng-controller="LinkNowCustomQuestionProtoTypeController">
+
+	<div class="row zappi-styles zappi-form mmr">
+		<div class="col-md-8">
+		  <zappi-page-indicator form-page-model="models.form"></zappi-page-indicator>
+		</div>
+	</div>
+
+	<div class="row zappi-styles zappi-form linknow">
+		<div class="col-md-8 form-left-panel audience-configuration">
+			<!--<zappi-tutorial tutorial-model="models.view.tutorial" start-label="Yes, Guide Me Through This" close-label="No, Don't show this again">
+			<h2>Step-By-Step Guide</h2>
+			If you've never used this form before, we can give you step-by-step guide and help you completing the survey setup.
+			</zappi-tutorial>-->
+			<linknow-form models="models"></linknow-form>
+
+			<zappi-form-page page-id="3" form-page-model="models.form" page-title="Create Your Questions" page-index="2">
+				<zappi-page-introduction></zappi-page-introduction>
+				<zappi-custom-question questions="models.choices.questions" tutorial-model="models.form.tutorial"></zappi-custom-question>
+			</zappi-form-page>
+
+		</div>
+	 	<de-right-panel-placeholder  page-navigation-model="models.form"></de-right-panel-placeholder>
+	</div>  
+
+</div>

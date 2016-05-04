@@ -1,0 +1,16 @@
+/* line 1, ../../../sass/prototype-canvas.scss */
+body {
+  background-color: #f8f8f8;
+}
+
+/* line 5, ../../../sass/prototype-canvas.scss */
+header {
+  padding-bottom: 15px;
+  height: 116px;
+  background-color: #363636;
+}
+
+/* line 11, ../../../sass/prototype-canvas.scss */
+.container {
+  padding-top: 10px;
+}

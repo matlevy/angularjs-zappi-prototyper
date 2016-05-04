@@ -1,0 +1,13 @@
+.zappi-notification {
+	
+	@extend .zappi-well;
+	@extend .typography.regular-text;
+	@extend .border;
+	@extend .border.thin;
+	@extend .zappi-blue.border.force;
+	@extend .zappi-dark.colored-text.force;
+	@extend .zappi-lightgrey.background.force;
+
+	margin-top: 0 !important;
+	padding: 1rem;
+}

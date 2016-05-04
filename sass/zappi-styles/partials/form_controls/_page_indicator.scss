@@ -1,0 +1,95 @@
+.zappi-page-indicator {
+
+	@include float-box(100%);
+	@extend .typography.medium-text;
+
+	height: 10rem;
+
+	.page-title, .page-subtitle {
+		padding-top: 2rem;
+		display: inline-block;
+		float: left;
+		position: relative;
+	}
+
+	.page-title {
+		@extend .typography.large-text;
+	}
+
+	.indicators {
+
+		@extend .z-reset-margins;
+		@extend .z-reset-padding;
+		@extend .single-line-space-above;
+		@extend .double-line-space-below;
+
+		display: inline-block;
+		position: relative;
+		float: right;
+
+		height: 3rem;
+
+		.indicator {
+
+			@extend .z-reset-margins;
+
+			position: relative;
+			margin-right: 1rem;
+			display: inline;
+			float: left;
+
+			&:last-of-type {
+				margin-right: 0;
+			}
+
+			min-width: 3rem;
+			min-height: 3rem;
+
+			.indicator-link {
+
+				display: inline-block;
+				position: relative;
+				float: left;
+
+				@extend .zappi-grey-bg;
+				@extend .zappi-white-txt;
+				@extend .typography.medium-text;
+
+				text-align: center;
+				width: 3rem;
+				height: 3rem;
+				border-radius: 1.5rem;
+				padding-top: 0.8rem;
+
+				text-decoration: none;
+
+				&.can-goto-page {
+					@extend .zappi-black-bg;
+					@extend .zappi-white-txt;
+				}
+
+				&.is-current {
+					@extend .zappi-blue-bg;
+				}
+
+				&.started {
+					@extend .zappi-blue-bg;
+				}
+			}
+		}
+
+		&.float-left {
+			float: left;
+			&.indicator {
+				float: left;
+			}
+		}
+
+		&.float-center {
+			float: none;
+			margin-left: auto;
+			margin-right: auto;
+		}
+	}
+
+}

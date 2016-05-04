@@ -1,0 +1,37 @@
+.zappi-button-base {
+	display: inline-block;
+	@extend .z-border-radius;
+	@extend .z-reset-padding;
+	@extend .z-reset-margin;
+	@extend .z-input-widths;
+	@extend .zappi-blue.background;
+	@extend .zappi-blue-hover.background;
+	@extend .zappi-white-hover.colored-text;
+	@extend .white-text;
+	@extend .typography.medium-text;
+	
+	text-decoration: none;
+	text-transform: uppercase;
+	padding: 1rem;
+	border: 0px;
+	-webkit-transition: color 0.2s, background-color 0.2s;
+	transition: background-color 0.2s, color 0.2s;
+	outline: none;
+
+	&:focus {
+		outline: none;
+	}
+
+	&.as-tag {
+		border-radius: 2rem;
+		padding: 0.8rem;
+		padding-left: 10px;
+		padding-right: 10px;
+		@extend .typography.small-text;
+	}
+}
+
+.btn {
+	@extend .zappi-button-base;
+	@extend .zappi-blue.background.force;
+}

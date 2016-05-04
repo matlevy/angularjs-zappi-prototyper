@@ -1,0 +1,39 @@
+{
+	"road_map" : [ { "key": "Plants", "children" : [
+		{ "key" : "Vegetables", "children" : [
+			{ "key" : "Beetroot", "value" : "beetroot", "chart_path" : "/prototypes/fluid/charts/01.svg" },
+			{ "key" : "Turnip", "value" : "turnip", "chart_path" : "/prototypes/fluid/charts/02.svg"  },
+			{ "key" : "Carrot", "value" : "carrot", "chart_path" : "/prototypes/fluid/charts/03.svg"  },
+			{ "key" : "Peas", "value" : "peas", "chart_path" : "/prototypes/fluid/charts/04.svg"  },
+			{ "key" : "Mushrooms", "value" : "mushrooms", "chart_path" : "/prototypes/fluid/charts/05.svg"  }
+		] },
+		{ "key" : "Fruits", "children" : [
+			{ "key" : "Bannanas", "value" : "beetroot", "chart_path" : "/prototypes/fluid/charts/06.svg"  },
+			{ "key" : "Apples", "value" : "turnip", "chart_path" : "/prototypes/fluid/charts/07.svg"  },
+			{ "key" : "Oranges", "value" : "carrot", "chart_path" : "/prototypes/fluid/charts/08.svg"  },
+			{ "key" : "Pears", "value" : "pears", "chart_path" : "/prototypes/fluid/charts/09.svg"  },
+			{ "key" : "Pineapples", "value" : "pineapples", "chart_path" : "/prototypes/fluid/charts/10.svg"  },
+			{ "key" : "Strawberries", "value" : "strawberries", "chart_path" : "/prototypes/fluid/charts/11.svg"  }
+		] }
+	] }, { "key": "Animals", "children" : [
+		{ "key" : "Primates", "children" : [
+			{ "key" : "Apes", "value" : "apes", "chart_path" : "/prototypes/fluid/charts/12.svg"  },
+			{ "key" : "Monkeys", "value" : "monkeys", "chart_path" : "/prototypes/fluid/charts/13.svg"  },
+			{ "key" : "Chimpanzees", "value" : "chimpanzees", "chart_path" : "/prototypes/fluid/charts/14.svg"  }
+		] },
+		{ "key" : "Mammals", "children" : [
+			{ "key" : "Lions", "value" : "lions", "chart_path" : "/prototypes/fluid/charts/15.svg"  },
+			{ "key" : "Tigers", "value" : "tigers", "chart_path" : "/prototypes/fluid/charts/16.svg"  },
+			{ "key" : "Giraffes", "value" : "giraffes", "chart_path" : "/prototypes/fluid/charts/17.svg"  },
+			{ "key" : "Whales", "value" : "whales", "chart_path" : "/prototypes/fluid/charts/18.svg"  },
+			{ "key" : "Dogs", "value" : "dogs", "chart_path" : "/prototypes/fluid/charts/01.svg"  },
+			{ "key" : "Cats", "value" : "cats", "chart_path" : "/prototypes/fluid/charts/02.svg"  }
+		] },
+		{ "key" : "Birds", "children" : [
+			{ "key" : "Eagles", "value" : "eagles", "chart_path" : "/prototypes/fluid/charts/04.svg"  },
+			{ "key" : "Ostriches", "value" : "ostriches", "chart_path" : "/prototypes/fluid/charts/06.svg"  },
+			{ "key" : "Seagulls", "value" : "seagulls", "chart_path" : "/prototypes/fluid/charts/08.svg"  },
+			{ "key" : "Starlings", "value" : "starlings", "chart_path" : "/prototypes/fluid/charts/10.svg"  }
+		] }
+	] } ]
+}

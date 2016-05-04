@@ -1,0 +1,9 @@
+<nav class="my-account-navigation">
+	<ul>
+		<li><button class="my-reports-button {{ route.prototype_name == 'my-reports' ? 'selected zappi-icon_books-zappigrey icon-button-selected' : 'zappi-icon_books' }}" ng-click="gotoPage('my-reports')">Reports</button></li>
+		<li><button class="my-orders-button {{ route.prototype_name ==  'my-orders' ? 'selected zappi-icon_basket-zappigrey icon-button-selected' : 'zappi-icon_basket' }}" ng-click="gotoPage('my-orders')">Orders</button></li>
+		<li><button class="my-credits-button {{ route.prototype_name ==  'my-credits' ? 'selected zappi-icon_register-zappigrey icon-button-selected'  : 'zappi-icon_register' }}" ng-click="gotoPage('my-credits')">Credits</button></li>
+		<li><button class="my-details-button {{ route.prototype_name == 'my-contact-details' ? 'selected zappi-icon_contact-zappigrey icon-button-selected' : 'zappi-icon_contact' }}" ng-click="gotoPage('my-contact-details')">My Details</button></li>
+		<li><button class="my-account-settings-button {{ route.prototype_name == 'my-account' ? 'selected zappi-icon_configure-zappigrey icon-button-selected' : 'zappi-icon_configure' }}" ng-click="gotoPage('my-account')">Account Settings</button></li>
+	</ul>
+</nav>

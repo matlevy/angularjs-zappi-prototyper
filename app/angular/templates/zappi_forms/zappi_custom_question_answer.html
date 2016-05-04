@@ -1,0 +1,11 @@
+<div class="row question-answer sprite png">
+	<div ng-show="question.hasAnswer(answer) && question.exclusiveAnswer!=answer" class="col-md-1 answer-position">
+		<button class="position-button" title="{{ question.randomise ? 'Fix or Un-fix the position of this answer' : '' }}" ng-class="{ 'random': question.randomise && !answer.isFixed }" ng-click="answer.toggleFixed( question.randomise )">{{ question.answers.indexOf(answer) + 1 }}</button>
+	</div>
+	<div class="{{ (question.hasAnswer(answer) && question.exclusiveAnswer!=answer) ? 'col-md-9' : 'col-md-12' }}">
+		<input class="answer-input" placeholder="{{ placeholder != null ? placeholder : 'type an answer for your question and press \'enter\'' }}" ng-model="answer.key">
+	</div>
+	<div ng-show="question.hasAnswer(answer) && question.exclusiveAnswer!=answer" class="col-md-2">
+		<button class="zappi-button secondary-action stretch" style="min-width:0px" ng-click="question.removeAnswer(answer)">Remove</button>
+	</div>
+</div>

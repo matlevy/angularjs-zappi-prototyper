@@ -1,0 +1,157 @@
+<proto-customise-header header-title="Configure Your Survey" page-model="page"></proto-customise-header>
+
+<div class="container zappi-styles zappi-form zappi-page zappi-target" ng-controller="TargetNewController">
+
+	<div class="row">
+		<div class="col-md-8">
+		  <zappi-page-indicator form-page-model="models.form"></zappi-page-indicator>
+		</div>
+	</div>
+
+	<div class="row">
+
+		<div class="col-md-8 form-left-panel audience-configuration">
+
+			<section class="zappi-form-section no-bottom-padding" id="target-survey">
+				<div class="row line-space-below">
+					<div class="col-md-2"><div class="zappi-question">Country</div></div>
+					<div class="col-md-10"><zappi-auto-complete search-text="data.country_search" options="data.countries" selected="data.selected_country" button-class="as-tag" is-visible="true" place-holder="Search for a country, e.g. US"></zappi-auto-complete></div>
+				</div>
+			</section>
+
+			<section class="zappi-form-section" ng-show="data.selected_target_group!=null">
+				<div class="row">
+					<div class="col-md-9">
+						<h3 class="zappi-question">{{ data.selected_target_group.name }}</h3>
+						<div>{{ data.selected_target_group.description }}</div>
+					</div>
+					<div class="col-md-3">
+						<button ng-click="startEditTarget()" class="zappi-button interaction-action as-tag stretch">Change</button>
+					</div>
+				</div>
+			</section>
+
+			<section class="zappi-form-section" ng-show="data.form.mode=='edit'">
+				<div class="row double-line-space-below">
+					<div class="col-md-12 ">
+						<input class="zappi-text-input stretch" ng-hide="data.page.show_categories" placeholder="Search: e.g. technology" ng-model="data.target_search.$"/>
+						<div>
+							<button class="zappi-button pad-right" ng-click="toggleCategories()">{{ data.page.show_categories ? 'Show Target Groups' : 'Show Categories' }}</button>
+							<button ng-show="data.target_search.collection_name!=''" class="zappi-button secondary-action" ng-click="clearTargetFilter()">Remove Category Filters</button>
+						</div>
+				    </div>
+				</div>
+
+				<div ng-if="!data.page.show_categories">
+					<div class="row line-space-below">
+						<div class="col-md-12">
+							<div class="row target-group" ng-repeat="target_group in data.target_groups | filter:data.target_search | limitTo:data.target_maxcount ">
+								<a href="javascript://" ng-click="selectTargetGroup(target_group)">
+									<div class="col-md-11">
+										<div class="row">
+											<div class="col-md-12">
+												<h3 class="target-group-name">{{ target_group.name }}</h3>
+												<div class="target-group-decription">{{ target_group.description }}</div>
+											</div>
+										</div>
+									</div>
+									<div class="col-md-1">
+										<div class="indicator-area">
+											<div class="indicator" ng-class="{ 'selected' : target_group==data.selected_target_group }"></div>				
+										</div>
+									</div>
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="row doubl-line-space-below" ng-show="(data.target_groups | filter:data.target_search | limitTo:data.target_maxcount).length < data.target_groups.length">
+						<div class="col-md-12">
+							<button class="zappi-button stretch" ng-click="showMoreTargetGroups()">Show More</button>
+						</div>
+					</div>
+				</div>
+
+				<div ng-if="data.page.show_categories" class="line-space-below">
+					<div class="row line-space-below">
+						<div class="col-md-12">
+							<div class="row">
+								<a href="javascript://" ng-click="selectTargetGroupCategory(category)" class="zappi-dark colored-text" ng-repeat="category in data.target_categories">
+									<div class="col-md-6">
+										<h3 class="target-category">{{ category }}</h3>
+									</div>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+			</section>
+
+			<section class="zappi-form-section no-bottom-padding" ng-show="data.form.mode!='edit' && data.dimensions.length>0">
+				<ul class="form-question-list">
+					<li><div class="zappi-question">
+						Customise the types of participents included (age, gender or region)?	            			
+						<zappi-toggle-button selected-label="YES" unselected-label="NO" selected="data.customise_target_options"></zappi-toggle-button>
+					</div></li>
+				</ul>
+			</section>
+
+			<div class="" ng-repeat="dimension in data.dimensions" ng-show="data.form.mode!='edit' && data.dimensions.length>0">	
+
+				<section class="zappi-form-section no-bottom-padding faded-primary-color-bg border thin" ng-show="data.view_target_segments">
+					<h4 class="line-space-below zappi-question">{{ getDimensionQuestion( dimension.type ) }} Segmentation</h4>
+					<div class="line-space-below"></div>
+					<div class="row" ng-show="dimension.dimensions.length<=4">
+						<div class="col-md-6 line-space-below" ng-repeat="option in (dimension.dimensions.length>6 ? dimension.selected : dimension.dimensions )">
+							<div><zappi-pie-panel panel-value="option.percent_of_group"></zappi-pie-panel></div>
+							<div style="text-align: center"><h4><b>{{ getDimensionLabel(option) }}:</b> {{ option.percent_of_group * 100 | number:0  }}%</h4></div>
+						</div>
+					</div>
+					<div ng-show="dimension.dimensions.length>4">
+						<div class="row ">
+							<div class="col-md-6 line-space-below" ng-repeat="option in ( data.page.hide_deselected ? dimension.selected : dimension.dimensions )">
+								<div class="row">
+									<div class="col-sm-6 zappi-question">
+										{{ getDimensionLabel(option) }}
+									</div>
+									<div class="col-sm-4">
+										<zappi-pie-panel panel-value="option.percent_of_group"></zappi-pie-panel>
+									</div>
+									<div class="col-sm-2 zappi-question">
+										{{ option.percent_of_group * 100 | number:0  }}%
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<section class="zappi-form-section no-bottom-padding" ng-show="data.customise_target_options">
+					<div class="row line-space-below" ng-show="dimension.visible==true">
+						<div class="col-md-2"><h4>{{ getDimensionQuestion( dimension.type ) }}</h4></div>
+						<div class="col-md-10">
+							<zappi-multi-select-option is-visible="dimension.expanded" label-function="getDimensionLabel" on-selected-change="onTargetAudienceChanged" allow-select-all="false" 
+		            		select-all-by-default="true" options="dimension.dimensions" selected="dimension.selected" all-label="{{getDimensionAllLabel(dimension.type)}}"></zappi-multi-select-option>
+		            	</div>
+					</div>
+				</section>
+
+			</div>
+
+		</div>
+
+	 	<de-right-panel-placeholder page-navigation-model="data.page">
+
+	 		<section class="zappi-panel" ng-show="data.form.mode!='edit' && data.dimensions.length>0">
+	 			<div class="">Display Participent Segmentation:
+					<zappi-toggle-button selected-label="YES" unselected-label="NO" selected="data.view_target_segments"></zappi-toggle-button>
+				</div>
+				<div class="line-space-above" ng-show="data.view_target_segments && data.customise_target_options">Hide Unselected Items:
+					<zappi-toggle-button selected-label="YES" unselected-label="NO" selected="data.page.hide_deselected"></zappi-toggle-button>
+				</div>
+	 		</section>
+	 		
+	 	</de-right-panel-placeholder>
+	</div>  
+
+</div>

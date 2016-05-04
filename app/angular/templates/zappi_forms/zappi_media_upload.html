@@ -1,0 +1,19 @@
+<div class="zappi-form-row" ng-show="isVisible">
+	<div class="zappi-media-upload">
+		<div class="state upload" ng-show="mediaObject!=null ? (mediaObject.state==states.READY || mediaObject.state==states.SELECTED) : true ">
+			<div class="upload-button-container">
+				<button class="zappi-button stretch upload-button">{{ label }}</button>
+			</div>
+		</div>
+		<div class="state uploading" ng-show="mediaObject.state==states.UPLOADING">
+			<zappi-progress-bar progress="mediaObject.uploadProgress"></zappi-progress-bar>
+		</div>
+		<div class="uploaded sprite png" ng-show="mediaObject.state==states.UPLOADED">
+			<div ng-transclude></div>
+			<button class="zappi-button pad-right line-space-above" ng-show="mediaObject.canSave && mediaObject.saved!=true && mediaObject.meta.context!=null" ng-click="saveMeta(mediaObject)" ng-show="mediaObject.saved==false">Save</button>
+			<button class="zappi-button interaction-action pad-right line-space-above" ng-click="editMeta(mediaObject)" ng-show="mediaObject.canSave && mediaObject.saved==true">Edit</button>
+			<button class="zappi-button pad-right line-space-above" ng-click="previewMedia(mediaObject)" ng-show="mediaObject.saved==true">Preview</button>
+			<button class="trash-button trash_icon_small" ng-click="removeMedia()">Remove</button>
+		</div>
+	</div>
+</div>

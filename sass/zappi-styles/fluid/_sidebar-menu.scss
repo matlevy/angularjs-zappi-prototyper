@@ -1,0 +1,179 @@
+.sidebar-menu {
+
+	a {
+		text-decoration: none !important;
+	}
+	
+	.buttons {
+
+		position: relative;
+		margin-top: 2rem;
+		margin-bottom: 2rem;
+		text-align: center;
+
+		.home, .back, .stared {
+			padding: 1rem;
+			//background-color: white;
+			border-radius: 3rem;
+			width: 6rem;
+			display: inline-block;
+		}
+
+		* {
+			color: #303030 !important;
+		}
+
+	}
+
+	.menu {
+
+		a {
+			text-decoration: none !important;
+		}
+
+		* {
+			color: #303030 !important;
+		}
+
+		position: relative;
+		width: 30rem;
+		float: left;
+
+		border-top: 1px dotted #EDEDED;
+
+		.menu-item {
+
+			box-sizing: border-box;
+
+			padding: 2rem;
+			width: 100%;
+			//border-bottom: 1px dotted #EDEDED;
+			//transition: 0.5s;
+			overflow: auto;
+
+			&.selection  {
+				padding: 0;
+				min-height: 60px;
+			}
+
+			.has-children {
+				float: right;
+			}
+
+			.add-to-page {
+				float: right;	
+			}
+
+			.menu-container {
+				position: relative;
+				float: left;
+				display: block;
+				width: 100%;
+				clear: both;
+				box-sizing: border-box;
+			}
+
+			.menu-item-options {
+
+				//
+				
+				overflow: hidden;
+				display: inline-block;
+				float: right;
+				box-sizing: border-box;
+				width: 56px;
+				max-height: 59px;
+				height: 59px;
+				overflow-y: hidden;
+				position: relative;
+
+				.menu-item-option {
+					
+					transition: 0.2s;
+					height: 59px;
+					opacity: 0;
+					box-sizing: border-box;
+					text-align: center;
+					position: absolute;
+					display: block;
+					top: 0;
+
+					i {
+						position: absolute;
+						left: 50%;
+						top: 50%;
+						transform: translateX(-50%) translateY(-50%);
+						transition: 0.2s;
+					}
+
+					&:nth-of-type(1){
+						right: 14px;
+						left: 0;
+					}
+
+					&:nth-of-type(2){
+						left: 41px;
+						right: 0;
+						overflow: hidden;
+						i { opacity: 0; display: none; }
+
+						&:hover {
+							left:14px;
+							i { opacity: 1; display: block; }
+						}
+					}
+
+					&.add {
+						background-color: #DEDEDE;
+						&:hover { background-color: #BEBEBE; }
+					}
+
+					&.star {
+						background-color: #f1d400;
+					}
+
+					&.stared {
+						background-color: #95c11f;
+					}
+
+				}
+
+			}
+
+			.menu-item-label {
+				display: inline-block;
+				float: left;
+				padding: 2rem;
+				padding-bottom: 0;
+				box-sizing: border-box;
+			}
+
+		}
+
+		.menu-item:hover {
+
+			background-color: white;
+			border-left: 5px solid #303030;
+
+			.menu-item-option {
+				opacity: 1;
+				top: 0; 
+				position: absolute;
+				
+			}
+
+		}
+
+	}
+
+	.menu-container {
+		width: 9000px;
+		transition: margin-left 0.2s;
+		-webkit-transition: margin-left 0.2s;
+	}
+
+	.panel {
+		@import "panels/createNewPackage";
+	}
+
+}

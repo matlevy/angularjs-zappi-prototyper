@@ -1,0 +1,47 @@
+.ff-modal-window {
+	
+	position: fixed;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	background-color: rgba(0,0,0,0.2);
+	z-index: 9999;
+
+	.modal-popup {
+		position: absolute;
+		left: 30vw;
+		right: 30vw;
+		top: 20vh;
+		bottom: 20vh;
+		padding: 2rem;
+		background-color: white;
+
+		&.save-charts {
+			top: 36vh;
+			bottom: 36vh;
+			left: 33vw;
+			right: 33vw;
+		}
+	}
+
+	.tool {
+		@extend .zappi-button;
+		width: 34px;
+		height: 34px;
+		float: right;
+		background-color: white;
+		border: 1px solid silver;
+		border-radius: 4px;
+	}
+
+	.modal-toolbar {
+		position: relative;
+		display: inline-block;
+		width: 100%;
+		border-bottom: 1px solid #FEFEFE;
+		padding-bottom: 1rem;
+		margin-bottom: 1rem;
+	}
+
+}

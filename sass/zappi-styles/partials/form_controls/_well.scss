@@ -1,0 +1,53 @@
+.zappi-well {
+
+	border: none;
+	margin-top: 20px;
+
+	@extend .z-border-radius;
+	@extend .z-reset-margin;
+
+	.well-title {
+
+		@extend .z-border-radius;
+
+		margin: 0;
+		font-size: 2rem;
+		line-height: 2rem;
+		text-align: center;
+		padding-top: 40px;
+		padding-bottom: 40px;
+		margin-bottom: 40px;
+
+	}
+
+	&.grey {
+		@extend .z-border-radius;
+		@extend .zappi-light-grey.background;
+	}
+
+	&.grey-bordered {
+		@extend .z-border-radius;
+		@extend .zappi-grey-bdr;
+		@extend .border.thin;
+	}
+
+	&.white {
+		@extend .z-border-radius;
+		@extend .zappi-white.background;
+	}
+
+	&.dark {
+		@extend .z-border-radius;
+		background-image: image-url('bg-dark.png');
+	}
+
+	&.light {
+		@extend .z-border-radius;
+		background-image: image-url('product-page-banner-bg-transparent.png');
+	}
+
+	&.bordered {
+		border: 2px solid;
+	}
+	
+}

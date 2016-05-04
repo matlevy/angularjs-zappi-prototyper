@@ -1,0 +1,21 @@
+.zappi-media-placeholder {
+	
+	@extend .stretch;
+	@extend .zappi-grey.border;
+	@extend .border.thin;
+	@extend .z-border-radius;
+	@extend .z-clear;
+
+	@include float-box(100%);
+
+	padding-top:20px;
+	padding-bottom:20px;
+
+	text-align: center;
+
+	&.small {
+		padding-top:50px;
+		padding-bottom:50px;
+	}
+
+}

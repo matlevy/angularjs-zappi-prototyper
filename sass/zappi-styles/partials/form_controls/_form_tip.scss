@@ -1,0 +1,13 @@
+.zappi-form-tip {
+	
+	@extend .line-space-below;
+	@extend .zappi-well;
+	@extend .zappi-well.grey;
+
+	.tip {
+		@extend .typography.medium-regular-text;
+		@extend .line-space-below;	
+	}
+
+	padding: 1rem;
+}

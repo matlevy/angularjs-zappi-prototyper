@@ -1,0 +1,52 @@
+
+<section class="zappi-form-section zappi-custom-question" ng-repeat="custom_question in questions">
+	<ul class="form-question-list">
+		<li>
+			<label>Question</label>
+			<input class="edit-question" ng-model="custom_question.text">
+		</li>
+		<li>
+			<label>Answers</label>
+			<zappi-custom-question-answer question="custom_question"></zappi-custom-question-answer>
+			<div class="line-space-below line-space-above">
+				<zappi-custom-question-answer question="custom_question" answer="answer" ng-repeat="answer in custom_question.answers" placeholder="Enter text for this answer or click delete." ></zappi-custom-question-answer>
+			</div>
+		</li>
+	    <li>
+	      <div class="zappi-question" ng-show="custom_question.is_multiple_choice && custom_question.answers.length>1">
+	        Becuase you have chosen to have multiple choice questions, you may want to place a specific answer at the end such as 'None of these answers'. This answer will always be last and the user will not be able to select other answers when chosing this. Would you like to do this?
+	        <zappi-toggle-button selected-label="YES" unselected-label="NO" selected="custom_question.hasExclusive"></zappi-toggle-button>
+	      </div>
+	    </li>
+	    <li>
+	      <div class="zappi-question" ng-show="custom_question.hasExclusive && custom_question.answers.length>1">
+	        <zappi-custom-question-answer question="custom_question" answer="custom_question.exclusiveAnswer" placeholder="Enter text for this answer."></zappi-custom-question-answer>
+	      </div>
+	    </li>
+	</ul>
+	<div class="sprite png typography regular-text">
+		Options:&nbsp;
+		<button class="duplicate-button duplicate" ng-click="copyQuestion( custom_question )">Copy</button>
+		<button class="trash-button trash_icon_small" ng-click="removeQuestion( custom_question )">Remove</button>
+		<button class="move-up-button move_up_icon_small" ng-click="moveQuestionUp( custom_question )" ng-show="questions.length>1">Move Up</button>
+		<button class="move-down-button move_down_icon_small" ng-click="moveQuestionDown( custom_question )" ng-show="questions.length>1">Move Down</button>
+		<button class="randomise-button random" ng-class="{ 'selected' : custom_question.randomise }" ng-click="toggleRandomise( custom_question )" ng-show="custom_question.answers.length>1">Randomised Order</button>
+		<button class="multichoice-button multichoice" ng-class="{ 'selected' : custom_question.is_multiple_choice }" ng-click="toggleMultiChocie( custom_question )" ng-show="custom_question.answers.length>1">Multi-Choice</button>
+	</div>
+</section>
+
+<section class="zappi-form-section zappi-custom-question" instructions-model="tutorialModel" instructions-title="Upload your creative" instructions-location="top" instructions-next-text="OK, Done." instructions-prev-text="Go back a step" pre-broadcast="" post-broadcast="" zappi-instructions-step ng-hide="questions.length>=maxPermitted">
+  <div class="instructions-text">
+     [[ TODO: Instructions Text ]]
+  </div>
+  <ul class="form-question-list">
+  	<li class="">
+  		<div class="zappi-question-list">
+  			<div class="question-input-area">
+  				<input class="question-input" placeholder="enter your question and press 'enter'" ng-model="newQuestionText">
+  			</div>
+  		</div>
+      	<a name="upload"></a>
+    </li>
+  </ul>
+</section>

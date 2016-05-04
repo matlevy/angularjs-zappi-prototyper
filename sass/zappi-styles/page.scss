@@ -1,0 +1,67 @@
+@import 'partials/functions';
+@import 'partials/utils';
+@import 'partials/base';
+@import 'partials/typography';
+@import 'partials/common';
+@import 'partials/animations';
+@import 'partials/border';
+@import 'partials/colors';
+
+$color-lightgrey: rgb(248, 248, 248);
+$color-darkgrey: #3f3f3f;
+$color-blue: #0da8df;
+
+@media screen and (max-width: 600px) {
+	html,body {
+		margin-top: 0 !important;
+	}
+}
+
+body {
+	background-color: rgb(248, 248, 248);
+	overflow-x: hidden;
+	left: 0;
+	right: 0;
+	position: absolute;
+}
+
+.container {
+	position: relative;
+}
+
+.row-centered {
+    text-align:center;
+}
+
+.col-centered {
+    display:inline-block;
+    float:none;
+    text-align:left;
+    margin-right:-4px;
+}
+
+.zappi-page {
+	@import 'new-layout/navigation_bar';
+	@import 'new-layout/header';
+	@import 'new-layout/content';
+	@import 'new-layout/contact';
+	@import 'new-layout/survey_summary';
+	@import 'new-layout/account';
+	@import 'new-layout/footer';
+	@import 'new-layout/products';
+	@import 'new-layout/notification';
+	@import 'new-layout/page_copy';
+	@import 'new-layout/order_summary';
+	@import 'new-layout/domain_dashboard';
+	@import 'new-layout/comment-list';
+	@import 'new-layout/domain_contacts';
+	@import 'new-layout/team';
+	@import 'new-layout/target';
+	@import 'new-layout/skins';
+	@import 'new-layout/product/index';
+	@import 'new-layout/secondary_navigation_header';
+
+	//min-height: 100vh;
+}
+
+@import 'partials/overrides';

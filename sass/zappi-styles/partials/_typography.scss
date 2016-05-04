@@ -1,0 +1,34 @@
+.typography {
+	&.small-text {
+		line-height: 2rem;
+		font-size: 2rem;
+		margin-bottom: 1rem;
+	}
+	&.small-text {
+		font-size: 1.2rem;
+		line-height: 1.2rem;
+	}
+	&.medium-text {
+		font-size: 1.5rem;
+		line-height: 1.5rem;
+	}
+	&.medium-regular-text {
+		line-height: 2rem;
+		font-size: 1.8rem;
+		margin-bottom: 1rem;
+	}
+	&.regular-text {
+		line-height: 3rem;
+		font-size: 2rem;
+		margin-bottom: 1rem;
+	}
+	&.large-text {
+		line-height: 3rem;
+		font-size: 3rem;
+		margin-bottom: 1rem;
+	}
+	&.big-text {
+		line-height: 4rem;
+		font-size: 4rem;
+	}
+}

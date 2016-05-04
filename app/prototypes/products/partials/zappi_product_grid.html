@@ -1,0 +1,8 @@
+<div class="row zappi-product-grid" style="position: relative; {{ getGridHeightStyle( (items | filter:filter).length, 3, 550 ) }}">
+	<div class="col-md-4 grid-box" ng-repeat="product in items | filter:filter" style="position: absolute; {{ getPositionStyle( $index, 3, 550 ) }}">
+		<div class="grid-box-container">
+			<zappi-product-box product="product"></zappi-product-box>
+		</div>
+	</div>
+	<div ng-transclude></div>
+</div>

@@ -1,0 +1,69 @@
+@mixin modal-scaled( $name, $width, $height ){
+	&.#{$name} {
+		position: absolute;
+		left: ( (100% - $width) / 2);
+		right: ((100% - $width) / 2);
+		top: ((100% - $height) / 2);
+		bottom: ((100% - $height) / 2);
+		border-radius: 4px;
+	}
+}
+
+@mixin modal-fixed( $name, $width, $height ){
+	&.#{$name} {
+		height: $height;
+		width: $width;
+		margin-left: auto;
+		margin-right: auto;
+		transform: translateY(50%);
+		border-radius: 4px;
+	}
+}
+
+.zappi-modal-container,
+&.zappi-modal-container {
+
+	z-index: 1000;
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100vh;
+	width: 100vw;
+  
+	background-color: rgba(0,0,0,0.2);
+
+	.zappi-modal-section {
+		@extend .zappi-white.background;
+		@extend .z-border-radius;
+		@extend .zappi-light.border;
+		@extend .border.thin;
+		
+		box-shadow: 0px 0px 50px rgba(0,0,0,0.1);
+
+		padding: 1rem;
+		@include modal-scaled('full',100%,100%);
+		@include modal-scaled('margined',90%,70%);
+		@include modal-fixed('medium-fixed',700,500);
+		@include modal-fixed('alert',500px,200px);
+		@include modal-fixed('form-popout',1100px,500px);
+
+		&.right-popout-fixed-medium {
+			right: 0;
+			width: 800px;
+			top: 50%;
+			left: 50%;
+			border-radius: 1rem;			
+			position: absolute;
+			background-color: rgb(248, 248, 248);
+			transform: translateY(-50%) translateX(-50%);
+			.modal-button {
+				margin-left: auto;
+				position: absolute;
+				left: 50%;
+				bottom: -3rem;
+				transform: translateX(-50%)
+			}
+		}
+	}
+ 
+}

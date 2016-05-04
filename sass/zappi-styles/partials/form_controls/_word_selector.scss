@@ -1,0 +1,52 @@
+.zappi-word-selector {
+
+	@include float-box(100%);
+
+	.text-input {
+		@extend .zappi-text-input;
+		@extend .stretch;
+		margin-bottom: 1rem;
+	}
+
+	.instructions {
+		@extend .typography.medium-text;
+		@extend .line-space-below;
+	}
+
+	.suggested-words {
+		@extend .zappi-button-group;
+		//@extend .zappi-form-row;
+
+		&.zappi-button {
+			@extend .dark-text;
+			&.custom {
+				@extend .zappi-orange.background;
+				@extend .zappi-orange-hover.background;
+			}
+		}
+
+		@extend .multi-select;
+	}
+
+	.selected-words {
+
+	}
+
+	.all-options-link {
+		
+		@extend .typography.medium-text;
+		@extend .z-border-radius;
+		@extend .z-reset-margins;
+		@extend .zappi-black.background;
+		@extend .zappi-white.colored-text;
+
+		padding: 0.7rem;
+		padding-left: 2rem;
+		padding-right: 2rem;
+		border-radius: 3rem;
+
+		display: inline-block;
+		float: left;
+		position: relative;
+	}
+}

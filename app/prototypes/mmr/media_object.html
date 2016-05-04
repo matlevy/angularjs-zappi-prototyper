@@ -1,0 +1,32 @@
+<div>
+  <ul class="form-question-list line-space-above">
+    <li class="zappi-form-row">
+      <div class="line-space-below"></div>
+      <div class="zappi-question">Pack Range Image</div>
+      <zappi-media-upload is-visible="true" on-media-chosen="onPackRangeChosen" media-object-factory="mediaObjectService.factory" on-media-remove="onPackRangeRemoved">
+        <zappi-media-placeholder media="mediaObject" custom-class="small"></zappi-media-placeholder>
+      </zappi-media-upload>
+    </li>
+    <li class="zappi-form-row">
+      <div class="zappi-question">Would you like to add product information for this pack different from that entered at the beginning?
+      <zappi-toggle-button selected-label="YES" unselected-label="NO" selected="useAltProductInfo"></zappi-toggle-button>
+      </div>
+    </li>
+  	<li class="zappi-form-row" ng-show="useAltProductInfo">
+  		<div class="zappi-question">Brand Name:</div>
+      <zappi-text-input type="single" label="e.g. XXX" value="mediaObject.meta.brand"></zappi-text-input>
+  	</li>
+  	<li class="zappi-form-row" ng-show="useAltProductInfo">
+      <div class="zappi-question">Pack Title:</div>
+      <zappi-text-input type="single" label="e.g. XXX" value="mediaObject.meta.pack_title"></zappi-text-input>
+    </li>
+    <li class="zappi-form-row" ng-show="useAltProductInfo">
+      <div class="zappi-question">Product Type:</div>
+      <zappi-text-input type="single" label="e.g. XXX" value="mediaObject.meta.product_type"></zappi-text-input>
+    </li>
+    <li class="zappi-form-row" ng-show="useAltProductInfo">
+      <div class="zappi-question">Product Name:</div>
+      <zappi-text-input type="single" label="e.g. XXX" value="mediaObject.meta.product_name"></zappi-text-input>
+    </li>
+  </ul>
+</div>

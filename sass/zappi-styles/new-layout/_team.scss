@@ -1,0 +1,136 @@
+.zappi-team,
+&.zappi-team {
+
+	&.team-profile-strip {
+		margin-top: 0;
+	}
+
+	&.team-profile-strip {
+		.photo-section {
+			float: left;
+		}
+		.profile-section {
+			float: right;	
+		}
+	}
+
+	&.team-profile-strip:nth-of-type(odd) {
+		.photo-section {
+			float: right;
+		}
+		.profile-section {
+			float: left;	
+		}
+	}
+
+	
+	@media screen and (max-width: 980px) {
+		.photo-section, .profile-section {
+			float: none;
+			margin-bottom: 2rem;
+			width: 100%;
+		}
+		.photo-section {
+			padding-left: 0px;
+			padding-right: 0px;
+		}
+	}
+
+	.team-profile {
+
+		margin-top: 0;
+		min-height: 0;
+
+		.profile-copy {
+
+			@extend .zappi-well;
+			@extend .zappi-white.background.force;
+
+			padding: 2rem;
+			margin-top: 4rem;
+
+			@media screen and (max-width: 600px) {
+				margin-top: 0;
+			}
+
+			.team-name {
+				@extend .typography.big-text;
+				margin-bottom: 1rem;
+				display: table;
+			}
+
+			.team-position {
+				@extend .typography.regular-text;
+				display: table;
+			}
+
+			.team-blurb {
+				@extend .typography.medium-regular-text;
+				min-height: 120px;
+				max-height: 120px;
+				display: table;
+			}
+
+			.team-buttons {
+
+			}
+
+		}
+
+	}
+
+	.team-photo {
+
+		@extend .z-border-radius;
+
+		background-repeat: none;
+		background-position: center center;
+		width: 40rem;
+		height: 40rem;
+
+		margin: 0 auto;
+
+		border-radius: 20rem;
+
+		@media screen and (max-width: 600px) {
+			width: 100%;
+			height: 30rem;
+			border-radius: 0 !important;
+			background-size: cover;
+		}
+
+	}
+
+	.team-profile-navigation {
+
+		@extend .z-clear;
+
+		padding-top: 2rem;
+
+		ul {
+			padding: 0;
+			margin: 0;
+		}
+
+		li {
+			display: inline-block;
+			padding: 0;
+			margin: 0;
+			position: relative;
+			min-height: 4rem;
+			float: none;
+		}
+
+		button {
+			color: black !important;
+		}
+
+		@media screen and (max-width: 600px) {
+			@extend .z-clear;
+			display: table;
+			position: relative;
+			float: none;
+		}
+	}
+
+}

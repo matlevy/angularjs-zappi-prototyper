@@ -1,0 +1,17 @@
+<div class="zappi-form-row" ng-show="isVisible">
+	<div class="zappi-phrase-complete">
+		<div class="sentence"><span class="copy" ng-transclude></span><!--<span class="word-marker">-->&nbsp;</span></div>
+		<ul class="phrases">
+			<li class="phrase" style="width: {{ columnWidth }}" ng-repeat="option in options">
+				<a ng-click="select(option)" href="javascript://" class="{{ option.value }}" ng-class="{ 'selected' : option==selected }">
+					<div class="option">
+						<div class="indicator-area">
+							<div class="indicator" ng-class="{ 'selected' : option==selected }"></div>				
+						</div>
+						<div class="option-label">{{ getOptionLabel(option) }}</div>
+					</div>
+				</a>
+			</li>
+		</ul>
+	</div>
+</div>

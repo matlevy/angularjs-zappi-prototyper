@@ -1,0 +1,82 @@
+.zappi-form-section-noanim,
+.zappi-page-section {
+
+	@extend .zappi-white.background;
+	@extend .z-border-radius;
+	@extend .zappi-light-grey-bdr;
+
+	padding: 30px;
+	margin-bottom: 40px;
+
+	&.light {
+		@extend .zappi-light.background;
+	}
+
+	&.dark {
+		@extend .zappi-dark.background;
+	}
+
+	&.mid {
+		@extend .zappi-mid.background;
+	}
+
+	&.white {
+		@extend .zappi-white.background;
+	}
+
+	&.black {
+		@extend .zappi-black.background;
+	}
+
+	&.dark-grey {
+		@extend .zappi-dark-grey.background;
+
+		.zappi-question {
+			@extend .zappi-white.colored-text;
+		}
+	}
+
+	&.thin-pad {
+		padding: 20px;
+	}
+
+	&.no-bottom-padding {
+		padding-bottom: 0px;
+	}
+
+}
+
+.zappi-form-section {
+
+	@extend .zappi-form-section-noanim;
+	@extend .zappi-animations.slide-down-and-fade-in-on-show;
+	@extend .zappi-animations.pop-in-on-show;
+
+	//
+
+	&.ng-enter.ng-enter-active,
+	&.ng-leave {
+		-webkit-transition: 0.8s;
+		transition: 0.8s;
+		opacity: 1;
+		max-height: 9999px;
+		padding-top:30px;
+		padding-bottom:30px;
+		transform:scale(1);
+		margin-bottom: 20px;
+	}
+
+	&.ng-move.ng-move-active,
+	&.ng-leave.ng-leave-active,
+	&.ng-enter {
+		-webkit-transition: 0.8s;
+		transition: 0.8s;
+		opacity: 0;
+		max-height: 0px;
+		padding-top:0;
+		padding-bottom:0;
+		transform:scale(0);
+		margin-bottom: 0;
+	}
+
+}

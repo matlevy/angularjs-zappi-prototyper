@@ -1,0 +1,26 @@
+.zappi-auto-complete {
+
+	@include float-box(100%);
+
+	.text-input {
+		@extend .zappi-text-input;
+		@extend .stretch;
+	}
+
+	.all-options-link {
+		@extend .typography.medium-text;
+		@extend .z-border-radius;
+		@extend .z-reset-margins;
+		@extend .zappi-black-bg;
+		@extend .zappi-white-txt;
+
+		padding: 0.7rem;
+		padding-left: 2rem;
+		padding-right: 2rem;
+		border-radius: 3rem;
+
+		display: inline-block;
+		float: left;
+		position: relative;
+	}
+}

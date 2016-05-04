@@ -1,0 +1,18 @@
+<proto-customise-header header-title="Products" page-model="page"></proto-customise-header>
+
+<div class="zappi-styles zappi-form zappi-products">
+
+	<div class="products-heading">
+
+		<div class="wizard-cta">
+			<button class="zappi-button as-tag">Find the right solution for me</button>
+		</div>
+
+	</div>
+
+	<div class="container" id="zappi-products" ng-controller="ProductDesignController">
+		<zappi-product-groups items="product_groups" selected="choices.selected_group" on-group-selected="onProductGroupChanged"></zappi-product-groups>
+		<zappi-product-grid items="products" filter="product_filter" item-selector=".zappi-product-box"></zappi-product-grid>	
+	</div>
+
+</div>

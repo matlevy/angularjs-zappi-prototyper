@@ -1,0 +1,94 @@
+<div ng-show="mediaObject.saved!=true && mediaObject.meta.context!=null">
+  <ul class="form-question-list">
+  	<li class="zappi-form-row">
+  		<div class="zappi-question">Enter a title for your media</div>
+      	<input class="zappi-text-input stretch" ng-model="mediaObject.meta.title" placeholder="e.g. Banner Advert 1"></input>
+  	</li>
+  	<li class="zappi-form-row" ng-show="mediaStages && mediaStages.length>0">
+  		<div class="zappi-question">At what stage of development is your advert currently at?</div>
+  		<zappi-form-image-select options="mediaStages" columns="2" image-height="200" selected="mediaObject.meta.stage" is-visible="true" id="stage"></zappi-form-image-select>
+  	</li>
+  	<li class="zappi-form-row" ng-show="mediaObject.meta.permitted_advert_types.length>0">
+  		<div class="zappi-question">What type of advert are you testing?</div>
+  		<zappi-single-select-option options="mediaObject.meta.permitted_advert_types" selected="mediaObject.meta.selected_advert_type"></zappi-single-select-option>
+  	</li>
+  	<li class="zappi-form-row" ng-show="mediaObject.meta.permitted_feature_types.length>0">
+  		<div class="zappi-question">Choose features your advert contain from the following:</div>
+  		<zappi-multi-select-option options="mediaObject.meta.permitted_feature_types" selected="mediaObject.meta.selected_features" all-label="Select All"></zappi-multi-select-option>
+  	</li>
+  	<li class="zappi-form-row" ng-show="mediaObject.meta.full_context=='display.facebook' || mediaObject.meta.full_context=='video.facebook'">
+  		<div class="zappi-question">Facebook URL</div>
+      	<input class="zappi-text-input stretch" ng-model="mediaObject.meta.facebook_url" placeholder="e.g. write 'Quaker' if the Facebook URL is facebook.com/Quaker"></input>
+  	</li>
+  	<li class="zappi-form-row" ng-show="mediaObject.meta.full_context=='display.facebook' || mediaObject.meta.full_context=='video.facebook'">
+  		<div class="zappi-question">Advert Text</div>
+      	<textarea class="zappi-text-input stretch" ng-model="mediaObject.meta.facebook_advert_text" placeholder=""></textarea>
+  	</li>
+  	<li class="zappi-form-row" ng-show="mediaObject.meta.full_context=='video.youtube'">
+  		<div class="zappi-question">Video Name</div>
+      	<input class="zappi-text-input stretch" ng-model="mediaObject.meta.youtube_video_name" placeholder="e.g. enter a name to appear when the user hovers over the video"></input>
+  	</li>
+  	<li class="zappi-form-row" ng-show="mediaObject.meta.full_context=='video.youtube'">
+  		<div class="zappi-question">Channel Name</div>
+      	<input class="zappi-text-input stretch" ng-model="mediaObject.meta.youtube_channel_name" placeholder="e.g. enter a channel name to appear when the user hovers over the video"></input>
+  	</li>
+  	<li class="zappi-form-row" ng-show="mediaObject.meta.full_context=='video.youtube'">
+  		<div class="zappi-question">Channel Logo</div>
+  		<zappi-media-upload is-visible="true" on-media-chosen="onYouTubeChannelLogoChosen" media-object-factory="mediaObjectService.factory" on-media-remove="onYouTubeVideoRemoved">
+  			<zappi-media-placeholder media="mediaObject" custom-class="small"></zappi-media-placeholder>
+  		</zappi-media-upload>
+  	</li>
+  </ul>
+</div>
+<div ng-show="mediaObject.saved==true">
+  <ul class="form-question-list">
+  	<li class="zappi-form-row">
+  		<div class="zappi-question summarised">
+  			<span class="title">Title:</span>
+  			<span class="value">{{ mediaObject.meta.title }}</span>
+  		</div>
+  	</li>
+  	<li class="zappi-form-row">
+  		<div class="zappi-question summarised">
+  			<span class="title">Stage:</span>
+  			<span class="value">{{ mediaObject.meta.stage.key }}</span>
+  		</div>
+  	</li>
+  	<li class="zappi-form-row">
+  		<div class="zappi-question summarised">
+  			<span class="title">Advert Type:</span>
+  			<span class="value">{{ mediaObject.meta.selected_advert_type.key }}</span>
+  		</div>
+  	</li>
+  	<li class="zappi-form-row">
+  		<div class="zappi-question summarised">
+  			<span class="title">Features:</span>
+  			<span class="value">{{ mediaObject.getFeatureTypesAsString() }}</span>
+  		</div>
+  	</li>
+  	<li class="zappi-form-row" ng-show="mediaObject.meta.full_context=='display.facebook' || mediaObject.meta.full_context=='video.facebook'">
+  		<div class="zappi-question summarised">
+  			<span class="title">Facebook URL:</span>
+  			<span class="value">{{ mediaObject.meta.selected_advert_type.facebook_url }}</span>
+  		</div>
+  	</li>
+  	<li class="zappi-form-row" ng-show="mediaObject.meta.full_context=='display.facebook' || mediaObject.meta.full_context=='video.facebook'">
+  		<div class="zappi-question summarised">
+  			<span class="title">Advert Text:</span>
+  			<span class="value">{{ mediaObject.meta.facebook_advert_text }}</span>
+  		</div>
+  	</li>
+  	<li class="zappi-form-row" ng-show="mediaObject.meta.full_context=='video.youtube'">
+  		<div class="zappi-question summarised">
+  			<span class="title">YouTube Video Name:</span>
+  			<span class="value">{{ mediaObject.meta.youtube_video_name }}</span>
+  		</div>
+  	</li>
+  	<li class="zappi-form-row" ng-show="mediaObject.meta.full_context=='video.youtube'">
+  		<div class="zappi-question summarised">
+  			<span class="title">YouTube Video Channel:</span>
+  			<span class="value">{{ mediaObject.meta.youtube_channel_name }}</span>
+  		</div>
+  	</li>
+  </ul>
+</div>

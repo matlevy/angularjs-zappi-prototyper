@@ -1,0 +1,190 @@
+&.heatmap-markers {
+
+	width: 100%;
+	position: relative;
+	display: block;
+
+	@media (min-width: 760px) {
+		width: 650px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.heatmap-pointer {
+		width: 100%;
+		height: 150px;
+		position: relative;
+		display: block;
+		margin-bottom: 1rem;
+
+		@media (max-width: 760px) {
+			height: 100px;
+		}
+
+		.status {
+
+			position: absolute;
+			left: 1rem;
+			bottom: 1rem;
+			width: 3rem;
+			height: 3rem;
+
+			background-color: red;
+
+			&.like {
+				background-color: green;
+			}
+
+		}
+	}
+
+	border-top: 1px dashed #CCCCCC;
+	margin-top: 2rem;
+
+	.support-text {
+		padding: 2rem;
+		border-radius: 4px;
+		background-color: #333333;
+		margin-bottom: 1rem;
+		color: white;
+		margin-top: 2rem;
+	}
+
+}
+
+&.heatmap {
+
+	width: 100%;
+	position: relative;
+	display: block;
+
+	@media (min-width: 760px) {
+		width: 650px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.support-text {
+		padding: 2rem;
+		border-radius: 4px;
+		background-color: #333333;
+		margin-bottom: 1rem;
+		color: white;
+	}
+
+	.heatmap-buttons,
+	.heatmap-comments,
+	.heatmap-image {
+		width: 100%;
+		position: relative;
+		display: inline-block;
+	}
+
+	.heatmap-image-container {
+		width: 100%;
+		@media (min-width: 760px) {
+			width: 100%;
+			float: left;
+			position: relative;
+		}
+		&.stretch {
+			width: 100% !important;
+		}
+	}
+
+	.heatmap-image {
+		width: 100%;
+		min-height: 200px;
+		background-size: contain;
+		background-repeat: no-repeat;
+		background-position: center center;
+		background-color: #EEEEEE;
+		margin-bottom: 1rem;
+
+		.heatmap-spot {
+			width: 2rem;
+			height: 2rem;
+			border-radius: 1rem;
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			transform: translateX(-10%) translateY(-10%);
+			-webkit-transform: translateX(-10%) translateY(-10%);
+			border: 3px solid;
+			border-color: white !important;
+
+			&.current {
+				transform: translateX(-300%) translateY(-300%);
+				//-webkit-transform: translateX(-200px) translateY(-200px);
+				border-color: yellow !important;
+				opacity: 1;
+			}
+		}
+	}
+
+	.heatmap-interaction {
+
+		@media (min-width: 760px) {
+			width: 100%;
+			float: right;
+			position: relative;
+		}
+
+	}
+
+	.heatmap-buttons {
+
+		min-height: 50px;
+		margin-bottom: 0;
+		position: relative;
+		display: inline-block;
+		
+		.like {
+			position: relative;
+			float: left;
+			display: block;
+			@media (max-width: 760px) {
+				width: 49% !important;
+				min-width: 49% !important;
+			}
+		}
+
+		.dislike {
+			position: relative;
+			float: right;
+			display: block;
+			@media (max-width: 760px) {
+				width: 49% !important;
+				min-width: 49% !important;
+			}
+		}
+
+		.not-chosen {
+			background-color: #CCCCCC !important;
+			color: #222222 !important;
+		}
+
+	}
+
+	.heatmap-comments {
+		textarea {
+			border: 1px solid grey;
+			width: 100%;
+			min-height: 100px;
+		}
+	}
+
+	.heatmap-image,
+	.heatmap-buttons,
+	.heatmap-interaction {
+		&.todo {
+			opacity: 0.5;
+		}
+	}
+
+	.heatmap-image.todo {
+		@media (min-width: 760px) {
+			opacity: 1 !important;
+		}
+	}
+}

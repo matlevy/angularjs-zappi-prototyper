@@ -1,0 +1,52 @@
+.zappi-image-option {
+	.image {
+		width: 100%;
+		height: 200px;
+		display: inline-block;
+		position: relative;
+		float: left;
+		background-repeat: no-repeat;
+		background-position: center center;
+		float: none;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	// TODO: This needs removing. We should be using our own styles rather than
+	// overriding shitty styles we don't like
+	.niceFormWrapper {
+		margin: 0;
+		margin-left: auto;
+		margin-right: auto;
+		float: none;
+	}
+	input {
+		position: relative;
+		display: inline-block;
+		margin: 0;
+	}
+	label {
+		margin: 0;
+		padding: 0;
+		float: none;
+		margin-left: auto;
+		margin-right: auto;
+		position: relative;
+		width: 100%;
+	}
+}
+
+.zappi-wizard.no-option-images {
+	.zappi-image-option .image {
+		display: none;
+	}
+}
+
+.zappi-wizard.left-aligned-options {
+	.zappi-image-option {
+		input, label {
+			position: relative;
+			width: auto;
+			float: left;
+		}
+	}
+}

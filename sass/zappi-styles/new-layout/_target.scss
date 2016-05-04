@@ -1,0 +1,43 @@
+.zappi-target,
+&.zappi-target {
+	
+	.target-category {
+		@extend .zappi-question;
+		@extend .zappi-mid.background;
+		@extend .z-reset-margins;
+		@extend .typography.medium-regular-text;
+		@extend .z-border-radius;
+
+		padding: 1rem;
+	}
+
+	.target-group {
+
+		@extend .zappi-dark;
+		@extend .colored-text;
+		@extend .zappi-mid.background;
+		@extend .z-reset-margins;
+		@extend .z-border-radius;
+		@extend .line-space-below;
+
+		padding: 1rem;
+		padding-top: 2rem;
+		padding-bottom: 2rem;
+
+		.target-group-name {
+			@extend .z-reset-margins;
+			margin-bottom: 1rem;
+		}
+
+		.target-group-decription {
+			@extend .z-reset-margins;
+			margin-bottom: 1rem;
+		}
+
+		a {
+			@extend .zappi-dark.colored-text.force;
+		}
+
+	}
+
+}

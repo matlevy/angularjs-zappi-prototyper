@@ -1,0 +1,82 @@
+.zappi-product-grid {
+
+	//text-align: center;
+
+	.grid-box {
+
+		text-align: center;
+		float: none;
+		display: inline-block;
+		transform: scale(1);
+		transition: 0.5s;
+		-webkit-transition: 0.5s;
+		float: left;
+		position: relative;
+
+		&.ng-enter-stagger,
+		&.ng-leave-stagger,
+		&.ng-move-stagger {
+			//-webkit-transition-delay:0.05s;
+		 	//transition-delay:0.05s;
+		}
+
+		.grid-box-container {
+			transition: 0.2s;
+			min-width: 370px;
+		}
+
+		&.ng-enter, 
+		&.ng-leave,
+		&.ng-move { 
+		    position: relative;
+		    display: block;
+		    overflow: hidden;
+		    opacity: 0; 
+		    transform: scale(0);
+		    .grid-box-container {
+		    	opacity: 0; 
+		    }
+		} 
+		 
+		&.ng-leave.ng-leave-active,
+		&.ng-enter,
+		&.ng-move {
+
+		   	.grid-box-container {
+		    	opacity: 0; 
+		    }
+
+		    opacity: 0; 
+		    transform: scale(0);
+		}
+
+		&.ng-move,
+		&.ng-enter {
+			opacity: 0;
+			transform: scale(0);
+		}
+		 
+		&.ng-enter.ng-enter-active,
+		&.ng-leave {
+		   	.grid-box-container {
+		    	opacity: 1;
+		    }
+		    opacity: 1;
+		    transform: scale(1);
+		}
+
+		&.ng-leave.ng-leave-active
+		&.ng-leave {
+			max-width: 0;
+		    max-height: 0;
+		    width: 0;
+		    height: 0;
+		}
+
+		height: 55rem;
+		max-height: 55rem;
+		overflow: hidden;
+
+	}
+
+}

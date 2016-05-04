@@ -1,0 +1,82 @@
+
+	<div class="row zappi-styles {{ !showQuestion ?  'hidden-xs' : '' }}">
+		<div class="col-md-12">
+			<div class="survey-body__question-number">
+				<span>Q.1</span>
+			</div>
+			<div class="survey-body__question-text-container">
+				<blockquote class="survey-body__question-text">
+					<span class="hidden-xs">
+						<p>We'd like you to mark areas of the image which you liked or disliked. You can do this as many times as you like but we'd like it if you chose at least one area you liked and one that you disliked. Start by selecting and area you liked or disliked.</p>
+					</span>
+					<span class="visible-xs">
+						<p>We'd like you to mark areas of the image which you liked or disliked. You can do this as many times as you like but we'd like it if you chose at least one area you liked and one that you disliked.</p>
+					</span>
+				</blockquote>
+				<div class="visible-xs">
+					<input class="zappi-button" name="commit" type="submit" value="OK, Got It!" ng-click="hideQuestion()" />
+				</div>
+			</div>
+		</div>
+	</div>
+<div ng-controller="HeatmapPrototypeController">
+	
+	<div data-view="QuestionViews.QuestionList">
+		<div class="row zappi-styles">
+			<div class="col-md-12">
+				<div class="dc-component heatmap">
+					<div class="heatmap-image-container">
+						<div class="heatmap-image {{ step > 0 ? '' : 'todo'  }}" ng-click="onImageClicked()" style="background-image: url('/assets/images/cat.jpg'); height: 300px;">
+							<div class="heatmap-spot" ng-show="step>1"></div>
+							<div class="heatmap-spot current" ng-show="step>4"></div>
+						</div>
+						<div ng-show="step==2 && currentPointer==null" class="support-text">
+							<p>Select whether you liked or dislike this part of the image</p>
+						</div>
+						<div class="heatmap-buttons {{ step > 1 ? '' : 'todo'  }}" ng-show="step>1">
+							<input class="zappi-button like {{ step%3==0 && step>0 ? '' : 'not-chosen'  }}" name="commit" type="button" value="I LIKE THIS" ng-click="gotoStep(3);" />
+							<input class="zappi-button dislike not-chosen" name="commit" type="button" value="I DISLIKE THIS" ng-click="" />
+						</div>
+					</div>
+					<div class="heatmap-interaction {{ step > 2 ? '' : 'todo'  }}" ng-show="step>2">
+						<div ng-show="step==3 && currentPointer==null" class="support-text">
+							<p>Write up to 50 characters about why you chose this part of the image.</p>
+						</div>
+						<div class="heatmap-comments line-space-below">
+							<textarea id="commentsArea" placeholder="Enter a comment about this part of the image." ng-model="comments"></textarea>
+						</div>
+						<div>
+							<input class="zappi-button stretch {{ step < 3 ? '' : 'not-chosen'  }} line-space-below" name="commit" type="button" value="{{ currentPointer != null ? 'I\'ve finished making my changes' : 'I\'ve finished making my comments'}}" ng-click="updateOrStore()" ng-disabled="comments.length<3"/>
+						</div>
+					</div>
+					<div ng-hide="currentPointer==null" class="line-space-above">
+						<input class="zappi-button stretch inverted" name="commit" type="button" value="Remove This Selection" ng-click="removeCurrentItem();" />
+					</div>
+					<div ng-show="currentPointer==null && (step > 1)" class="line-space-above">
+						<input class="zappi-button interaction-button stretch inverted" name="commit" type="button" value="Go Back, Forget This Selection" ng-click="resetChanges();" />
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div data-view="QuestionViews.QuestionList" class="zappi-styles" ng-show="pointers.length > 0 && step == 1">
+		<div class="dc-component heatmap-markers line-space-below">
+			<div class="support-text">
+				<p><b>Review Your Choices: </b>Tap an image below to change your comments or edit and remove from it from your selections. Repeat the previous steps to add more points you either like or dislike. To add another marker tap the image above.</p>
+			</div>
+			<div class="row zappi-styles">
+				<div class="col-xs-4 col-md-3" ng-repeat="pointer in pointers">
+					<a href="javascript://" ng-click="selectItem(pointer)">
+						<div class="heatmap-pointer" style="background-image: url('/assets/images/cat.jpg');">
+							<div class="status {{ $index%2==0 ? 'like' : 'dislike' }}"></div>
+						</div>
+					</a>
+				</div>
+			</div>
+			<div class="line-space-below">
+				<input class="zappi-button stretch {{ step < 3 ? '' : 'not-chosen'  }}" name="commit" type="button" value="Remove All My Selections" ng-click="clearAll()" />
+			</div>
+		</div>
+	</div>
+</div>

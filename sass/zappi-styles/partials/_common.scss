@@ -1,0 +1,66 @@
+.stretch {
+	width: 100%;
+	display: inline-block;
+}
+
+.center-align {
+	text-align: center;
+}
+
+.link-block {
+	text-decoration: none;
+	&:hover {
+		text-decoration: none;
+	}
+}
+
+.half-line-space-above {
+	margin-top: 1rem;
+}
+
+.half-line-space-below {
+	margin-bottom: 1rem;
+}
+
+.single-line-space-above,
+.line-space-above {
+	margin-top: 2rem;
+}
+
+.single-line-space-below,
+.line-space-below {
+	margin-bottom: 2rem;
+}
+
+.double-line-space-below {
+	margin-bottom: 4rem;
+}
+
+.double-line-space-above {
+	margin-top: 4rem;
+}
+
+.big-space-above {
+	margin-top: 8rem;
+}
+
+.ultra-space-above {
+	margin-top: 11rem;
+}
+
+.add-space {
+	&.left-and-right {
+		margin-left: 15px;
+		margin-right: 15px;
+	}
+}
+
+.large-text {
+	font-size: 2rem;
+	line-spacing: 40px;
+}
+
+.larger-text {
+	font-size: 3rem;
+	line-spacing: 60px;
+}

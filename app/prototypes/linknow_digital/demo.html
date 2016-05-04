@@ -1,0 +1,59 @@
+<proto-customise-header header-skin="linknow-full" page-model="page"></proto-customise-header>
+
+<div class="container" ng-controller="LinkNowDigitalProtoTypeController">
+
+  <div class="row zappi-styles zappi-form mmr">
+    <div class="col-md-8">
+      <zappi-page-indicator form-page-model="models.form"></zappi-page-indicator>
+    </div>
+  </div>
+
+  <div class="row zappi-styles zappi-form linknow" ng-controller="LinkNowDigitalProtoTypeController">
+
+    <div class="col-md-8 form-left-panel audience-configuration">
+
+    <!--
+      <zappi-tutorial tutorial-model="models.view.tutorial" start-label="Yes, Guide Me Through This" close-label="No, Don't show this again">
+        <h2>Step-By-Step Guide</h2>
+        If you've never used this form before, we can give you step-by-step guide and help you completing the survey setup.
+      </zappi-tutorial>
+    -->
+      <linknow-form models="models"></linknow-form>
+
+      <zappi-form-page page-id="3" form-page-model="models.form" page-title="Upload Your Creative" page-index="2">
+
+        <zappi-page-introduction hide-when="models.choices.media.length>0">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris orci tortor, dignissim nec molestie sed, blandit quis risus. Nullam quis augue velit. Nam tempus leo nisl, sagittis feugiat diam varius quis. Maecenas vestibulum dictum justo, id iaculis lectus rhoncus ac. Praesent in lorem tempus, ultricies nunc sed, porttitor dui. Quisque vel lorem arcu. In nisi libero, elementum nec placerat sit amet, malesuada quis enim. Nullam et elit id nulla tincidunt tincidunt. Nulla quis velit erat.
+        </zappi-page-introduction>
+
+        <section class="zappi-form-section upload-options" ng-repeat="media_object in models.choices.media">
+          <zappi-media-upload is-visible="true" media-upload-state="media_object.state" media-object="media_object" on-media-removed="onMediaRemove">
+            <div class="zappi-question" ng-show="media_object.saved!=true">Where will your advert appear?</div>
+            <div class="zappi-question summarised as-title" ng-show="media_object.saved==true"><span class="title">{{ media_object.meta.context.key }}</span></div>
+            <zappi-form-image-select options="media_object.meta.permitted_media_contexts" columns="media_object.meta.permitted_media_contexts.length < 4 ? media_object.meta.permitted_media_contexts.length : 4" image-height="100" selected="media_object.meta.context" is-visible="media_object.saved!=true" on-change="updateMediaObjectMeta( media_object )" id="ad-type"></zappi-form-image-select>
+            <linknow-digital-media-config media-object="media_object" media-stages="models.options.stages" ng-hide="media_object.meta.context==null"></linknow-digital-media-config>
+            <zappi-media-placeholder media="media_object" custom-class="small" ng-show="media_object.saved==false || media_object.saved==null"></zappi-media-placeholder>
+          </zappi-media-upload>
+        </section>
+        
+        <section class="zappi-form-section upload-section" id="upload" ng-show="models.choices.media.length<=5">
+          <div class="instructions-text">
+            Finally upload your creatives for us to test. You can do this by dragging and dropping the file into the upload area or simply clicking the button and browsing for the file.
+          </div>
+          <ul class="form-question-list">
+            <li class="">
+              <zappi-media-upload is-visible="true" on-media-chosen="onNewMedia" media-object-factory="mediaObjectService.factory" media-object-type="linknow"></zappi-media-upload>
+              <a name="upload"></a>
+            </li>
+          </ul>
+        </section>
+
+      </zappi-form-page>
+
+    </div>
+
+    <de-right-panel-placeholder  page-navigation-model="models.form"></de-right-panel-placeholder>
+
+  </div>  
+
+</div>

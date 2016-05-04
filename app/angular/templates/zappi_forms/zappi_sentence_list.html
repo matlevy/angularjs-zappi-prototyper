@@ -1,0 +1,13 @@
+<div class="zappi-form-row" ng-show="isVisible">
+	<div class="zappi-sentence-list">
+		<div class="sentence-input-area" ng-hide="maxPermitted==sentences.length">
+			<input class="sentence-input" placeholder="{{ placeHolder }}" ng-model="newSentence">
+		</div>
+		<div class="sentence-items">
+			<div class="sentence" ng-repeat="sentence in sentences">
+				<div class="copy">{{ sentence.copy }}</div>
+				<div class="actions"><button class="zappi-button stretch line-space-above" ng-click="removeSentence(sentence)">Remove</button></div>
+			</div>
+		</div>
+	</div>
+</div>

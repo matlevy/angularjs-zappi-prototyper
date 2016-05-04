@@ -1,0 +1,64 @@
+.audience-summary-panel {
+	@extend .zappi-form-section;
+	@extend .zappi-well;
+	@extend .no-top-spacing;
+	@extend .z-clear;
+	@extend .zappi-form-right-panel.element;
+
+	@extend .zappi-blue.links;
+	@extend .dark-text;
+	@extend .zappi-light-grey-bg;
+	
+	@include float-box(100%);
+
+	.title {
+		@extend .z-clear;
+		@include float-box(100%);
+
+		margin-bottom: 0.6rem;
+		
+	}
+
+	.detail {
+		@extend .z-clear;
+		@extend .zappi-blue-txt;
+
+		@include float-box(100%);
+
+		margin-bottom: 1rem;
+	}
+
+	.summary-section {
+		@include float-box(100%);
+		@extend .zappi-animations.slide-down-and-fade-in-on-show;
+	}
+
+	h3 {
+		@extend .typography.small-text;
+
+		@include float-box(100%);
+
+		margin-bottom: 0rem;
+		margin:0;
+		text-transform: uppercase;
+	}
+
+	a {
+		@extend .zappi-white-txt;
+		@extend .zappi-blue-bg;
+		@extend .z-border-radius;
+		@extend .typography.medium-text;
+
+		margin-left: 10px;
+		text-transform: uppercase;
+		padding: 2px;
+		padding-left: 10px;
+		padding-right: 10px;
+		margin-bottom: 3px;
+	}
+
+	&.white {
+		@extend .z-border-radius;
+		@extend .zappi-white.background.force;
+	}
+}

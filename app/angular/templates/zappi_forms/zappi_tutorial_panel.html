@@ -1,0 +1,9 @@
+<section class="config-quote-box" ng-show="tutorialModel.instructions.length>0">
+  <button class="zappi-button zappi-pink-bg guide-cta extra-padding stretch" ng-click="startGuide()">{{ startLabel }}</button>
+  <ol class="tutorial-steps">
+    <li ng-repeat="instruction in tutorialModel.instructions" data-id="{{ instruction.targetId }}" data-text="{{ instruction.nextText }}" data-prev-text="{{ instruction.previousText }}" data-options="{{ getOptions(instruction) }}">
+      <h2>{{ instruction.title }}</h2>
+      <p>{{ instruction.copy }}</p>
+    </li>
+  </ol>
+</section>

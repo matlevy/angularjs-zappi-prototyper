@@ -1,0 +1,20 @@
+<div class="container-tools">
+	<button class="tool" ng-click="renameFolder()" ng-show="folder!=null && view_mode=='tiled'" ><i class="fa fa-pencil" ></i></button>
+	<button class="tool" ng-click="save()" ng-show="view_mode=='tiled'"><i class="fa fa-floppy-o"></i></button>
+	<button class="tool" ng-click="goUp()" ng-show="charts_temp.length>0 && view_mode=='tiled'"><i class="fa fa-level-up"></i></button>
+	<button class="tool" ng-click="trashSelected()" ng-show="selected.length>0 && view_mode=='tiled'"><i class="fa fa-download"></i></button>
+	<button class="tool" ng-click="packageSelectedCharts()" ng-show="selected.length>0 && view_mode=='tiled'"><i class="fa fa-folder"></i></button>
+	<button class="tool" ng-click="trashSelected()" ng-show="selected.length>0 && view_mode=='tiled'"><i class="fa fa-trash"></i></button>
+	<button class="tool" ng-click="toggleViewMode()"><i class="fa fa-{{ view_mode!='tiled' ? 'th-large' : 'bars' }}"></i></button>
+</div>
+<div class="report-repeater {{ view_mode == 'tiled' ? '' : 'vertical' }}">
+	<a href="javascript://" ng-click="onChartItemSelected(chart)"  
+		ng-dblclick="onChartItemClicked(chart)" ng-repeat="chart in activePackage track by $index" ng-hide="isItemHidden(chart)">
+		<div class="report {{ chart.is_selected ? 'is_selected' : '' }}">
+			<div class="report-graph">
+				<img ng-src="{{ chart.chart_path }}" width="90%"/>
+			</div>
+			<div class="report-name">{{ chart.key }}</div>
+		</div>
+	</a>
+</div>

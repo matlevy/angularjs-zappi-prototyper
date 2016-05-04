@@ -1,0 +1,78 @@
+.header {
+
+	position: relative;
+	height: auto;
+	background-color: #0da8df;
+	overflow-y: hidden;
+	background-position: 110% 40px;
+	background-size: 400px 400px;
+	
+	@media screen and (min-width: 768px) {
+		height: 380px;
+	}
+
+	@media screen and (max-width: 768px) {
+		.container {
+			//background-color: rgba(0,0,0,0.5);
+			padding-bottom: 4rem;
+		}
+	}
+
+	.product-name {
+		color: white;
+		margin-top: 200px;
+		margin-bottom: 0.5rem !important;
+		text-transform: uppercase;
+		@extend .typography.large-text;
+
+		@media screen and (min-width: 980px) {
+			@extend .typography.big-text;
+		}
+
+		@media screen and (max-width: 768px) {
+			@extend .typography.large-text;
+			margin-top: 100px;
+		}
+
+		@media screen and (max-width: 600px) {
+			margin-top: 50px;
+			width: 80%;
+		}
+	}
+
+	.page-title {
+		color: white;
+		margin-top: 0.5rem !important;
+		text-transform: uppercase;
+		@extend .typography.medium-regular-text;
+
+		@media screen and (max-width: 980px) {
+			@extend .typography.large-text;
+			padding-right: 30%;
+		}
+
+		@media screen and (max-width: 768px) {
+			@extend .typography.large-text;
+			padding-right: 0%;
+		}
+
+		@media screen and (max-width: 600px) {
+			width: 80%;
+		}
+	}
+
+	@media screen and (min-width: 1200px) {
+		background-position: 80% 40px;
+		background-size: 500px 500px;
+	}
+
+	@media screen and (max-width: 768px) {
+		background-size: 200px 200px;
+		background-position: 110% 140%;
+	}
+
+	@media screen and (max-width: 600px) {
+		background-size: 150px 150px;
+	}
+
+}

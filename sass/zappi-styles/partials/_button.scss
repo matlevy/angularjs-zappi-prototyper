@@ -1,0 +1,228 @@
+@mixin icon-button(){
+	border: 1px solid;
+	background-color: #DDDDDD !important;
+	color: #333333 !important;
+	border-color: #333333 !important;
+	text-align: right;
+
+	background-repeat: no-repeat;
+	background-position: 7px 7px;
+	background-size: 24px;
+	padding-left: 40px;
+	width: auto;
+	min-width: 0px;
+
+	border-color: #DDDDDD !important;
+	color: #DDDDDD !important;
+
+	max-width: 0px;
+	padding-right: 0px;
+	max-height: 40px;
+	overflow: hidden;
+
+	-webkit-transition: background-image 0.3s, max-width 0.3s 0.3s, padding-right 0.3s 0.3s, color 0.3s;
+	transition: background-image 0.3s, max-width 0.3s 0.3s, padding-right 0.3s 0.3s, color 0.3s;
+
+	height: 4rem;
+
+	//font-size: 0;
+
+	&:hover {
+		-webkit-transition: background-image 0.3s, max-width 0.3s, padding-right 0.3s, color 0.3s 0.3s;
+		transition: background-image 0.3s, max-width 0.3s, padding-right 0.3s, color 0.3s 0.3s;
+		max-width: 500px;
+		padding-right: 10px;
+		color: #333333 !important;
+	}
+
+	&.selected {
+		background-color: #0da8df !important;
+		border-color: #0da8df !important;
+		color: white !important;
+		max-width: 500px;
+		padding-right: 10px;
+	}
+
+	&.highlighted {
+		background-color: #0da8df !important;
+	}
+
+	position: relative;
+	float: none;
+}
+
+.zappi-button,
+.zappi-button-group .zappi-button {
+	
+	@extend .z-border-radius;
+	@extend .z-reset-padding;
+	@extend .z-reset-margin;
+	@extend .z-input-widths;
+
+	@include z-standard-input-spacing();
+
+	// Default colors
+
+	@extend .zappi-blue.background;
+	@extend .zappi-blue-hover.background;
+	@extend .zappi-white-hover.colored-text;
+	@extend .white-text;
+
+	@extend .typography.medium-text;
+
+	text-decoration: none;
+
+	text-transform: uppercase;
+	border: 1px solid;
+
+	&.pad-right {
+		margin-right: 10px;
+	}
+
+	min-width: 150px;
+	border: 0px;
+
+	outline: none;
+
+	&:focus {
+		outline: none;
+	}
+
+	&.no-left-corner {
+		border-top-left-radius: 0;
+    	border-bottom-left-radius: 0;
+	}
+
+	-webkit-transition: color 0.2s, background-color 0.2s;
+	transition: background-color 0.2s, color 0.2s;
+
+	&.as-tag, 
+	&.as-tag:first-of-type, 
+	&.as-tag:last-of-type {
+
+		border-radius: 20px;
+		min-width: 100px;
+		max-width: auto;
+		margin-right: 10px;
+		margin-bottom: 10px;
+		padding-left: 20px;
+		padding-right: 20px;
+
+		&.no-hpad {
+			margin-right: 0;
+			margin-left: 0;
+		}
+		
+	}
+
+	&.thin {
+		@extend .typography.medium-text;
+	}
+
+	&.selectable {
+		@extend .zappi-light-grey.background;
+		@extend .zappi-light-grey-hover.background;
+		@extend .zappi-black.colored-text;
+	}
+
+	&.selected {
+		@extend .zappi-blue.background;
+		@extend .zappi-blue-hover.background;
+		@extend .zappi-white.colored-text;
+		color: white !important;
+	}
+
+	&.custom {
+		@extend .zappi-orange.background;
+		@extend .zappi-orange-hover.background;
+	}
+
+	&.secondary-action {
+		@extend .zappi-white.colored-text;
+		@extend .zappi-grey.background.force;
+	}
+
+	&.interaction-action {
+		@extend .zappi-white.colored-text;
+		@extend .zappi-black.background.force;
+	}
+
+	&.extra-padding {
+		padding-left: 40px;
+		padding-right: 40px;
+	}
+
+	&.small {
+		font-size: 1.2rem;
+		line-height: 1.2rem;
+		min-width: 110px;
+	}
+
+	&.disabled,
+	&:disabled {
+		@extend .zappi-disabled.background;
+	}
+
+	&.within-text  {
+		margin-right: 10px;
+		margin-left: 10px;
+	}
+
+	&.no-hpad {
+		margin-right: 0;
+		margin-left: 0;
+	}
+
+}
+
+.zappi-button-group {
+
+	@extend .z-row;
+
+	.zappi-button {
+		position: relative;
+		display: block;
+		float: left;
+		text-transform: capitalize;
+	}
+
+	&.multi-select {
+		.zappi-button {
+			margin-right: 4px;
+			&:last-of-type {
+				margin-right: 0px;
+			}
+		}
+	}
+
+	&.single-select {
+		.zappi-button {
+
+			&:first-of-type {
+				min-width: 102px;
+			}
+			
+			&:last-of-type {
+				min-width: 102px;
+			}
+		}
+	}
+
+	.button-group-title {
+		@extend .typography.medium-text;
+		@extend .zappi-dark-txt;
+		@extend .half-line-space-below;
+
+		text-transform: none;
+		padding-bottom: 1rem;
+	}
+
+	&.error .zappi-button, &.error .zappi-text-input {
+		@extend .zappi-error.border;
+	}
+
+	&.disabled .zappi-button {
+
+	}
+
+}

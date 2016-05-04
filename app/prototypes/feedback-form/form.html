@@ -1,0 +1,26 @@
+<div class="zappi-feedback-form">
+	<section class="zappi-form-section upload-section" ng-show="models.form.currentSelectedPackImage.media.state!='uploading'">
+	    <ul class="form-question-list">
+			<li class="zappi-form-row">
+				<div class="zappi-question">What were your reasons for choosing this LinkNow Digital?</div>
+				<textarea class="zappi-text-input stretch medium-height"></textarea>
+			</li>
+			<li class="zappi-form-row">
+				<div class="zappi-question">What comments do you have regarding the services provided by our team?</div>
+				<textarea class="zappi-text-input stretch medium-height"></textarea>
+			</li>
+			<li class="zappi-form-row">
+				<div class="zappi-question">Do you have any suggestions as to how we can make this product better?</div>
+				<textarea class="zappi-text-input stretch medium-height"></textarea>
+			</li>
+			<li class="zappi-form-row">
+				<div class="zappi-question">How would you rate the speed at which we provided our service?</div>
+				<!--<zappi-input-with-change-option options="feedback.ratings.items" selected="feedback.speed"></zappi-input-with-change-option>-->
+				<zappi-single-select-option options="$parent.$parent.feedback.ratings" selected="$parent.$parent.feedback.speed"></zappi-single-select-option>
+			</li>
+		</ul>
+		<div class="line-space-above">
+  			<button class="zappi-button stretch" ng-click="$parent.$parent.closeFeedbackForm()">Send Your Feedback</button>
+  		</div>
+  	</section>
+</div>

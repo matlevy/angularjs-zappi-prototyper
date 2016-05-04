@@ -1,0 +1,16 @@
+.zappi-styles {
+	@import 'partials/functions';
+	@import 'partials/base';
+	@import 'partials/utils';
+	@import 'partials/common';
+	@import 'partials/border';
+	@import 'partials/typography';
+	@import 'partials/animations';
+	@import 'partials/form';
+	@import 'partials/button';
+	@import 'partials/icon_buttons';
+	@import 'partials/colors';
+	@import 'partials/walkthrough';
+	@import 'partials/form_controls/custom_question';
+	@import 'partials/overrides';
+}

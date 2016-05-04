@@ -1,0 +1,80 @@
+<proto-customise-header header-title="My Details" page-model="page"></proto-customise-header>
+
+<div class="zappi-styles zappi-form container account my-details">
+
+	<div class="row">
+		<div class="col-md-8" ng-include="'/prototypes/my-shared/navigation.html'"></div>
+		<div class="col-md-2">&nbsp;</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-6">
+			
+			<section class="zappi-form-section" id="contact-form">
+				<ul class="form-question-list contact-area">
+					<li class="zappi-form-row">
+						<div class="zappi-question">Forname</div>
+						<input type="text" class="zappi-text-input stretch" ng-model="page.account.details.forname">
+					</li>
+					<li class="zappi-form-row">
+						<div class="zappi-question">Surname</div>
+						<input type="text" class="zappi-text-input stretch" ng-model="page.account.details.surname">
+					</li>
+					<li class="zappi-form-row">
+						<div class="zappi-question">Company Name</div>
+						<input type="text" class="zappi-text-input stretch" ng-model="page.account.details.company_name">
+					</li>
+					<li class="zappi-form-row">
+						<div class="zappi-question">My company position is</div>
+						<zappi-input-with-change-option options="page.account.details.job_types.items" selected="page.account.details.job_types.selected"></zappi-input-with-change-option>
+					</li>
+				</ul>
+			</section>
+
+		</div>
+
+		<div class="col-md-6">
+			<section class="zappi-form-section" id="contact-form">
+				<ul class="form-question-list contact-area">
+					<li class="zappi-form-row">
+						<div class="zappi-question">Telephone</div>
+						<input type="text" class="zappi-text-input stretch" ng-model="page.account.details.telephone">
+					</li>
+					<li class="zappi-form-row">
+						<div class="zappi-question">Address Line 1</div>
+						<input type="text" class="zappi-text-input stretch" ng-model="page.account.details.company_address_1">
+					</li>
+					<li class="zappi-form-row">
+						<div class="zappi-question">Address Line 2</div>
+						<input type="text" class="zappi-text-input stretch" ng-model="page.account.details.company_address_2">
+					</li>
+					<li class="zappi-form-row">
+						<div class="zappi-question">Postcode</div>
+						<input type="text" class="zappi-text-input stretch" ng-model="page.account.details.company_postcode">
+					</li>
+				</ul>
+			</section>
+
+		</div>
+
+	</div>
+	<div class="row">
+		<div class="col-md-12"><button class="zappi-button">Save</button></div>
+	</div>
+	<!--
+	<div class="row">
+		<div class="col-md-12">
+			<section class="zappi-form-section" id="contact-form">
+				<div class="zappi-question">
+					Contact me about news and information regarding ZappiStore
+					<zappi-toggle-button selected-label="YES" unselected-label="NO" selected="page.account.details.contactZappi"></zappi-toggle-button>
+				</div>
+				<div class="zappi-question">
+					Contact me about news and information regarding ZappiStore partners
+					<zappi-toggle-button selected-label="YES" unselected-label="NO" selected="page.account.details.contactPartners"></zappi-toggle-button>
+				</div>
+			</section>
+			<button class="zappi-button">Save</button>
+		</div>
+	</div>-->
+</div>

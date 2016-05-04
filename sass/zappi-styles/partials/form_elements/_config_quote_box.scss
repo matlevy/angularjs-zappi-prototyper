@@ -1,0 +1,38 @@
+.config-quote-box {
+
+	@extend .zappi-panel;
+
+	.price-container, .duration-container {
+
+		@extend .center-align;
+		@include float-box(50%);
+
+		>.quote-label {
+			@extend .typography.small-text;
+			@extend .dark-text;
+			text-transform: uppercase;
+			font-weight: bold;
+		}
+		>.quote-value {
+			@extend .zappi-blue.colored-text;
+			@extend .typography.big-text;
+		}
+		
+
+		&.is-calculating {
+			>.quote-value {
+				filter: blur(3px);
+				transform: translateZ(0);
+				-webkit-transform: translateZ(0);
+				-webkit-filter: blur(3px);
+			}
+		}
+
+	}
+
+	&.grey {
+		@extend .zappi-light-grey.background.force;
+	}
+
+	margin-bottom: 20px;
+}

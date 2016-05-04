@@ -1,0 +1,31 @@
+.survey-summary {
+
+	section {
+		@extend .double-line-space-below;
+	}
+	
+	.survey-section-title {
+
+		@extend .z-reset-margins;
+		@extend .single-line-space-below;
+
+
+	}
+
+	.survey-section-meta {
+
+		@extend .typography.medium-regular-text;
+
+	}
+
+	.value-render {
+
+		.meta-image {
+			max-width: 70%;
+		}
+	}
+
+	&.grey {
+		@extend .zappi-light-grey.background.force;
+	}
+}

@@ -1,0 +1,63 @@
+.zappi-comments-list {
+
+	@extend .z-reset-padding;
+	list-style: none;
+	
+	.comment {
+
+		@extend .zappi-white.background;
+		@extend .z-border-radius;
+		@extend .zappi-light-grey-bdr;
+
+		padding: 3rem;
+		list-style: none;
+
+		.reply {
+			margin-top: 1rem;
+		}
+
+	}
+
+	.comment-content,
+	.comment-metadata,
+	.comment-author {
+
+		@extend .typography.medium-regular-text;
+
+		margin-bottom: 1rem;
+	}
+
+	.comment-reply-link {
+		
+		@extend .z-border-radius;
+		@extend .z-reset-padding;
+		@extend .z-reset-margin;
+		@extend .z-input-widths;
+
+		@include z-standard-input-spacing();
+
+		// Default colors
+
+		@extend .zappi-blue.background;
+		@extend .zappi-blue-hover.background;
+		@extend .zappi-white-hover.colored-text;
+		@extend .white-text;
+
+		@extend .typography.medium-text;
+
+		text-transform: uppercase;
+
+		margin-top: 1rem;
+
+		text-decoration: none;
+		min-width: 150px;
+		width: 150px;
+
+		display: inline-block;
+		position: relative;
+
+		text-align: center;
+	}
+
+	margin-bottom: 4rem;
+}

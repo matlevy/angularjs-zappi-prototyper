@@ -1,0 +1,29 @@
+<div class="row zappi-styles {{ !showQuestion ?  'hidden-xs' : '' }}">
+	<div class="col-md-12">
+		<div class="survey-body__question-number">
+			<span>Q.1</span>
+		</div>
+		<div class="survey-body__question-text-container">
+			<blockquote class="survey-body__question-text">
+				<p>Now please rate each concept by placing the image on the bar below. Click the image to select it, and drag and drop onto the bar to rate the concept. You may give different concepts the same score.</p>
+			</blockquote>
+			<div class="visible-xs">
+				<input class="zappi-button" name="commit" type="submit" value="OK, Got It!" ng-click="hideQuestion()" />
+			</div>
+		</div>
+	</div>
+</div>
+<div data-view="QuestionViews.QuestionList">
+	<div class="row">
+		<div class="col-md-12">
+			<div class="dc-component ranker">
+				<div class="ranker-score" ng-repeat="i in [1,2,3,4,5,6,7,8,9,10]">
+					<div class="ranking-number theme-background shade-{{ i-1 }}">
+						<div class="theme-text ranking-number-label">{{ i }}</div>
+					</div>
+					<div class="ranking-area"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

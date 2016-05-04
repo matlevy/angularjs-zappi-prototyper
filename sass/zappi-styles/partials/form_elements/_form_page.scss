@@ -1,0 +1,20 @@
+.zappi-form-page {
+
+	&.ng-show, &.ng-hide {
+		-webkit-transition:0.2s linear all;
+		-moz-transition:0.2s linear all;
+		-o-transition:0.2s linear all;
+		transition:0.2s linear all;
+	}
+
+	&.ng-show,
+	&.ng-show.ng-show-active,
+	&.ng-move.ng-move-active {
+		opacity:1;
+	}
+
+	&.ng-hide {
+		opacity:0;	
+	}
+	
+}

@@ -1,0 +1,67 @@
+.tutorial-steps {
+	display: none;
+}
+
+.joyride-modal-bg {
+	background: rgba(0,0,0,0.7);
+}
+
+.joyride-expose-cover {
+	display: none;
+}
+
+.joyride-expose-wrapper {
+	box-shadow: none;
+	background: none;
+}
+
+.joyride-tip-guide {
+	z-index: 1000;
+}
+
+.joyride-next-tip {
+	@extend .zappi-button;
+	@extend .zappi-pink-bg;
+	@extend .zappi-white-txt;
+	border-width: 0 !important;
+	margin-bottom: 20px;
+	background-image: none;
+	@include float-box(auto);
+	@extend .z-clear;
+	text-align: center;
+	float: left;
+	margin-top: 20px;
+}
+
+.joyride-tip-guide {
+	border: 3px solid black;
+
+	@extend .zappi-pink-border;
+	@extend .z-border-radius;
+	@extend .zappi-black-txt;
+	@extend .zappi-pink-bdr;
+	@extend .zappi-white-bg;
+	@extend .typography.medium-text;
+
+	p, h2 {
+		@extend .typography.medium-regular-text;
+		@extend .z-clear;
+		@include float-box(100%);
+	}
+
+	h2 {
+		@extend .zappi-pink-txt;
+	}
+
+	margin: 20px;
+	padding: 10px;
+	margin-right: 40px;
+	
+	font-family: DinLight, 'DinLight', sans-serif;
+	width: 450px;
+
+}
+
+.joyride-nub {
+	@extend .zappi-pink-bdr;
+}
